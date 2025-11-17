@@ -1,4 +1,3 @@
-# tools/statistics_tool.py
 from __future__ import annotations
 
 from fastmcp import FastMCP
@@ -9,10 +8,6 @@ from utils.exceptions import BusinessError
 
 
 def register_statistics_tools(mcp: FastMCP):
-    """
-    注册统计相关的 MCP 工具。
-    """
-
     @mcp.tool()
     def get_daily_stats(date: str) -> DailyStatsResult:
         """
@@ -26,5 +21,4 @@ def register_statistics_tools(mcp: FastMCP):
         try:
             return get_daily_stats_for_date(date)
         except BusinessError as e:
-            # FastMCP 会把异常转成 MCP 错误返回给客户端
             raise e

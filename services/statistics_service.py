@@ -32,22 +32,15 @@ def _calc_rates(row: Dict[str, Any]) -> RateStats:
 def _calc_diff(today: float, yesterday: float) -> RateDiff:
     diff = today - yesterday
     if diff > 0:
-        trend = "up"
+        trend = "上升"
     elif diff < 0:
-        trend = "down"
+        trend = "下降"
     else:
         trend = "equal"
     return {"diff": diff, "trend": trend}
 
 
 def _query_stats_for_date(conn, date_str: str) -> RateStats:
-    """
-    查询指定日期的总量 / 解决 / 满意。
-    表字段：
-      - `日期` (DATE)
-      - `是否解决` (varchar, '是'/'否')
-      - `是否满意` (varchar, '是'/'否')
-    """
     table = get_table_name()
     sql = f"""
         SELECT
