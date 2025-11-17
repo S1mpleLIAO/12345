@@ -32,5 +32,4 @@ class DailyStatsResult(TypedDict):
     yesterday_date: str
     today: RateStats
     yesterday: RateStats
-    compare: Dict[str, RateDiff]
     streets: StreetRanks

@@ -92,7 +92,7 @@ def get_daily_stats_for_date(date_str: str) -> DailyStatsResult:
     """
     对外主函数：
       输入：date_str = 'YYYY-MM-DD'（如 '2025-01-01'）
-      输出：当天统计 + 昨天统计 + 对比 + 街道排名
+      输出：当天统计 + 昨天统计 + 对比 + 处置部门排名
     """
     try:
         d = parse_date(date_str)
@@ -110,22 +110,11 @@ def get_daily_stats_for_date(date_str: str) -> DailyStatsResult:
         yesterday_stats = _query_stats_for_date(conn, yest_str)
         streets = _query_street_ranks_for_date(conn, today_str)
 
-        solved_diff = _calc_diff(
-            today_stats["solved_rate"], yesterday_stats["solved_rate"]
-        )
-        satisfied_diff = _calc_diff(
-            today_stats["satisfied_rate"], yesterday_stats["satisfied_rate"]
-        )
-
         return {
             "date": today_str,
             "yesterday_date": yest_str,
             "today": today_stats,
             "yesterday": yesterday_stats,
-            "compare": {
-                "solved": solved_diff,
-                "satisfied": satisfied_diff,
-            },
             "streets": streets,
         }
     finally:
