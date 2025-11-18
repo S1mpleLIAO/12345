@@ -4,8 +4,7 @@ from __future__ import annotations
 from fastmcp import FastMCP
 from models.types import AppealTop5Result
 from models.types import DailyStatsResult
-from services.statistics_service import get_daily_stats_for_date
-from services.appeal_service import get_top5_appeal_types_for_date
+from services.daily_report_service import get_daily_stats_for_date, get_top5_appeal_types_for_date
 from utils.exceptions import BusinessError
 
 
