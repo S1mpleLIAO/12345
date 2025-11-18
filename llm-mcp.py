@@ -154,7 +154,7 @@ class MCPClientWrapper:
 
 
 async def main():
-    question = "我想知道2025年1月2日的统计情况，按照以下格式输出：今日，我区12345热线受理诉求{}件，解决率、满意率（全口径含剔除诉求）分别为{}和{}，较昨日分别上升或者下降{}和{}个百分点。11月考核期，前三：{}；后三：{}。"
+    question = "我想知道2025年1月2日的统计情况，按照以下格式输出：今日，我区12345热线受理诉求{}件，解决率、满意率（全口径含剔除诉求）分别为{}和{}，较昨日分别上升或者下降{}和{}个百分点（）。11月考核期，前三：{}；后三：{}。"
     mcp_client = MCPClientWrapper(MCP_ENTRY, model=MODEL_NAME)
     async with mcp_client.session:
         answer = await mcp_client.chat(question)
