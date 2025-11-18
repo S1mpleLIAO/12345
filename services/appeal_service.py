@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List
 
-from db.connection import get_connection
+from db.connection import get_connection, release_connection
 from db.table import get_table_name
 from utils.dates import parse_date, format_date
 from utils.exceptions import BusinessError
@@ -81,4 +81,4 @@ def get_top5_appeal_types_for_date(date_str: str) -> AppealTop5Result:
         }
 
     finally:
-        conn.close()
+        release_connection(conn)

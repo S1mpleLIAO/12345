@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from db.connection import get_connection
+from db.connection import get_connection, release_connection
 from db.table import get_table_name
 from utils.dates import parse_date, format_date, get_yesterday
 from utils.exceptions import BusinessError
@@ -118,4 +118,4 @@ def get_daily_stats_for_date(date_str: str) -> DailyStatsResult:
             "streets": streets,
         }
     finally:
-        conn.close()
+        release_connection(conn)
