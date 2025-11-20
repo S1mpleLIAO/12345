@@ -46,3 +46,15 @@ class AppealTop5Result(TypedDict):
     date: str  # 查询日期 'YYYY-MM-DD'
     total: int  # 该日期所有数据总数
     items: List[AppealItem]
+    
+class EnterpriseAppealItem(TypedDict):
+    date: str          # 'YYYY-MM-DD'
+    department: str    # 处置部门
+    appeal_type: str   # 诉求类型
+    content: str       # 诉求内容全文或截断
+
+
+class EnterpriseAppealResult(TypedDict):
+    date: str
+    total: int                      # 企业诉求总数
+    items: List[EnterpriseAppealItem]

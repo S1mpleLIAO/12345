@@ -12,8 +12,11 @@ from models.types import (
     StreetCount,
     StreetRanks,
     DailyStatsResult,
+    AppealItem,
+    AppealTop5Result,
+    EnterpriseAppealItem,
+    EnterpriseAppealResult,
 )
-from models.types import AppealItem, AppealTop5Result
 
 def _calc_rates(row: Dict[str, Any]) -> RateStats:
     total = int(row.get("total_count") or 0)
@@ -176,6 +179,68 @@ def get_top5_appeal_types_for_date(date_str: str) -> AppealTop5Result:
         return {
             "date": date_str,
             "total": total,
+            "items": items,
+        }
+
+    finally:
+        release_connection(conn)
+        
+def get_enterprise_appeals_for_date(date_str: str) -> EnterpriseAppealResult:
+    """
+    识别某一天的“企业诉求”：
+      - 统计企业诉求总数
+      - 列出每一条企业诉求的：处置部门、诉求类型、工单内容
+
+    企业诉求判定规则（默认版，可以后细化）：
+      - 诉求类型包含“企业” OR
+      - 工单内容包含“企业”
+    """
+    # 1. 校验并规范化日期
+    try:
+        d = parse_date(date_str)
+    except ValueError:
+        raise BusinessError("日期格式必须为 YYYY-MM-DD，例如 '2025-01-01'")
+
+    date_str = format_date(d)
+
+    table = get_table_name()
+    conn = get_connection()
+    try:
+        # 2. 查询符合条件的企业诉求列表
+        sql = f"""
+            SELECT
+                `日期`        AS dt,
+                `处置部门`    AS dept,
+                `诉求类型`    AS appeal_type,
+                `工单内容`    AS content
+            FROM {table}
+            WHERE `日期` = %s
+              AND (
+                    `诉求类型` LIKE %s
+                 OR `工单内容` LIKE %s
+              )
+            ORDER BY `日期` ASC, `处置部门` ASC;
+        """
+        like_pattern = "%企业%"
+
+        with conn.cursor() as cur:
+            cur.execute(sql, (date_str, like_pattern, like_pattern))
+            rows = cur.fetchall() or []
+
+        items: List[EnterpriseAppealItem] = []
+        for r in rows:
+            items.append(
+                {
+                    "date": r["dt"],
+                    "department": r["dept"],
+                    "appeal_type": r.get("appeal_type") or "",
+                    "content": r.get("content") or "",
+                }
+            )
+
+        return {
+            "date": date_str,
+            "total": len(items),
             "items": items,
         }
 
