@@ -4,4 +4,4 @@ database:
   user: "root"
   password: "1qaz@WSX"
   name: "12345"
-  table: "12345test"
+  table: "12345duo"

@@ -16,6 +16,7 @@ from models.types import (
     AppealTop5Result,
     EnterpriseAppealItem,
     EnterpriseAppealResult,
+    DailyReportFullData,
 )
 
 def _calc_rates(row: Dict[str, Any]) -> RateStats:
@@ -246,3 +247,24 @@ def get_enterprise_appeals_for_date(date_str: str) -> EnterpriseAppealResult:
 
     finally:
         release_connection(conn)
+        
+        
+def get_full_daily_report_data(date_str: str) -> DailyReportFullData:
+    """
+    组合调用三个基础统计服务，返回日报所需的所有数据。
+    """
+    # 1. 获取基础统计 (总量、三率、街道排名)
+    stats = get_daily_stats_for_date(date_str)
+    
+    # 2. 获取 Top5 诉求
+    top5 = get_top5_appeal_types_for_date(date_str)
+    
+    # 3. 获取企业诉求
+    enterprise = get_enterprise_appeals_for_date(date_str)
+
+    return {
+        "stats": stats,
+        "top5": top5,
+        "enterprise": enterprise,
+    }
+    

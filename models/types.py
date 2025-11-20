@@ -58,3 +58,8 @@ class EnterpriseAppealResult(TypedDict):
     date: str
     total: int                      # 企业诉求总数
     items: List[EnterpriseAppealItem]
+    
+class DailyReportFullData(TypedDict):
+    stats: DailyStatsResult            # 总体情况 & 考核排名
+    top5: AppealTop5Result             # 诉求热点
+    enterprise: EnterpriseAppealResult # 企业诉求
