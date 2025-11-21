@@ -1,14 +1,14 @@
 from __future__ import annotations
 
+from datetime import date
 from typing import Any, Dict, List
-
+from calendar import monthrange
 from db.connection import get_connection, release_connection
 from db.table import get_table_name
 from utils.dates import parse_date, format_date, get_yesterday
 from utils.exceptions import BusinessError
-from models.types import (
+from models.dailyreport_types import (
     RateStats,
-    RateDiff,
     StreetCount,
     StreetRanks,
     DailyStatsResult,
@@ -17,6 +17,9 @@ from models.types import (
     EnterpriseAppealItem,
     EnterpriseAppealResult,
     DailyReportFullData,
+    AssessmentPeriodData,
+    AssessmentResult,
+    AssessmentRankResult,
 )
 
 def _calc_rates(row: Dict[str, Any]) -> RateStats:
@@ -268,3 +271,195 @@ def get_full_daily_report_data(date_str: str) -> DailyReportFullData:
         "enterprise": enterprise,
     }
     
+def _calc_last_month(year: int, month: int) -> tuple[int, int]:
+    """返回上个月的 (year, month)"""
+    if month == 1:
+        return year - 1, 12
+    return year, month - 1
+
+
+def _calc_two_months_ago(year: int, month: int) -> tuple[int, int]:
+    """返回上上个月的 (year, month)"""
+    if month == 1:
+        return year - 1, 11
+    if month == 2:
+        return year - 1, 12
+    return year, month - 2
+
+
+def _safe_day(year: int, month: int, day: int) -> int:
+    """确保 day 不超过该月最大天数（例如 3月31 对比 2月只有28天）"""
+    last_day = monthrange(year, month)[1]
+    return min(day, last_day)
+
+
+def _query_period_stats(start: date, end: date) -> AssessmentPeriodData:
+    """
+    对指定考核期统计：
+      - 总受理量 total
+      - 解决率 solved_rate
+      - 满意率 satisfied_rate
+    """
+    table = get_table_name()
+    start_str = format_date(start)
+    end_str = format_date(end)
+
+    sql = f"""
+        SELECT
+            COUNT(*) AS total_count,
+            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
+            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
+        FROM {table}
+        WHERE `日期` BETWEEN %s AND %s;
+    """
+
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (start_str, end_str))
+            row = cur.fetchone() or {}
+    finally:
+        conn.close()
+
+    total = int(row.get("total_count") or 0)
+    solved = int(row.get("solved_count") or 0)
+    satisfied = int(row.get("satisfied_count") or 0)
+
+    solved_rate = solved / total if total else 0.0
+    satisfied_rate = satisfied / total if total else 0.0
+
+    return {
+        "start_date": start_str,
+        "end_date": end_str,
+        "total": total,
+        "solved_rate": solved_rate,
+        "satisfied_rate": satisfied_rate,
+    }
+
+
+def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult:
+    """
+    对指定考核期，按“处置部门”统计，并给出：
+      - top3: 排名前三的处置部门名称列表
+      - bottom3: 排名后三的处置部门名称列表
+
+    排名规则示例（你可以按需调整）：
+      这里依然按“解决率优先、满意率次之、受理量再次之”排序，
+      但最终只返回部门名称。
+    """
+    table = get_table_name()
+    start_str = format_date(start)
+    end_str = format_date(end)
+
+    sql = f"""
+        SELECT
+            `处置部门` AS dept,
+            COUNT(*) AS total_count,
+            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
+            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
+        FROM {table}
+        WHERE `日期` BETWEEN %s AND %s
+        GROUP BY `处置部门`;
+    """
+
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (start_str, end_str))
+            rows = cur.fetchall() or []
+    finally:
+        conn.close()
+
+    # 内部仍然算一下指标，用于排序；外部只拿部门名
+    records: List[dict] = []
+    for r in rows:
+        total = int(r.get("total_count") or 0)
+        solved = int(r.get("solved_count") or 0)
+        satisfied = int(r.get("satisfied_count") or 0)
+        if total <= 0:
+            continue
+
+        solved_rate = solved / total if total else 0.0
+        satisfied_rate = satisfied / total if total else 0.0
+
+        records.append(
+            {
+                "department": r.get("dept") or "",
+                "total": total,
+                "solved_rate": solved_rate,
+                "satisfied_rate": satisfied_rate,
+            }
+        )
+
+    # 排名：解决率 ↓，满意率 ↓，受理量 ↓
+    records_sorted = sorted(
+        records,
+        key=lambda x: (x["solved_rate"], x["satisfied_rate"], x["total"]),
+        reverse=True,
+    )
+
+    top3_names = [r["department"] for r in records_sorted[:3]]
+    bottom3_slice = records_sorted[-3:] if len(records_sorted) >= 3 else records_sorted
+    bottom3_names = [r["department"] for r in bottom3_slice]
+
+    return {
+        "top3": top3_names,
+        "bottom3": bottom3_names,
+    }
+
+
+def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
+    """
+    输入：任意日期 YYYY-MM-DD（例如 2025-03-15）
+
+    输出：
+      - 本考核期：上个月10日 ~ 当日
+      - 上一考核期：上上个月10日 ~ 上个月同日（若该月无此日，则用该月最后一天）
+      - 本考核期内按“处置部门”的考核排名（前三 & 后三）
+
+    仅返回各考核期原始指标和排名数据，
+    “环比上升/下降/持平、绝对值、百分点”等描述交由上层 LLM 处理。
+    """
+    try:
+        d = parse_date(date_str)
+    except ValueError:
+        raise BusinessError("日期格式必须为 YYYY-MM-DD，例如 '2025-03-15'")
+
+    year = d.year
+    month = d.month
+    day = d.day
+
+    # 本考核期：上个月10日 ~ 当日
+    last_month_year, last_month = _calc_last_month(year, month)
+    this_start = date(last_month_year, last_month, 10)
+    this_end = d
+
+    # 上一考核期：上上个月10日 ~ 上个月“同日”(或该月最后一天)
+    two_ago_year, two_ago_month = _calc_two_months_ago(year, month)
+    last_start = date(two_ago_year, two_ago_month, 10)
+    last_end_day = _safe_day(last_month_year, last_month, day)
+    last_end = date(last_month_year, last_month, last_end_day)
+
+    this_period = _query_period_stats(this_start, this_end)
+    last_period = _query_period_stats(last_start, last_end)
+
+    # 本考核期“处置部门”排名
+    this_period_ranks = _query_dept_ranks_for_period(this_start, this_end)
+
+    month_label = f"{year:04d}-{month:02d}"
+
+    return {
+        "date": format_date(d),
+        "month_label": month_label,
+        "this_period": this_period,
+        "last_period": last_period,
+        "this_period_ranks": this_period_ranks,
+    }
+
+
+
+
+
+
+
+

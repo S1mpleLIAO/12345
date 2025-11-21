@@ -1,7 +1,5 @@
-from services.daily_report_service import get_full_daily_report_data
+from services.daily_report_service import get_assessment_data_for_date
 if __name__ == "__main__":
-    # 测试调用
-    data = get_full_daily_report_data("2025-05-19")
-    import pprint
 
-    pprint.pprint(data)
+    assess_data = get_assessment_data_for_date("2025-06-10")
+    print("考核期数据：", assess_data)

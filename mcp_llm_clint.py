@@ -23,8 +23,8 @@ SYSTEM_MSG = {
 }
 
 MAX_TOOL_LOOPS = 10
-MAX_COMPLETION_TOKENS = 2048  # 每次最多生成 2048 token，避免 vLLM 默认拉满 26 万
-MAX_TOOL_OUTPUT_CHARS = 4000  # 工具返回内容最长截断
+MAX_COMPLETION_TOKENS = 16384  # 每次最多生成 2048 token，避免 vLLM 默认拉满 26 万
+MAX_TOOL_OUTPUT_CHARS = 8192  # 工具返回内容最长截断
 MAX_HISTORY_MESSAGES = 10  # 最多保留最近 40 条（不含 system）
 
 

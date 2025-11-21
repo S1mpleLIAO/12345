@@ -63,3 +63,22 @@ class DailyReportFullData(TypedDict):
     stats: DailyStatsResult            # 总体情况 & 考核排名
     top5: AppealTop5Result             # 诉求热点
     enterprise: EnterpriseAppealResult # 企业诉求
+
+class AssessmentPeriodData(TypedDict):
+    start_date: str        # 考核期开始日期 YYYY-MM-DD
+    end_date: str          # 考核期结束日期 YYYY-MM-DD
+    total: int             # 受理量
+    solved_rate: float     # 解决率（0~1 小数）
+    satisfied_rate: float  # 满意率（0~1 小数）
+
+
+class AssessmentResult(TypedDict):
+    date: str                  # 传入的基准日期
+    month_label: str           # date 所在月份，比如 "2025-03"
+    this_period: AssessmentPeriodData  # 本考核期（上个月10日~当日）
+    last_period: AssessmentPeriodData  # 上一考核期（再往前一个月）
+    
+
+class AssessmentRankResult(TypedDict):
+    top3: List[str]      # 考核期前三部门名称
+    bottom3: List[str]   # 考核期后三部门名称
