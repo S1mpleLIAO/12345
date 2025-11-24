@@ -8,6 +8,7 @@ from db.table import get_table_name
 from utils.dates import parse_date, format_date, get_yesterday
 from utils.exceptions import BusinessError
 from models.dailyreport_types import (
+    DeptAssessmentRecord,
     RateStats,
     StreetCount,
     StreetRanks,
@@ -339,13 +340,16 @@ def _query_period_stats(start: date, end: date) -> AssessmentPeriodData:
 
 def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult:
     """
-    对指定考核期，按“处置部门”统计，并给出：
-      - top3: 排名前三的处置部门名称列表
-      - bottom3: 排名后三的处置部门名称列表
+    对指定考核期，按“处置部门”统计：
+      - total: 受理量
+      - solved: 解决数
+      - satisfied: 满意数
+      - solved_rate: 解决率
+      - satisfied_rate: 满意率
+      - score: 综合成绩 = (total / max_total)*10% + solved_rate*50% + satisfied_rate*40%
 
-    排名规则示例（你可以按需调整）：
-      这里依然按“解决率优先、满意率次之、受理量再次之”排序，
-      但最终只返回部门名称。
+    返回：
+      - records: 所有部门的记录，按综合成绩从高到低排序
     """
     table = get_table_name()
     start_str = format_date(start)
@@ -370,13 +374,16 @@ def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult
     finally:
         conn.close()
 
-    # 内部仍然算一下指标，用于排序；外部只拿部门名
-    records: List[dict] = []
+    # 先构造基础数据（不算综合成绩）
+    records: List[DeptAssessmentRecord] = []
     for r in rows:
+        department = r.get("dept") or ""
         total = int(r.get("total_count") or 0)
         solved = int(r.get("solved_count") or 0)
         satisfied = int(r.get("satisfied_count") or 0)
+
         if total <= 0:
+            # 没有实际数据就跳过
             continue
 
         solved_rate = solved / total if total else 0.0
@@ -384,27 +391,41 @@ def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult
 
         records.append(
             {
-                "department": r.get("dept") or "",
+                "department": department,
                 "total": total,
+                "solved": solved,
+                "satisfied": satisfied,
                 "solved_rate": solved_rate,
                 "satisfied_rate": satisfied_rate,
+                "score": 0.0,  # 先占位，后面统一算
             }
         )
 
-    # 排名：解决率 ↓，满意率 ↓，受理量 ↓
+    if not records:
+        return {"records": []}
+
+    # 计算 max_total，用于归一化
+    max_total = max(rec["total"] for rec in records) or 0
+
+    # 根据公式计算 score
+    for rec in records:
+        total_norm = (rec["total"] / max_total) if max_total > 0 else 0.0
+        score = (
+            total_norm * 0.10
+            + rec["solved_rate"] * 0.50
+            + rec["satisfied_rate"] * 0.40
+        )* 100
+        rec["score"] = score
+
+    # 按综合成绩从高到低排序，若分数相同，按受理量再排一下
     records_sorted = sorted(
         records,
-        key=lambda x: (x["solved_rate"], x["satisfied_rate"], x["total"]),
+        key=lambda x: (x["score"], x["total"]),
         reverse=True,
     )
 
-    top3_names = [r["department"] for r in records_sorted[:3]]
-    bottom3_slice = records_sorted[-3:] if len(records_sorted) >= 3 else records_sorted
-    bottom3_names = [r["department"] for r in bottom3_slice]
-
     return {
-        "top3": top3_names,
-        "bottom3": bottom3_names,
+        "records": records_sorted
     }
 
 
@@ -431,12 +452,12 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
 
     # 本考核期：上个月10日 ~ 当日
     last_month_year, last_month = _calc_last_month(year, month)
-    this_start = date(last_month_year, last_month, 10)
+    this_start = date(last_month_year, last_month, 19)
     this_end = d
 
     # 上一考核期：上上个月10日 ~ 上个月“同日”(或该月最后一天)
     two_ago_year, two_ago_month = _calc_two_months_ago(year, month)
-    last_start = date(two_ago_year, two_ago_month, 10)
+    last_start = date(two_ago_year, two_ago_month, 19)
     last_end_day = _safe_day(last_month_year, last_month, day)
     last_end = date(last_month_year, last_month, last_end_day)
 

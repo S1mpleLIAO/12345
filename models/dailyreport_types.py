@@ -71,14 +71,24 @@ class AssessmentPeriodData(TypedDict):
     solved_rate: float     # 解决率（0~1 小数）
     satisfied_rate: float  # 满意率（0~1 小数）
 
+class DeptAssessmentRecord(TypedDict):
+    department: str        # 处置部门名称
+    total: int             # 受理量
+    solved: int            # 解决数
+    satisfied: int         # 满意数
+    solved_rate: float     # 解决率（0~1）
+    satisfied_rate: float  # 满意率（0~1）
+    score: float           # 综合成绩（0~1 左右）综合成绩=((total / max_total)x10%)+(解决率x50%)+(满意率x40%)
+
+
+class AssessmentRankResult(TypedDict):
+    records: List[DeptAssessmentRecord]   # 所有部门，按综合成绩从高到低排序
 
 class AssessmentResult(TypedDict):
     date: str                  # 传入的基准日期
     month_label: str           # date 所在月份，比如 "2025-03"
     this_period: AssessmentPeriodData  # 本考核期（上个月10日~当日）
     last_period: AssessmentPeriodData  # 上一考核期（再往前一个月）
+    this_period_ranks: AssessmentRankResult
     
 
-class AssessmentRankResult(TypedDict):
-    top3: List[str]      # 考核期前三部门名称
-    bottom3: List[str]   # 考核期后三部门名称

@@ -130,7 +130,7 @@ class MCPClientWrapper:
 
             # 没有 tool_calls，直接返回
             if not msg.tool_calls:
-                return f"(未使用工具/已经无须工具调用)\n\n{msg.content or ''}"
+                return f"\n\n{msg.content or ''}"
 
             # 规范：先把带 tool_calls 的 assistant 消息放回上下文
             messages.append(
