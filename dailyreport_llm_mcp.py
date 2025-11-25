@@ -28,7 +28,7 @@ def _get_prompts(date_str: str):
 ##逻辑：(本月考核期指标 - 上月考核期指标)，正数写“上升”，负数写“下降”，零写“持平”。数值取绝对值。##
  
 ### 2. 考核排名
-# ##根据街道乡镇综合成绩排名##
+# ##根据【乡镇街道】考核排名数据（综合成绩排序）##
 * **[date所在月份]考核期前三**：[前三列表]
 * **[date所在月份]考核期后三**：[后三列表]
 ### 3. 诉求热点分析
@@ -57,7 +57,7 @@ def _get_prompts(date_str: str):
 """
 
     # --- 街道 Prompt ---
-    q_excel_street = f"""请统计{date_str}的日报综合成绩情况。根据提供的各个街道镇乡的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
+    q_street = f"""请统计{date_str}的日报综合成绩情况。根据提供的各个街道镇乡的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
 请根据提供的数据中的街道镇乡数据（这是一个包含 {street_count} 个街道数据的列表），直接生成 markdown 表格(输出只包含表名和表格)。
 **提供的数据字段对应关系如下：**
 - `department` -> 承办单位
@@ -73,7 +73,7 @@ def _get_prompts(date_str: str):
 2. 即使该街道各项数据为 0，也要原样输出。
 3. 严禁引入任何不在此列表中的单位。
 
-# [乡镇街道诉求办理“三率”统计表[{date_str}所在月份的上个月19日]-{date_str}（不含剔除诉求）]
+### [乡镇街道诉求办理“三率”统计表[{date_str}所在月份的上个月19日]-{date_str}（不含剔除诉求）]
 | 序号 | 承办单位 | 受理量 | 解决数 | 满意数 | 解决率(%) | 满意率(%) | 综合成绩 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | [排名第1的名称] | [受理量] | [解决数] | [满意数] | [解决率]% | [满意率]% | [综合成绩] |
@@ -82,7 +82,7 @@ def _get_prompts(date_str: str):
 """
 
     # --- 区直单位 Prompt ---
-    q_excel_unit = f"""请统计{date_str}的日报综合成绩情况。根据提供的各个区直单位的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
+    q_unit = f"""请统计{date_str}的日报综合成绩情况。根据提供的各个区直单位的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
     请根据提供的数据中的区直单位数据（这是一个包含 {unit_count} 个区直单位数据的列表），直接生成 markdown 表格(输出只包含表名和表格)。
 **提供的数据字段对应关系如下：**
 - `department` -> 承办单位
@@ -98,19 +98,19 @@ def _get_prompts(date_str: str):
 2. 即使该单位各项数据为 0，也要原样输出。
 3. 严禁引入任何不在此列表中的单位（如街道、乡、镇等）。
 ####
-# [区直单位诉求办理“三率”统计表[{date_str}所在月份的上个月19日]-{date_str}（不含剔除诉求）]
+### [区直单位诉求办理“三率”统计表[{date_str}所在月份的上个月19日]-{date_str}（不含剔除诉求）]
 | 序号 | 承办单位 | 受理量 | 解决数 | 满意数 | 解决率(%) | 满意率(%) | 综合成绩 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | [排名第1的名称] | [受理量] | [解决数] | [满意数] | [解决率]% | [满意率]% | [综合成绩] |
 ...
 | {unit_count} | [排名第{unit_count}的名称] | ... | ... | ... | ... | ... | ... |
 """
-    return q_daily_report
+    return q_daily_report,q_street,q_unit
 
 
 async def generate_daily_report(date_str: str):
     # 1. 获取构造好的 Prompts
-    q_daily = _get_prompts(date_str)
+    q_daily,q_street,q_unit = _get_prompts(date_str)
     
     mcp_client = MCPClientWrapper()
     
@@ -119,17 +119,17 @@ async def generate_daily_report(date_str: str):
         print(">> 正在生成主体日报...")
         answer1 = await mcp_client.chat(q_daily)
         print("主体日报生成完毕。")
-    # async with mcp_client.session:
-    #     print(">> 正在生成街道统计表...")
-    #     answer2 = await mcp_client.chat(q_street)
-    #     print("街道统计表生成完毕。")
-    # async with mcp_client.session:
-    #     print(">> 正在生成委办局统计表...")
-    #     answer3 = await mcp_client.chat(q_unit)
-    #     print("委办局统计表生成完毕。")
+    async with mcp_client.session:
+        print(">> 正在生成街道统计表...")
+        answer2 = await mcp_client.chat(q_street)
+        print("街道统计表生成完毕。")
+    async with mcp_client.session:
+        print(">> 正在生成委办局统计表...")
+        answer3 = await mcp_client.chat(q_unit)
+        print("委办局统计表生成完毕。")
 
     print("生成完毕，正在合并结果...")
-    answer = answer1 
+    answer = answer1 + "\n\n" + answer2 + "\n\n" + answer3
     return answer
 
 if __name__ == "__main__":

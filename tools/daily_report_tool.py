@@ -1,8 +1,7 @@
-
 from __future__ import annotations
 
 from fastmcp import FastMCP
-from models.dailyreport_types import DailyReportFullData, StreetAssessmentResult, UnitAssessmentResult
+from models.dailyreport_types import DailyReportFullData, StreetAssessmentResult, UnitAssessmentResult, AssessmentResult
 from services.daily_report_service import get_full_daily_report_data, get_street_assessment_data, get_unit_assessment_data, get_assessment_data_for_date
 from utils.exceptions import BusinessError
 
@@ -24,9 +23,9 @@ def register_statistics_tools(mcp: FastMCP):
             raise e
         
     @mcp.tool()
-    def get_full_assessment_data_tool(date: str) -> StreetAssessmentResult:
+    def get_full_assessment_data_tool(date: str) -> AssessmentResult:
         """
-        返回当月考核期和上个月考核期的各个指标
+        返回当月考核期和上个月考核期的各个指标（不包含排名数据）
         """
         try:
             return get_assessment_data_for_date(date)
@@ -57,4 +56,3 @@ def register_statistics_tools(mcp: FastMCP):
             return get_unit_assessment_data(date)
         except BusinessError as e:
             raise e
-

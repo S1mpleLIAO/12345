@@ -345,200 +345,15 @@ def _query_period_stats(start: date, end: date) -> AssessmentPeriodData:
     }
 
 
-def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult:
-    """
-    对指定考核期，按“处置部门”统计：
-      - total: 受理量
-      - solved: 解决数
-      - satisfied: 满意数
-      - solved_rate: 解决率
-      - satisfied_rate: 满意率
-      - score: 综合成绩 = (total / max_total)*10% + solved_rate*50% + satisfied_rate*40%
-
-    返回：
-      - records: 所有部门的记录，按综合成绩从高到低排序
-    """
-    table = get_table_name()
-    start_str = format_date(start)
-    end_str = format_date(end)
-
-    sql = f"""
-        SELECT
-            `处置部门` AS dept,
-            COUNT(*) AS total_count,
-            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
-            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
-        FROM {table}
-        WHERE `日期` BETWEEN %s AND %s
-        GROUP BY `处置部门`;
-    """
-
-    conn = get_connection()
-    try:
-        with conn.cursor() as cur:
-            cur.execute(sql, (start_str, end_str))
-            rows = cur.fetchall() or []
-    finally:
-        conn.close()
-
-    # 先构造基础数据（不算综合成绩）
-    records: List[DeptAssessmentRecord] = []
-    for r in rows:
-        department = r.get("dept") or ""
-        total = int(r.get("total_count") or 0)
-        solved = int(r.get("solved_count") or 0)
-        satisfied = int(r.get("satisfied_count") or 0)
-
-        if total <= 0:
-            # 没有实际数据就跳过
-            continue
-
-        solved_rate = solved / total if total else 0.0
-        satisfied_rate = satisfied / total if total else 0.0
-
-        records.append(
-            {
-                "department": department,
-                "total": total,
-                "solved": solved,
-                "satisfied": satisfied,
-                "solved_rate": solved_rate,
-                "satisfied_rate": satisfied_rate,
-                "score": 0.0,  # 先占位，后面统一算
-            }
-        )
-
-    if not records:
-        return {"records": []}
-
-    # 计算 max_total，用于归一化
-    max_total = max(rec["total"] for rec in records) or 0
-
-    # 根据公式计算 score
-    for rec in records:
-        total_norm = (rec["total"] / max_total) if max_total > 0 else 0.0
-        score = (
-            total_norm * 0.10 + rec["solved_rate"] * 0.50 + rec["satisfied_rate"] * 0.40
-        ) * 100
-        rec["score"] = score
-
-    # 按综合成绩从高到低排序，若分数相同，按受理量再排一下
-    records_sorted = sorted(
-        records,
-        key=lambda x: (x["score"], x["total"]),
-        reverse=True,
-    )
-
-    return {"records": records_sorted}
-
-
-def _process_group_ranks(
-    rows_map: Dict[str, dict], whitelist: List[str]
-) -> List[DeptAssessmentRecord]:
-    """
-    通用函数：根据白名单筛选数据、补全缺失项（填0）、计算综合成绩、排序。
-    """
-    records: List[DeptAssessmentRecord] = []
-
-    # 1. 遍历白名单，确保每个人都在列表中（兜底逻辑）
-    for name in whitelist:
-        # 如果数据库里有数据，就取出来；如果没有，就给个空的默认值
-        row = rows_map.get(
-            name, {"total_count": 0, "solved_count": 0, "satisfied_count": 0}
-        )
-
-        total = int(row.get("total_count") or 0)
-        solved = int(row.get("solved_count") or 0)
-        satisfied = int(row.get("satisfied_count") or 0)
-
-        solved_rate = solved / total if total > 0 else 0.0
-        satisfied_rate = satisfied / total if total > 0 else 0.0
-
-        records.append(
-            {
-                "department": name,
-                "total": total,
-                "solved": solved,
-                "satisfied": satisfied,
-                "solved_rate": solved_rate,
-                "satisfied_rate": satisfied_rate,
-                "score": 0.0,  # 稍后计算
-            }
-        )
-
-    # 2. 计算 Max Total (用于归一化)
-    # 注意：只在当前组内计算最大值，这样街道和委办局互不影响
-    max_total = max((r["total"] for r in records), default=0)
-
-    # 3. 计算综合成绩
-    for r in records:
-        if max_total > 0:
-            total_norm = r["total"] / max_total
-        else:
-            total_norm = 0.0
-
-        # 公式：(受理量归一化*10% + 解决率*50% + 满意率*40%) * 100
-        score = (
-            total_norm * 0.10 + r["solved_rate"] * 0.50 + r["satisfied_rate"] * 0.40
-        ) * 100
-        r["score"] = round(score, 1)  # 保留1位小数
-
-    # 4. 排序：按分数降序，分数相同按受理量
-    records.sort(key=lambda x: (x["score"], x["total"]), reverse=True)
-
-    return records
-
-
-def _query_dept_ranks_for_period_separated(
-    start: date, end: date
-) -> AssessmentRankResult:
-    """
-    查询考核期数据，并严格按照 Config 里的白名单拆分为“街道”和“委办局”两组。
-    """
-    table = get_table_name()
-    start_str = format_date(start)
-    end_str = format_date(end)
-
-    # 查询所有部门的数据
-    sql = f"""
-        SELECT
-            `处置部门` AS dept,
-            COUNT(*) AS total_count,
-            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
-            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
-        FROM {table}
-        WHERE `日期` BETWEEN %s AND %s
-        GROUP BY `处置部门`;
-    """
-
-    conn = get_connection()
-    try:
-        with conn.cursor() as cur:
-            cur.execute(sql, (start_str, end_str))
-            rows = cur.fetchall() or []
-    finally:
-        release_connection(conn)
-
-    # 将数据库结果转为字典映射： {"龙山街道": {row_data}, ...}
-    rows_map = {r["dept"]: r for r in rows}
-
-    # 分别处理两组数据
-    street_records = _process_group_ranks(rows_map, config.raw_streets)
-    unit_records = _process_group_ranks(rows_map, config.raw_units)
-
-    return {"street_records": street_records, "unit_records": unit_records}
-
-
 def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
     """
     输入：任意日期 YYYY-MM-DD（例如 2025-03-15）
 
     输出：
-      - 本考核期：上个月10日 ~ 当日
-      - 上一考核期：上上个月10日 ~ 上个月同日（若该月无此日，则用该月最后一天）
+      - 本考核期：上个月19日 ~ 当日
+      - 上一考核期：上上个月19日 ~ 上个月同日（若该月无此日，则用该月最后一天）
 
-    仅返回各考核期原始指标和排名数据，
-    “环比上升/下降/持平、绝对值、百分点”等描述交由上层 LLM 处理。
+    仅返回各考核期原始指标，不包含具体排名数据。
     """
     try:
         d = parse_date(date_str)
@@ -549,12 +364,12 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
     month = d.month
     day = d.day
 
-    # 本考核期：上个月10日 ~ 当日
+    # 本考核期：上个月19日 ~ 当日
     last_month_year, last_month = _calc_last_month(year, month)
     this_start = date(last_month_year, last_month, 19)
     this_end = d
 
-    # 上一考核期：上上个月10日 ~ 上个月“同日”(或该月最后一天)
+    # 上一考核期：上上个月19日 ~ 上个月“同日”(或该月最后一天)
     two_ago_year, two_ago_month = _calc_two_months_ago(year, month)
     last_start = date(two_ago_year, two_ago_month, 19)
     last_end_day = _safe_day(last_month_year, last_month, day)
@@ -563,6 +378,7 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
     this_period = _query_period_stats(this_start, this_end)
     last_period = _query_period_stats(last_start, last_end)
 
+    # 已移除排名计算
 
     month_label = f"{year:04d}-{month:02d}"
 
@@ -703,10 +519,3 @@ def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
         "period_end": format_date(end_date),
         "records": records
     }
-
-
-
-
-
-
-

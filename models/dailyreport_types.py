@@ -105,6 +105,3 @@ class AssessmentResult(TypedDict):
     month_label: str
     this_period: AssessmentPeriodData
     last_period: AssessmentPeriodData
-    this_period_ranks: AssessmentRankResult
-    
-
