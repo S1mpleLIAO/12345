@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from config.loader import config
 from datetime import date
 from typing import Any, Dict, List
 from calendar import monthrange
@@ -21,7 +21,10 @@ from models.dailyreport_types import (
     AssessmentPeriodData,
     AssessmentResult,
     AssessmentRankResult,
+    StreetAssessmentResult,
+    UnitAssessmentResult,
 )
+
 
 def _calc_rates(row: Dict[str, Any]) -> RateStats:
     total = int(row.get("total_count") or 0)
@@ -35,6 +38,7 @@ def _calc_rates(row: Dict[str, Any]) -> RateStats:
         "solved_rate": solved / total if total else 0.0,
         "satisfied_rate": satisfied / total if total else 0.0,
     }
+
 
 def _query_stats_for_date(conn, date_str: str) -> RateStats:
     table = get_table_name()
@@ -116,6 +120,7 @@ def get_daily_stats_for_date(date_str: str) -> DailyStatsResult:
     finally:
         release_connection(conn)
 
+
 def get_top5_appeal_types_for_date(date_str: str) -> AppealTop5Result:
     """
     给定日期（YYYY-MM-DD），统计该日“诉求类型”出现次数 Top5 及占比。
@@ -189,7 +194,8 @@ def get_top5_appeal_types_for_date(date_str: str) -> AppealTop5Result:
 
     finally:
         release_connection(conn)
-        
+
+
 def get_enterprise_appeals_for_date(date_str: str) -> EnterpriseAppealResult:
     """
     识别某一天的“企业诉求”：
@@ -251,18 +257,18 @@ def get_enterprise_appeals_for_date(date_str: str) -> EnterpriseAppealResult:
 
     finally:
         release_connection(conn)
-        
-        
+
+
 def get_full_daily_report_data(date_str: str) -> DailyReportFullData:
     """
     组合调用三个基础统计服务，返回日报所需的所有数据。
     """
     # 1. 获取基础统计 (总量、三率、街道排名)
     stats = get_daily_stats_for_date(date_str)
-    
+
     # 2. 获取 Top5 诉求
     top5 = get_top5_appeal_types_for_date(date_str)
-    
+
     # 3. 获取企业诉求
     enterprise = get_enterprise_appeals_for_date(date_str)
 
@@ -271,7 +277,8 @@ def get_full_daily_report_data(date_str: str) -> DailyReportFullData:
         "top5": top5,
         "enterprise": enterprise,
     }
-    
+
+
 def _calc_last_month(year: int, month: int) -> tuple[int, int]:
     """返回上个月的 (year, month)"""
     if month == 1:
@@ -411,10 +418,8 @@ def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult
     for rec in records:
         total_norm = (rec["total"] / max_total) if max_total > 0 else 0.0
         score = (
-            total_norm * 0.10
-            + rec["solved_rate"] * 0.50
-            + rec["satisfied_rate"] * 0.40
-        )* 100
+            total_norm * 0.10 + rec["solved_rate"] * 0.50 + rec["satisfied_rate"] * 0.40
+        ) * 100
         rec["score"] = score
 
     # 按综合成绩从高到低排序，若分数相同，按受理量再排一下
@@ -424,9 +429,104 @@ def _query_dept_ranks_for_period(start: date, end: date) -> AssessmentRankResult
         reverse=True,
     )
 
-    return {
-        "records": records_sorted
-    }
+    return {"records": records_sorted}
+
+
+def _process_group_ranks(
+    rows_map: Dict[str, dict], whitelist: List[str]
+) -> List[DeptAssessmentRecord]:
+    """
+    通用函数：根据白名单筛选数据、补全缺失项（填0）、计算综合成绩、排序。
+    """
+    records: List[DeptAssessmentRecord] = []
+
+    # 1. 遍历白名单，确保每个人都在列表中（兜底逻辑）
+    for name in whitelist:
+        # 如果数据库里有数据，就取出来；如果没有，就给个空的默认值
+        row = rows_map.get(
+            name, {"total_count": 0, "solved_count": 0, "satisfied_count": 0}
+        )
+
+        total = int(row.get("total_count") or 0)
+        solved = int(row.get("solved_count") or 0)
+        satisfied = int(row.get("satisfied_count") or 0)
+
+        solved_rate = solved / total if total > 0 else 0.0
+        satisfied_rate = satisfied / total if total > 0 else 0.0
+
+        records.append(
+            {
+                "department": name,
+                "total": total,
+                "solved": solved,
+                "satisfied": satisfied,
+                "solved_rate": solved_rate,
+                "satisfied_rate": satisfied_rate,
+                "score": 0.0,  # 稍后计算
+            }
+        )
+
+    # 2. 计算 Max Total (用于归一化)
+    # 注意：只在当前组内计算最大值，这样街道和委办局互不影响
+    max_total = max((r["total"] for r in records), default=0)
+
+    # 3. 计算综合成绩
+    for r in records:
+        if max_total > 0:
+            total_norm = r["total"] / max_total
+        else:
+            total_norm = 0.0
+
+        # 公式：(受理量归一化*10% + 解决率*50% + 满意率*40%) * 100
+        score = (
+            total_norm * 0.10 + r["solved_rate"] * 0.50 + r["satisfied_rate"] * 0.40
+        ) * 100
+        r["score"] = round(score, 1)  # 保留1位小数
+
+    # 4. 排序：按分数降序，分数相同按受理量
+    records.sort(key=lambda x: (x["score"], x["total"]), reverse=True)
+
+    return records
+
+
+def _query_dept_ranks_for_period_separated(
+    start: date, end: date
+) -> AssessmentRankResult:
+    """
+    查询考核期数据，并严格按照 Config 里的白名单拆分为“街道”和“委办局”两组。
+    """
+    table = get_table_name()
+    start_str = format_date(start)
+    end_str = format_date(end)
+
+    # 查询所有部门的数据
+    sql = f"""
+        SELECT
+            `处置部门` AS dept,
+            COUNT(*) AS total_count,
+            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
+            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
+        FROM {table}
+        WHERE `日期` BETWEEN %s AND %s
+        GROUP BY `处置部门`;
+    """
+
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (start_str, end_str))
+            rows = cur.fetchall() or []
+    finally:
+        release_connection(conn)
+
+    # 将数据库结果转为字典映射： {"龙山街道": {row_data}, ...}
+    rows_map = {r["dept"]: r for r in rows}
+
+    # 分别处理两组数据
+    street_records = _process_group_ranks(rows_map, config.raw_streets)
+    unit_records = _process_group_ranks(rows_map, config.raw_units)
+
+    return {"street_records": street_records, "unit_records": unit_records}
 
 
 def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
@@ -436,7 +536,6 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
     输出：
       - 本考核期：上个月10日 ~ 当日
       - 上一考核期：上上个月10日 ~ 上个月同日（若该月无此日，则用该月最后一天）
-      - 本考核期内按“处置部门”的考核排名（前三 & 后三）
 
     仅返回各考核期原始指标和排名数据，
     “环比上升/下降/持平、绝对值、百分点”等描述交由上层 LLM 处理。
@@ -464,8 +563,6 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
     this_period = _query_period_stats(this_start, this_end)
     last_period = _query_period_stats(last_start, last_end)
 
-    # 本考核期“处置部门”排名
-    this_period_ranks = _query_dept_ranks_for_period(this_start, this_end)
 
     month_label = f"{year:04d}-{month:02d}"
 
@@ -474,9 +571,138 @@ def get_assessment_data_for_date(date_str: str) -> AssessmentResult:
         "month_label": month_label,
         "this_period": this_period,
         "last_period": last_period,
-        "this_period_ranks": this_period_ranks,
     }
 
+
+def _process_rank_data(rows_map: Dict[str, dict], whitelist: List[str]) -> List[DeptAssessmentRecord]:
+    """
+    通用清洗函数：
+    1. 遍历白名单，确保输出列表长度 == len(whitelist)。
+    2. 缺失数据填 0。
+    3. 计算综合成绩并排序。
+    """
+    records: List[DeptAssessmentRecord] = []
+    
+    # 1. 严格遍历白名单，确保不漏、不杂
+    for name in whitelist:
+        row = rows_map.get(name, {})
+        
+        total = int(row.get("total_count") or 0)
+        solved = int(row.get("solved_count") or 0)
+        satisfied = int(row.get("satisfied_count") or 0)
+        
+        solved_rate = solved / total if total > 0 else 0.0
+        satisfied_rate = satisfied / total if total > 0 else 0.0
+        
+        records.append({
+            "department": name,
+            "total": total,
+            "solved": solved,
+            "satisfied": satisfied,
+            "solved_rate": solved_rate,
+            "satisfied_rate": satisfied_rate,
+            "score": 0.0  # 占位
+        })
+
+    # 2. 计算综合成绩 (仅在当前组内归一化)
+    max_total = max((r["total"] for r in records), default=0)
+    
+    for r in records:
+        if max_total > 0:
+            total_norm = r["total"] / max_total
+        else:
+            total_norm = 0.0
+        
+        # 综合成绩公式
+        score = (total_norm * 0.10 + r["solved_rate"] * 0.50 + r["satisfied_rate"] * 0.40) * 100
+        r["score"] = round(score, 1)
+
+    # 3. 排序：分数优先，受理量其次
+    records.sort(key=lambda x: (x["score"], x["total"]), reverse=True)
+    
+    return records
+
+def _query_raw_period_data(start: date, end: date) -> Dict[str, dict]:
+    """
+    查询指定时间段内所有部门的原始数据，返回 {部门名: {数据}} 字典。
+    """
+    table = get_table_name()
+    start_str = format_date(start)
+    end_str = format_date(end)
+    
+    sql = f"""
+        SELECT
+            `处置部门` AS dept,
+            COUNT(*) AS total_count,
+            SUM(CASE WHEN `是否解决` = '是' THEN 1 ELSE 0 END) AS solved_count,
+            SUM(CASE WHEN `是否满意` = '是' THEN 1 ELSE 0 END) AS satisfied_count
+        FROM {table}
+        WHERE `日期` BETWEEN %s AND %s
+        GROUP BY `处置部门`;
+    """
+    
+    conn = get_connection()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql, (start_str, end_str))
+            rows = cur.fetchall() or []
+    finally:
+        release_connection(conn)
+        
+    return {r["dept"]: r for r in rows}
+
+def _get_period_dates(date_str: str):
+    """计算考核期时间：上个月19日 ~ 当日"""
+    try:
+        d = parse_date(date_str)
+    except ValueError:
+        raise BusinessError("日期格式错误")
+        
+    year = d.year
+    month = d.month
+    
+    # 上个月的年份和月份
+    last_year = year - 1 if month == 1 else year
+    last_month = 12 if month == 1 else month - 1
+    
+    start_date = date(last_year, last_month, 19)
+    end_date = d
+    
+    return start_date, end_date
+
+# === 独立工具服务 1：获取街道数据 ===
+def get_street_assessment_data(date_str: str) -> StreetAssessmentResult:
+    start_date, end_date = _get_period_dates(date_str)
+    
+    # 1. 查全量数据
+    rows_map = _query_raw_period_data(start_date, end_date)
+    
+    # 2. 只清洗街道 (16个)
+    records = _process_rank_data(rows_map, config.raw_streets)
+    
+    return {
+        "date": date_str,
+        "period_start": format_date(start_date),
+        "period_end": format_date(end_date),
+        "records": records
+    }
+
+# === 独立工具服务 2：获取区直单位数据 ===
+def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
+    start_date, end_date = _get_period_dates(date_str)
+    
+    # 1. 查全量数据
+    rows_map = _query_raw_period_data(start_date, end_date)
+    
+    # 2. 只清洗区直单位 (33个)
+    records = _process_rank_data(rows_map, config.raw_units)
+    
+    return {
+        "date": date_str,
+        "period_start": format_date(start_date),
+        "period_end": format_date(end_date),
+        "records": records
+    }
 
 
 

@@ -114,7 +114,6 @@ async def main(start_date: str,end_date: str,holiday: str):
 
 并总结原因（如原文所述：景区管理、公共安全类问题影响满意率等）。
 
-
 """
     mcp_client = MCPClientWrapper()
     async with mcp_client.session:

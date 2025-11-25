@@ -78,17 +78,33 @@ class DeptAssessmentRecord(TypedDict):
     satisfied: int         # 满意数
     solved_rate: float     # 解决率（0~1）
     satisfied_rate: float  # 满意率（0~1）
-    score: float           # 综合成绩（0~1 左右）综合成绩=((total / max_total)x10%)+(解决率x50%)+(满意率x40%)
+    score: float           # 综合成绩
 
+# 新增：街道考核结果专用结构
+class StreetAssessmentResult(TypedDict):
+    date: str
+    period_start: str
+    period_end: str
+    # 这里的 records 必须严格等于 16 条
+    records: List[DeptAssessmentRecord]
+
+# 新增：区直单位考核结果专用结构
+class UnitAssessmentResult(TypedDict):
+    date: str
+    period_start: str
+    period_end: str
+    # 这里的 records 必须严格等于 33 条
+    records: List[DeptAssessmentRecord]
 
 class AssessmentRankResult(TypedDict):
-    records: List[DeptAssessmentRecord]   # 所有部门，按综合成绩从高到低排序
+    street_records: List[DeptAssessmentRecord] # 街道排名（严格16个）
+    unit_records: List[DeptAssessmentRecord]   # 委办局排名（严格33个）
 
 class AssessmentResult(TypedDict):
-    date: str                  # 传入的基准日期
-    month_label: str           # date 所在月份，比如 "2025-03"
-    this_period: AssessmentPeriodData  # 本考核期（上个月10日~当日）
-    last_period: AssessmentPeriodData  # 上一考核期（再往前一个月）
+    date: str
+    month_label: str
+    this_period: AssessmentPeriodData
+    last_period: AssessmentPeriodData
     this_period_ranks: AssessmentRankResult
     
 
