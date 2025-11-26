@@ -7,13 +7,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-# 引入核心逻辑
-# 注意：文件名 dailyreport_llm-mcp.py 带横杠无法直接 import，
-# 请务必将其重命名为 dailyreport_llm_mcp.py (下划线)
-from dailyreport_llm_mcp import generate_daily_report
+from report.dailyreport_llm_mcp import generate_daily_report
 
 app = FastAPI(title="12345日报生成系统")
-
+DAILY_MCP_ENTRY = "http://127.0.0.1:9001/daily_report_mcp"
 # 允许跨域
 app.add_middleware(
     CORSMiddleware,
@@ -42,7 +39,7 @@ async def generate_report_api(request: ReportRequest):
     
     try:
         # 直接调用分离出来的业务逻辑函数
-        report_content = await generate_daily_report(date_str)
+        report_content = await generate_daily_report(date_str,DAILY_MCP_ENTRY)
         
         return {
             "status": "success", 

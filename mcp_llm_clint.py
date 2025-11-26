@@ -10,7 +10,7 @@ VLLM_URL = "http://localhost:8003/v1"
 VLLM_KEY = "EMPTY"
 MODEL_NAME = "qwen-next"
 
-MCP_ENTRY = "http://127.0.0.1:9001/mysql"
+
 
 SYSTEM_MSG = {
     "role": "system",
@@ -29,7 +29,7 @@ MAX_HISTORY_MESSAGES = 10  # 最多保留最近 40 条（不含 system）
 
 
 class MCPClientWrapper:
-    def __init__(self, mcp_entry: str = MCP_ENTRY, model: str = MODEL_NAME):
+    def __init__(self, mcp_entry: str, model: str = MODEL_NAME):
         self.mcp_entry = mcp_entry
         self.model = model
 

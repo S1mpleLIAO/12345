@@ -1,3 +1,10 @@
+import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import asyncio
 from mcp_llm_clint import MCPClientWrapper
 from config.loader import config
@@ -117,11 +124,11 @@ def _get_prompts(date_str: str):
     return q_daily_report,q_street,q_unit
 
 
-async def generate_daily_report(date_str: str):
+async def generate_daily_report(date_str: str,mcp_entry: str):
     # 1. 获取构造好的 Prompts
     q_daily,q_street,q_unit = _get_prompts(date_str)
     
-    mcp_client = MCPClientWrapper()
+    mcp_client = MCPClientWrapper(mcp_entry=mcp_entry)
     
     async with mcp_client.session:
         print(f"[{date_str}] 开始生成日报")
@@ -142,5 +149,6 @@ async def generate_daily_report(date_str: str):
     return answer
 
 if __name__ == "__main__":
-    answer=asyncio.run(generate_daily_report("2025-06-12"))
+    MCP_ENTRY = "http://127.0.0.1:9001/daily_report_mcp"
+    answer=asyncio.run(generate_daily_report("2025-06-12",MCP_ENTRY))
     print("日报生成任务已完成。", answer)
