@@ -20,7 +20,6 @@ from models.dailyreport_types import (
     DailyReportFullData,
     AssessmentPeriodData,
     AssessmentResult,
-    AssessmentRankResult,
     StreetAssessmentResult,
     UnitAssessmentResult,
 )
@@ -438,6 +437,44 @@ def _process_rank_data(rows_map: Dict[str, dict], whitelist: List[str]) -> List[
     
     return records
 
+def _calc_summary_from_records(records: List[DeptAssessmentRecord]) -> DeptAssessmentRecord:
+    """
+    根据已算好 score 的 records 生成一条汇总记录：
+    - total / solved / satisfied 做求和
+    - solved_rate / satisfied_rate / score 做简单平均（算术平均）
+    """
+    if not records:
+        return {
+            "department": "汇总",
+            "total": 0,
+            "solved": 0,
+            "satisfied": 0,
+            "solved_rate": 0.0,
+            "satisfied_rate": 0.0,
+            "score": 0.0,
+        }
+
+    n = len(records)
+
+    total_sum = sum(r["total"] for r in records)
+    solved_sum = sum(r["solved"] for r in records)
+    satisfied_sum = sum(r["satisfied"] for r in records)
+
+    avg_solved_rate = sum(r["solved_rate"] for r in records) / n
+    avg_satisfied_rate = sum(r["satisfied_rate"] for r in records) / n
+    avg_score = sum(r["score"] for r in records) / n
+
+    return {
+        "department": "汇总",
+        "total": total_sum,
+        "solved": solved_sum,
+        "satisfied": satisfied_sum,
+        "solved_rate": avg_solved_rate,
+        "satisfied_rate": avg_satisfied_rate,
+        "score": round(avg_score, 1),
+    }
+
+
 def _query_raw_period_data(start: date, end: date) -> Dict[str, dict]:
     """
     查询指定时间段内所有部门的原始数据，返回 {部门名: {数据}} 字典。
@@ -495,13 +532,18 @@ def get_street_assessment_data(date_str: str) -> StreetAssessmentResult:
     
     # 2. 只清洗街道 (16个)
     records = _process_rank_data(rows_map, config.raw_streets)
+
+    # 3. 计算汇总行（受理量/解决数/满意数求和，率+综合成绩取平均）
+    summary = _calc_summary_from_records(records)
     
     return {
         "date": date_str,
         "period_start": format_date(start_date),
         "period_end": format_date(end_date),
-        "records": records
+        "records": records,
+        "summary": summary,
     }
+
 
 # === 独立工具服务 2：获取区直单位数据 ===
 def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
@@ -512,10 +554,14 @@ def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
     
     # 2. 只清洗区直单位 (33个)
     records = _process_rank_data(rows_map, config.raw_units)
+
+    # 3. 计算汇总行
+    summary = _calc_summary_from_records(records)
     
     return {
         "date": date_str,
         "period_start": format_date(start_date),
         "period_end": format_date(end_date),
-        "records": records
+        "records": records,
+        "summary": summary,
     }

@@ -87,6 +87,7 @@ class StreetAssessmentResult(TypedDict):
     period_end: str
     # 这里的 records 必须严格等于 16 条
     records: List[DeptAssessmentRecord]
+    summary: DeptAssessmentRecord
 
 # 新增：区直单位考核结果专用结构
 class UnitAssessmentResult(TypedDict):
@@ -95,6 +96,7 @@ class UnitAssessmentResult(TypedDict):
     period_end: str
     # 这里的 records 必须严格等于 33 条
     records: List[DeptAssessmentRecord]
+    summary: DeptAssessmentRecord
 
 class AssessmentRankResult(TypedDict):
     street_records: List[DeptAssessmentRecord] # 街道排名（严格16个）
