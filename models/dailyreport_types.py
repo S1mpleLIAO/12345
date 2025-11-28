@@ -32,7 +32,6 @@ class DailyStatsResult(TypedDict):
     yesterday_date: str
     today: RateStats
     yesterday: RateStats
-    streets: StreetRanks
 
 
 class AppealItem(TypedDict):
@@ -72,13 +71,28 @@ class AssessmentPeriodData(TypedDict):
     satisfied_rate: float  # 满意率（0~1 小数）
 
 class DeptAssessmentRecord(TypedDict):
-    department: str        # 处置部门名称
-    total: int             # 受理量
-    solved: int            # 解决数
-    satisfied: int         # 满意数
-    solved_rate: float     # 解决率（0~1）
-    satisfied_rate: float  # 满意率（0~1）
-    score: float           # 综合成绩
+    """
+    单个部门考核期记录结构，供街道/区直单位使用。
+
+    对应表头：
+    | 序号 | 承办单位 | 受理量 | 办结量 | 有效回访 | 联系数 | 解决数 | 满意数 | 基本满意 |
+    | 响应率(%) | 解决率(%) | 满意率(%) | 综合成绩 |
+    """
+
+    department: str              # 承办单位
+    total: int                   # 受理量（全部）
+    closed: int                  # 办结量（按办结时间统计）
+    valid: int                   # 有效回访（是否有效回访=是）
+    contact: int                 # 联系数（有效回访 AND 是否联系=是）
+    solved: int                  # 解决数（有效回访 AND 是否解决=是）
+    satisfied: int               # 满意数（有效回访 AND 是否满意=满意）
+    basic_satisfied: int         # 基本满意数（有效回访 AND 是否满意=基本满意）
+
+    response_rate: float         # 响应率 = 联系数 / 有效回访
+    solved_rate: float           # 解决率 = 解决数 / 有效回访
+    satisfied_rate: float        # 满意率 = (满意 + 0.9×基本满意) / 有效回访
+
+    score: float                 # 综合成绩： (响应率*0.1 + 满意率*0.4 + 解决率*0.5) * 100
 
 # 新增：街道考核结果专用结构
 class StreetAssessmentResult(TypedDict):

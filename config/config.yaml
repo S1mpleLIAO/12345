@@ -4,7 +4,7 @@ database:
   user: "root"
   password: "1qaz@WSX"
   name: "12345"
-  table: "12345duo"
+  table: "2024gongnuan"
 
 data_lists:
   streets:
