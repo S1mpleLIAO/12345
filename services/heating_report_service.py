@@ -128,6 +128,8 @@ def _query_overall_stats(
 
     start_date, end_date = start_dt.date(), (end_dt - timedelta(days=1)).date()
 
+    # HeatingStats 现在在类型上有 last_total/yoy 字段，但这里返回的是“本年基础值”，
+    # 去年与同比在 get_full_heating_report_data 里补充。
     return {
         "start_date": format_date(start_date),
         "end_date": format_date(end_date),
@@ -178,6 +180,7 @@ def _query_monthly_stats(
         else:
             m_solved_rate = m_satisfied_rate = 0.0
 
+        # last_total 字段在 get_full_heating_report_data 中根据“去年同月”补充
         monthly_list.append(
             {
                 "month": month_label,
@@ -224,6 +227,7 @@ def _query_central_heating_stats(
 
     central_ratio = (central_total / total) if total > 0 else 0.0
 
+    # last_total / yoy_* 在 get_full_heating_report_data 中根据“去年集中供暖”补充
     return {
         "total": central_total,
         "ratio": central_ratio,
@@ -294,35 +298,44 @@ def _query_company_ranking(
         comp_count = int(r.get("cnt") or 0)
         comp_ratio = comp_count / total if total > 0 else 0.0
 
-        companies.append({
-            "rank": idx,
-            "company_name": comp_name,
-            "count": comp_count,
-            "ratio": comp_ratio,
-        })
+        companies.append(
+            {
+                "rank": idx,
+                "company_name": comp_name,
+                "count": comp_count,
+                "ratio": comp_ratio,
+            }
+        )
 
     return companies
-
 
 
 def get_full_heating_report_data(year: int) -> HeatingReportData:
     """
     获取指定年度供暖季的完整统计分析数据。
     """
-    # 1. 计算供暖季起止日期
+    # 1. 计算当年供暖季起止日期
     start_date, end_date = _calc_heating_season(year)
     start_dt = datetime.combine(start_date, time(0, 0, 0))
     end_dt = datetime.combine(
         end_date + timedelta(days=1), time(0, 0, 0)
     )  # 次日0点作为结束边界
+
+    # 1.1 计算去年供暖季起止日期
+    last_year = year - 1
+    last_start_date, last_end_date = _calc_heating_season(last_year)
+    last_start_dt = datetime.combine(last_start_date, time(0, 0, 0))
+    last_end_dt = datetime.combine(
+        last_end_date + timedelta(days=1), time(0, 0, 0)
+    )
+
     table = get_table_name()
 
     conn = get_connection()
     try:
-        # 2. 整体统计
+        # 2. 当年整体统计
         heating_stats = _query_overall_stats(conn, table, start_dt, end_dt)
-        print(start_dt, end_dt)
-        total = heating_stats["total"]
+        total = int(heating_stats["total"])
 
         # 若供暖季内无相关诉求数据，直接返回空结果集
         if total == 0:
@@ -334,23 +347,77 @@ def get_full_heating_report_data(year: int) -> HeatingReportData:
                     "ratio": 0.0,
                     "solved_rate": 0.0,
                     "satisfied_rate": 0.0,
+                    "last_total": 0,
+                    "yoy_diff": 0,
+                    "yoy_rate": 0.0,
                 },
                 "categories": [],
                 "companies": [],
             }
 
-        # 3. 月度统计
-        monthly_list = _query_monthly_stats(conn, table, start_dt, end_dt)
+        # 3. 去年整体统计（用于总体同比）
+        last_heating_stats = _query_overall_stats(
+            conn, table, last_start_dt, last_end_dt
+        )
+        last_total = int(last_heating_stats.get("total") or 0)
 
-        # 4. 集中供暖统计
+        # 3.1 计算总体同比
+        yoy_diff = total - last_total
+        yoy_rate = (yoy_diff / last_total) if last_total > 0 else 0.0
+
+        heating_stats["last_total"] = last_total
+        heating_stats["yoy_diff"] = yoy_diff
+        heating_stats["yoy_rate"] = yoy_rate
+
+        # 4. 月度统计（当年 + 去年），只需要去年每月诉求量
+        monthly_list = _query_monthly_stats(conn, table, start_dt, end_dt)
+        last_monthly_list = _query_monthly_stats(
+            conn, table, last_start_dt, last_end_dt
+        )
+
+        # 按“月份 MM”对齐去年每月诉求总量
+        last_month_total_map = {}
+        for item in last_monthly_list:
+            month_label = item.get("month") or ""
+            if len(month_label) >= 7:
+                mm = month_label[5:]  # "01" ~ "12"
+                last_month_total_map[mm] = int(item.get("total") or 0)
+
+        for item in monthly_list:
+            month_label = item.get("month") or ""
+            if len(month_label) >= 7:
+                mm = month_label[5:]
+                item["last_total"] = last_month_total_map.get(mm, 0)
+            else:
+                item["last_total"] = 0
+
+        # 5. 集中供暖统计（当年 + 去年），并计算同比
         central_stats = _query_central_heating_stats(
             conn, table, start_dt, end_dt, total
         )
+        last_central_stats = _query_central_heating_stats(
+            conn,
+            table,
+            last_start_dt,
+            last_end_dt,
+            last_total if last_total > 0 else total,
+        )
+        central_total = int(central_stats.get("total") or 0)
+        last_central_total = int(last_central_stats.get("total") or 0)
 
-        # 5. 分类 Top10
+        central_yoy_diff = central_total - last_central_total
+        central_yoy_rate = (
+            central_yoy_diff / last_central_total if last_central_total > 0 else 0.0
+        )
+
+        central_stats["last_total"] = last_central_total
+        central_stats["yoy_diff"] = central_yoy_diff
+        central_stats["yoy_rate"] = central_yoy_rate
+
+        # 6. 分类 Top7
         categories_list = _query_top_categories(conn, table, start_dt, end_dt, total)
 
-        # 6. 公司排行
+        # 7. 公司排行
         companies_list = _query_company_ranking(conn, table, start_dt, end_dt, total)
 
         # 汇总
