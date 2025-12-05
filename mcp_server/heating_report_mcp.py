@@ -13,7 +13,7 @@ if __name__ == "__main__":
     mcp.run(
         transport="streamable-http",
         host="0.0.0.0",
-        port=9001,
+        port=9002,
         path="/heating_report_mcp",
         log_level="debug",
     )
