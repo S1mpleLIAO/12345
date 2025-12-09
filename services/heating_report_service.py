@@ -14,6 +14,7 @@ from models.heatingreport_types import (
     CategoryItem,
     CompanyItem,
     HeatingReportData,
+    OffSeasonStats,
 )
 
 # 供暖相关的通用 LIKE 条件（供暖 / 供热）
@@ -42,6 +43,22 @@ def _calc_heating_season(year: int) -> Tuple[date, date]:
     end_date = date(year + 1, 3, 14)
     return start_date, end_date
 
+def _calc_off_season_next_year(year: int) -> Tuple[date, date]:
+    """
+    根据供暖季起始年份，计算“下一年度非供暖季”的起止日期。
+
+    约定：
+    - 输入 year，例如 2024
+    - 非供暖季时间：year+1 年 3 月 15 日 00:00:00 至 year+1 年 11 月 1 日 00:00:00
+    - 对应日期区间为 [year+1-03-15, year+1-10-31]，查询时用 end+1 天作为 < 上界。
+    """
+    if year < 2000 or year > 2100:
+        raise BusinessError("供暖季年份不合法")
+
+    off_year = year + 1
+    start_date = date(off_year, 3, 15)
+    end_date = date(off_year, 10, 31)
+    return start_date, end_date
 
 def _build_heating_params(start_dt: datetime, end_dt: datetime) -> Tuple:
     """构造供暖/供热相关的 LIKE 查询参数。"""
@@ -430,5 +447,92 @@ def get_full_heating_report_data(year: int) -> HeatingReportData:
         }
         return result
 
+    finally:
+        release_connection(conn)
+        
+        
+def _query_off_season_stats(
+    conn, table: str, start_dt: datetime, end_dt: datetime
+) -> Tuple[int, List[CategoryItem]]:
+    """
+    统计下一年度非供暖季内的供暖诉求总量 + 三级分类 Top6。
+    """
+
+    # 1）总量
+    with conn.cursor() as cur:
+        sql_total = f"""
+            SELECT COUNT(*) AS total_count
+            FROM {table}
+            WHERE {HEATING_WHERE_FRAGMENT}
+        """
+        params = _build_heating_params(start_dt, end_dt)
+        cur.execute(sql_total, params)
+        row = cur.fetchone() or {}
+
+    total = int(row.get("total_count") or 0)
+
+    if total == 0:
+        return 0, []
+
+    # 2）三级分类 Top6
+    with conn.cursor() as cur:
+        sql_cat = f"""
+            SELECT `三级分类` AS category_name, COUNT(*) AS cnt
+            FROM {table}
+            WHERE {HEATING_WHERE_FRAGMENT}
+            GROUP BY `三级分类`
+            ORDER BY cnt DESC
+            LIMIT 6;
+        """
+        params = _build_heating_params(start_dt, end_dt)
+        cur.execute(sql_cat, params)
+        rows = cur.fetchall() or []
+
+    categories: List[CategoryItem] = []
+    for idx, r in enumerate(rows, start=1):
+        cat_count = int(r.get("cnt") or 0)
+        cat_name = r.get("category_name") or ""
+        cat_ratio = cat_count / total if total > 0 else 0.0
+
+        categories.append(
+            {
+                "rank": idx,
+                "category_name": cat_name,
+                "count": cat_count,
+                "ratio": cat_ratio,
+            }
+        ) 
+
+    return total, categories
+
+
+def get_off_season_stats(year: int) -> OffSeasonStats:
+    """
+    对外接口：根据 year 统计“下一年度非供暖季供暖诉求”情况。
+
+    约定：
+    - 输入 year，例如 2024
+    - 非供暖季时间统计区间：year+1 年 3 月 15 日 00:00:00 至 year+1 年 11 月 1 日 00:00:00
+    """
+    # 计算下一年度非供暖季起止日期
+    off_start_date, off_end_date = _calc_off_season_next_year(year)
+    off_start_dt = datetime.combine(off_start_date, time(0, 0, 0))
+    off_end_dt = datetime.combine(
+        off_end_date + timedelta(days=1), time(0, 0, 0)  # 11-01 0 点上界
+    )
+
+    table = get_table_name()
+    conn = get_connection()
+    try:
+        total, categories = _query_off_season_stats(
+            conn, table, off_start_dt, off_end_dt
+        )
+
+        return {
+            "start_date": format_date(off_start_date),
+            "end_date": format_date(off_end_date),
+            "total": total,
+            "categories": categories,
+        }
     finally:
         release_connection(conn)

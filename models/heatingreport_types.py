@@ -22,6 +22,7 @@ class HeatingStats(TypedDict):
 
 class MonthlyStatItem(TypedDict):
     """供暖季单月统计条目。"""
+
     month: str  # 月份，格式 YYYY-MM
     total: int  # 当月诉求受理总量（本年）
     solved_rate: float  # 当月解决率
@@ -59,6 +60,17 @@ class CompanyItem(TypedDict):
     ratio: float  # 占供暖诉求总量的比率 (0~1)
 
 
+class OffSeasonStats(TypedDict):
+    """非供暖季供暖诉求统计（输入年度的下一年度 3.15~11.1）。"""
+
+    start_date: str  # 非供暖季开始日期 YYYY-MM-DD
+    end_date: (
+        str  # 非供暖季结束日期 YYYY-MM-DD（例如 10-31，对应到 11-01 0点的左闭右开）
+    )
+    total: int  # 非供暖季内的供暖诉求总量（按供暖/供热关键词过滤）
+    categories: List[CategoryItem]  # 三级分类 Top6（名称/数量/占比）
+
+
 class HeatingReportData(TypedDict):
     """供暖季统计分析数据结构。"""
 
@@ -67,3 +79,11 @@ class HeatingReportData(TypedDict):
     central_heating: CentralHeatingStats  # 集中供暖类诉求统计（含去年+同比）
     categories: List[CategoryItem]  # 高频三级分类列表
     companies: List[CompanyItem]  # 供热公司办理排行列表
+
+class OffSeasonStats(TypedDict):
+    """非供暖季供暖诉求统计（输入年度的下一年度 3.15~11.1）。"""
+
+    start_date: str  # YYYY-MM-DD，例如 "2025-03-15"
+    end_date: str    # YYYY-MM-DD，例如 "2025-10-31"
+    total: int       # 非供暖季内供暖诉求总量
+    categories: List[CategoryItem]  # 三级分类 Top6

@@ -25,6 +25,7 @@ app.add_middleware(
 )
 
 
+
 class ReportRequest(BaseModel):
     """日报请求体"""
     date: str  # 格式 YYYY-MM-DD
@@ -37,7 +38,7 @@ class HeatingReportRequest(BaseModel):
 
 # 挂载静态文件
 app.mount("/static", StaticFiles(directory="static", html=True), name="static")
-
+app.mount("/", StaticFiles(directory="static", html=True), name="index")
 
 @app.get("/")
 async def root_index():
