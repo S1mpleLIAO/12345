@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, time, timedelta
+from datetime import date, datetime, time, timedelta
 from typing import Dict, List
 
 from db.connection import get_connection, release_connection
@@ -12,6 +12,9 @@ from models.emergencyreport_types import (
     EmergencyAppealItem,
     EmergencyAppealResult,
     EmergencyCategoryStats,
+    EmergencyMonthlyRateResult,
+    EmergencyDailyRateItem,
+    EmergencyMonthlyRateResult,
 )
 
 # 关注的紧急敏感一级分类
@@ -27,6 +30,51 @@ def _get_noon_range_for_date(date_str: str) -> tuple[datetime, datetime]:
     d = parse_date(date_str)
     end_dt = datetime.combine(d, time(12, 0, 0))
     start_dt = end_dt - timedelta(days=1)
+    return start_dt, end_dt
+
+def _get_month_assessment_label_start(d: date) -> date:
+    """
+    根据报表日期 d（date 对象），计算“月考核期”起始的统计日期标签：
+      - 若 d 为 2025-10-26，则起始标签日期为 2025-09-19；
+      - 若 d 为 2025-01-10，则起始标签日期为 2024-12-19。
+    """
+    year = d.year
+    month = d.month
+    if month == 1:
+        prev_year = year - 1
+        prev_month = 12
+    else:
+        prev_year = year
+        prev_month = month - 1
+
+    return date(prev_year, prev_month, 19)
+
+
+def _get_month_assessment_range(date_str: str) -> tuple[datetime, datetime]:
+    """
+    月考核期时间范围：
+    输入日期 D（例如 2025-10-26），则统计区间为：
+      上一个月 19 日 00:00:00  至  D 当日 24:00:00（即 D+1 日 00:00:00），左闭右开。
+    如：D=2025-10-26 -> [2025-09-19 00:00:00, 2025-10-27 00:00:00)
+    """
+    d = parse_date(date_str)  # utils.dates.parse_date，返回 datetime.date
+
+    year = d.year
+    month = d.month
+    # 上个月
+    if month == 1:
+        prev_year = year - 1
+        prev_month = 12
+    else:
+        prev_year = year
+        prev_month = month - 1
+
+    start_date = date(prev_year, prev_month, 19)
+    start_dt = datetime.combine(start_date, time(0, 0, 0))
+
+    end_date = d + timedelta(days=1)  # 统计到当日 24:00
+    end_dt = datetime.combine(end_date, time(0, 0, 0))
+
     return start_dt, end_dt
 
 
@@ -250,7 +298,7 @@ def get_emergency_appeals_for_date(date_str: str) -> EmergencyAppealResult:
                 `二级承办单位简称`   AS dept,
                 `一级分类`           AS category,
                 `主要内容`           AS content,
-                `处理结果`           AS result   -- TODO: 如字段名不同，请改为实际列名
+                `处理结果`           AS result
             FROM {table}
             WHERE `创建时间` >= %s
               AND `创建时间` < %s
@@ -280,6 +328,189 @@ def get_emergency_appeals_for_date(date_str: str) -> EmergencyAppealResult:
             "period_start": start_dt.strftime("%Y-%m-%d %H:%M:%S"),
             "period_end": end_dt.strftime("%Y-%m-%d %H:%M:%S"),
             "items": items,
+        }
+    finally:
+        release_connection(conn)
+
+
+
+def get_emergency_month_rates(date_str: str) -> EmergencyMonthlyRateResult:
+    """
+    获取输入日期对应的“月考核期”内紧急敏感诉求三率情况：
+    - 统计范围：上个月19日（00:00）至当日（24:00），左闭右开；
+    - 对象：一级分类为【供暖、扬言、消防安全、供水】四类；
+    - 指标：受理总量、有效回访数、联系数、已解决数、满意数、基本满意数、三率。
+
+    响应率：contact / valid
+    解决率：solved / valid
+    满意率：(satisfied + 0.9 * basic_satisfied) / valid
+    """
+    try:
+        d = parse_date(date_str)
+    except ValueError:
+        raise BusinessError("日期格式必须为 YYYY-MM-DD，例如 '2025-10-26'")
+
+    date_norm = format_date(d)
+    start_dt, end_dt = _get_month_assessment_range(date_norm)
+
+    conn = get_connection()
+    try:
+        # 复用分类原始统计，再汇总四类
+        cur_map = _query_category_raw_stats(conn, start_dt, end_dt)
+
+        total = 0
+        valid = contact = solved = satisfied = basic_satisfied = 0
+
+        for cat in EMERGENCY_CATEGORIES:
+            row = cur_map.get(cat, {
+                "total_count": 0,
+                "valid_count": 0,
+                "contact_count": 0,
+                "solved_count": 0,
+                "satisfied_count": 0,
+                "basic_satisfied_count": 0,
+            })
+
+            total += row["total_count"]
+            valid += row["valid_count"]
+            contact += row["contact_count"]
+            solved += row["solved_count"]
+            satisfied += row["satisfied_count"]
+            basic_satisfied += row["basic_satisfied_count"]
+
+        if valid > 0:
+            response_rate = contact / valid
+            solved_rate = solved / valid
+            satisfied_rate = (satisfied + 0.9 * basic_satisfied) / valid
+        else:
+            response_rate = solved_rate = satisfied_rate = 0.0
+
+        return {
+            "date": date_norm,
+            "period_start": start_dt.strftime("%Y-%m-%d %H:%M:%S"),
+            "period_end": end_dt.strftime("%Y-%m-%d %H:%M:%S"),
+            "total": total,
+            "valid": valid,
+            "contact": contact,
+            "solved": solved,
+            "satisfied": satisfied,
+            "basic_satisfied": basic_satisfied,
+            "response_rate": response_rate,
+            "solved_rate": solved_rate,
+            "satisfied_rate": satisfied_rate,
+        }
+    finally:
+        release_connection(conn)
+
+
+def get_emergency_month_daily_rates(date_str: str) -> EmergencyMonthlyRateResult:
+    """
+    获取输入日期对应的“月考核期”内，每一天的紧急敏感诉求三率情况。
+
+    - 报表日期 D（例如 2025-10-26）；
+    - 统计“标签日期”从：上一个月19日  至  D（两端都包含）；
+      例如 D=2025-10-26，则标签日期为 2025-09-19 ~ 2025-10-26。
+    - 每一个标签日期 d 的统计窗口为：
+        [d-1 日 12:00, d 日 12:00)
+      与日报、紧急敏感专报保持一致。
+    - 统计对象：一级分类为【供暖、扬言、消防安全、供水】四类，合并统计。
+    - 指标：total / valid / contact / solved / satisfied / basic_satisfied 以及三率。
+    """
+    try:
+        d = parse_date(date_str)  # utils.dates.parse_date，返回 datetime.date
+    except ValueError:
+        raise BusinessError("日期格式必须为 YYYY-MM-DD，例如 '2025-10-26'")
+
+    d_date: date = d
+    date_norm = format_date(d_date)
+
+    # 计算“月考核期”的标签起始日期（按自然日）
+    start_label_date = _get_month_assessment_label_start(d_date)
+    end_label_date = d_date  # 含当日
+
+    # 生成标签日期列表
+    days_labels: List[date] = []
+    cur = start_label_date
+    while cur <= end_label_date:
+        days_labels.append(cur)
+        cur = cur + timedelta(days=1)
+
+    conn = get_connection()
+    try:
+        daily_items: List[EmergencyDailyRateItem] = []
+
+        global_period_start: datetime | None = None
+        global_period_end: datetime | None = None
+
+        for label_date in days_labels:
+            # 该天的标签字符串
+            label_str = format_date(label_date)
+
+            # 使用与日报一致的窗口：[label_date-1 12:00, label_date 12:00)
+            day_start_dt, day_end_dt = _get_noon_range_for_date(label_str)
+
+            if global_period_start is None or day_start_dt < global_period_start:
+                global_period_start = day_start_dt
+            if global_period_end is None or day_end_dt > global_period_end:
+                global_period_end = day_end_dt
+
+            # 查询该窗口内四类紧急敏感诉求的原始计数
+            day_map = _query_category_raw_stats(conn, day_start_dt, day_end_dt)
+
+            total = 0
+            valid = contact = solved = satisfied = basic_satisfied = 0
+
+            for cat in EMERGENCY_CATEGORIES:
+                row = day_map.get(cat, {
+                    "total_count": 0,
+                    "valid_count": 0,
+                    "contact_count": 0,
+                    "solved_count": 0,
+                    "satisfied_count": 0,
+                    "basic_satisfied_count": 0,
+                })
+                total += row["total_count"]
+                valid += row["valid_count"]
+                contact += row["contact_count"]
+                solved += row["solved_count"]
+                satisfied += row["satisfied_count"]
+                basic_satisfied += row["basic_satisfied_count"]
+
+            if valid > 0:
+                response_rate = contact / valid
+                solved_rate = solved / valid
+                satisfied_rate = (satisfied + 0.9 * basic_satisfied) / valid
+            else:
+                response_rate = solved_rate = satisfied_rate = 0.0
+
+            daily_items.append(
+                {
+                    "stat_date": label_str,
+                    "period_start": day_start_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                    "period_end": day_end_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                    "total": total,
+                    "valid": valid,
+                    "contact": contact,
+                    "solved": solved,
+                    "satisfied": satisfied,
+                    "basic_satisfied": basic_satisfied,
+                    "response_rate": response_rate,
+                    "solved_rate": solved_rate,
+                    "satisfied_rate": satisfied_rate,
+                }
+            )
+
+        if global_period_start is None:
+            # 理论上不会出现（因为至少会有一个标签日期），但防御性处理
+            global_period_start = _get_noon_range_for_date(format_date(start_label_date))[0]
+        if global_period_end is None:
+            global_period_end = _get_noon_range_for_date(format_date(end_label_date))[1]
+
+        return {
+            "date": date_norm,
+            "period_start": global_period_start.strftime("%Y-%m-%d %H:%M:%S"),
+            "period_end": global_period_end.strftime("%Y-%m-%d %H:%M:%S"),
+            "days": daily_items,
         }
     finally:
         release_connection(conn)

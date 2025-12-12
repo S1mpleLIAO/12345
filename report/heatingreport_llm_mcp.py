@@ -12,7 +12,7 @@ from config.loader import config
 def _get_prompts(year):
 
     q_heating_report = f"""
-请统计{year}的供暖季情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式日报。
+请统计{year}的供暖季情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
 
 请严格遵守以下排版和逻辑要求（##包裹的内容为处理逻辑，不要输出在结果中）：
 # 一、{year}年供暖季情况
@@ -59,6 +59,9 @@ def _get_prompts(year):
 2024年供暖季，共受理臻品园小区相关供暖诉求93件，由雁栖诚泰热力承办，主要反映供暖温度不达标、协调办理停暖等问题，区级回访解决率27.1%，满意率22.7%。
 
 """
+    q_heating_off_report=f"""
+    请统计{year}下一年非供暖季的供暖诉求情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
+    """
 
     return q_heating_report
 

@@ -63,3 +63,35 @@ class EmergencyAppealResult(TypedDict):
     period_start: str
     period_end: str
     items: List[EmergencyAppealItem]
+
+
+class EmergencyDailyRateItem(TypedDict):
+    """
+    月考核期内某一天的三率情况。
+    统计窗口沿用日报口径：前一日12:00至当日12:00。
+    """
+    stat_date: str          # 统计日期（标签），例如 '2025-10-26'
+    period_start: str       # 该日统计窗口起始时间（YYYY-MM-DD HH:MM:SS）
+    period_end: str         # 该日统计窗口结束时间（YYYY-MM-DD HH:MM:SS）
+
+    total: int              # 四类合计受理量
+    valid: int              # 有效回访数
+    contact: int            # 联系数
+    solved: int             # 已解决数
+    satisfied: int          # 满意数
+    basic_satisfied: int    # 基本满意数
+
+    response_rate: float    # 响应率 = contact / valid
+    solved_rate: float      # 解决率 = solved / valid
+    satisfied_rate: float   # 满意率 = (satisfied + 0.9 * basic_satisfied) / valid
+
+
+class EmergencyMonthlyRateResult(TypedDict):
+    """
+    月考核期内（上个月19号至指定日期）紧急敏感诉求每日三率结果。
+    统计对象：一级分类为【供暖、扬言、消防安全、供水】四类合并。
+    """
+    date: str               # 报表日期（YYYY-MM-DD），即传入的 date
+    period_start: str       # 整个月考核期覆盖的最早窗口开始时间
+    period_end: str         # 整个月考核期覆盖的最晚窗口结束时间
+    days: List[EmergencyDailyRateItem]
