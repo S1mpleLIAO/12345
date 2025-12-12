@@ -61,28 +61,40 @@ def _get_prompts(year):
 """
     q_heating_off_report=f"""
     请统计{year}下一年非供暖季的供暖诉求情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
+    ## ##中的内容为处理逻辑，不要输出在结果中##
+    内容如下：
+    # 二、{year}年非供暖季供暖诉求情况
+    [非供暖季起止时间月份]##写{year}下一年的非供暖季起止时间月份##，共受理集中供暖诉求[非供暖季供暖诉求件数]件。从诉求内容看，主要反映：[问题类型]，具体分类占比情况如下：
+    | 问题类型 | 数量 |占比 |
+    | :--- | :--- | :--- |
+    | [问题类型1] | [数量1] | [占比1]% |
+    |···| ··· | ··· |
+    ##表格要求：按数量降序排列，占比保留一位小数##
     """
 
-    return q_heating_report
+    return q_heating_report,q_heating_off_report
 
 
 async def generate_heating_report(date_str: str, mcp_entry: str):
-    q_heating = _get_prompts(date_str)
+    q_heating_report,q_heating_off_report = _get_prompts(date_str)
 
     mcp_client = MCPClientWrapper(mcp_entry=mcp_entry)
 
     async with mcp_client.session:
-        print(f"[{date_str}] 开始生成日报")
-        print(">> 正在生成主体日报...")
-        answer1 = await mcp_client.chat(q_heating)
-        print("主体日报生成完毕。")
+        print(f"[{date_str}] 开始生成供暖报告")
+        print(">> 正在生成供暖报告...")
+        answer1 = await mcp_client.chat(q_heating_report)
+        print("主体供暖报告生成完毕。")
+    async with mcp_client.session:
+        answer2 = await mcp_client.chat(q_heating_off_report)
+        print("非供暖季供暖报告生成完毕。")
 
-    print("生成完毕，正在合并结果...")
-    answer = answer1
+    print("生成完毕...")
+    answer = answer1 + "\n\n" + answer2 
     return answer
 
 
 if __name__ == "__main__":
-    MCP_ENTRY = "http://127.0.0.1:9001/heating_report_mcp"
+    MCP_ENTRY = "http://127.0.0.1:9002/heating_report_mcp"
     answer = asyncio.run(generate_heating_report(2024, MCP_ENTRY))
     print("供暖报告生成任务已完成。", answer)

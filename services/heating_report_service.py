@@ -56,7 +56,7 @@ def _calc_off_season_next_year(year: int) -> Tuple[date, date]:
         raise BusinessError("供暖季年份不合法")
 
     off_year = year + 1
-    start_date = date(off_year, 3, 15)
+    start_date = date(off_year, 3, 16)
     end_date = date(off_year, 10, 31)
     return start_date, end_date
 
@@ -456,6 +456,8 @@ def _query_off_season_stats(
 ) -> Tuple[int, List[CategoryItem]]:
     """
     统计下一年度非供暖季内的供暖诉求总量 + 三级分类 Top6。
+    修改后：
+    ——仅统计一级分类 = '供暖' 的诉求，不再使用模糊匹配。
     """
 
     # 1）总量
@@ -463,9 +465,11 @@ def _query_off_season_stats(
         sql_total = f"""
             SELECT COUNT(*) AS total_count
             FROM {table}
-            WHERE {HEATING_WHERE_FRAGMENT}
+            WHERE `创建时间` >= %s
+              AND `创建时间` < %s
+              AND `一级分类` = '供暖'
         """
-        params = _build_heating_params(start_dt, end_dt)
+        params = (start_dt, end_dt)
         cur.execute(sql_total, params)
         row = cur.fetchone() or {}
 
@@ -474,17 +478,19 @@ def _query_off_season_stats(
     if total == 0:
         return 0, []
 
-    # 2）三级分类 Top6
+    # 2）三级分类 Top6（同样只统计一级分类 = '供暖'）
     with conn.cursor() as cur:
         sql_cat = f"""
             SELECT `三级分类` AS category_name, COUNT(*) AS cnt
             FROM {table}
-            WHERE {HEATING_WHERE_FRAGMENT}
+            WHERE `创建时间` >= %s
+              AND `创建时间` < %s
+              AND `一级分类` = '供暖'
             GROUP BY `三级分类`
             ORDER BY cnt DESC
             LIMIT 6;
         """
-        params = _build_heating_params(start_dt, end_dt)
+        params = (start_dt, end_dt)
         cur.execute(sql_cat, params)
         rows = cur.fetchall() or []
 
@@ -501,9 +507,10 @@ def _query_off_season_stats(
                 "count": cat_count,
                 "ratio": cat_ratio,
             }
-        ) 
+        )
 
     return total, categories
+
 
 
 def get_off_season_stats(year: int) -> OffSeasonStats:
