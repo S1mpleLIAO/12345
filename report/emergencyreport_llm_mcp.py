@@ -49,7 +49,7 @@ def _get_prompts(date_str: str):
     return q_emergency_report
 
 
-async def generate_daily_report(date_str: str,mcp_entry: str):
+async def generate_emergency_report(date_str: str,mcp_entry: str):
     # 1. 获取构造好的 Prompts
     q_daily = _get_prompts(date_str)
     
@@ -65,5 +65,5 @@ async def generate_daily_report(date_str: str,mcp_entry: str):
 
 if __name__ == "__main__":
     MCP_ENTRY = "http://127.0.0.1:9003/emergency_report_mcp"
-    answer=asyncio.run(generate_daily_report("2025-10-26",MCP_ENTRY))
+    answer=asyncio.run(generate_emergency_report("2025-10-26",MCP_ENTRY))
     print("日报生成任务已完成。", answer)
