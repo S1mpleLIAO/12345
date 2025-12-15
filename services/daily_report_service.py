@@ -714,3 +714,69 @@ def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
         "records": records,
         "summary": summary,
     }
+def _iter_dates_inclusive(start: date, end: date) -> List[date]:
+    """返回 [start, end] 的日期列表（按天）"""
+    days: List[date] = []
+    cur = start
+    while cur <= end:
+        days.append(cur)
+        cur = cur + timedelta(days=1)
+    return days
+
+
+def get_lagging_street_rank_trends(date_str: str) -> Dict[str, Any]:
+    """
+    落后街镇排名动态监控（独立 MCP 工具使用）：
+    1) 找出查询日期当日（三率综合成绩）排名倒数3名街镇
+    2) 在同一月考核期（上月19日00:00~当日12:00）内，
+       输出这3个街镇每日的综合排名变化（截至当天12:00口径）
+    """
+    try:
+        d = parse_date(date_str)
+    except ValueError:
+        raise BusinessError("日期格式必须为 YYYY-MM-DD，例如 '2025-10-26'")
+
+    query_date_str = format_date(d)
+
+    # 考核期固定：上月19日00:00 ~ 查询日12:00
+    period_start, period_end = _get_period_dates(query_date_str)
+
+    # ===== 1) 查询日当天排名 -> 取倒数3个街镇 =====
+    rows_map_end = _query_raw_period_data(period_start, period_end)
+    end_records = _process_rank_data(rows_map_end, config.raw_streets)
+
+    bottom3_records = end_records[-3:] if len(end_records) >= 3 else end_records
+    bottom3_names = [r["department"] for r in bottom3_records]
+
+    # ===== 2) 考核期内每日排名趋势（固定 period_start，不随 day 改变）=====
+    days = _iter_dates_inclusive(period_start, period_end)
+
+    items = [
+        {"street_name": name, "daily_ranks": []}
+        for name in bottom3_names
+    ]
+
+    for day in days:
+        day_rows = _query_raw_period_data(period_start, day)
+        day_records = _process_rank_data(day_rows, config.raw_streets)
+
+        # day_records 已排序，index+1 即排名（1最好）
+        rank_map = {r["department"]: idx + 1 for idx, r in enumerate(day_records)}
+        day_str = format_date(day)
+
+        for it in items:
+            name = it["street_name"]
+            it["daily_ranks"].append(
+                {
+                    "date": day_str,
+                    "rank": int(rank_map.get(name, len(day_records) or 0)),
+                }
+            )
+
+    return {
+        "date": query_date_str,
+        "period_start": format_date(period_start),
+        "period_end": format_date(period_end),
+        "bottom3": bottom3_names,
+        "items": items,
+    }
