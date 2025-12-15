@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from config.loader import config
 from datetime import date, datetime, time, timedelta
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 from calendar import monthrange
 from db.connection import get_connection, release_connection
 from db.table import get_table_name
@@ -658,28 +658,34 @@ def _query_raw_period_data(start: date, end: date) -> Dict[str, dict]:
 
 
 
-def _get_period_dates(date_str: str):
+def _get_period_dates(date_str: str) -> Tuple[date, date]:
     """
-    计算考核期日期边界（用于展示）：
-      start_date: 上个月19日
-      end_date:   当前日期
-    实际统计用 [start 00:00, end 12:00)。
+    月考核周期（19号分界）：
+    - 若查询日 D.day >= 19：周期起始为当月19日00:00
+    - 若查询日 D.day < 19：周期起始为上月19日00:00
+    周期结束为查询日当天（后续查询会截止到当天12:00）
     """
     try:
-        d = parse_date(date_str)
+        current_date = parse_date(date_str)  # 返回 datetime.date
     except ValueError:
-        raise BusinessError("日期格式错误")
+        raise BusinessError("Invalid date format. Use YYYY-MM-DD")
 
-    year = d.year
-    month = d.month
+    year = current_date.year
+    month = current_date.month
 
-    last_year = year - 1 if month == 1 else year
-    last_month = 12 if month == 1 else month - 1
+    if current_date.day >= 19:
+        # 当期从当月19号开始
+        start_date = date(year, month, 19)
+    else:
+        # 当期从上月19号开始
+        if month == 1:
+            start_date = date(year - 1, 12, 19)
+        else:
+            start_date = date(year, month - 1, 19)
 
-    start_date = date(last_year, last_month, 19)
-    end_date = d
-
+    end_date = current_date
     return start_date, end_date
+
 
 
 # === 独立工具服务 1：获取街道考核期数据 ===

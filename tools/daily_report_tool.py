@@ -12,6 +12,7 @@ from services.daily_report_service import (
     get_street_assessment_data,
     get_unit_assessment_data,
     get_assessment_data_for_date,
+    get_lagging_street_rank_trends,
 )
 from utils.exceptions import BusinessError
 
@@ -45,8 +46,9 @@ def register_statistics_tools(mcp: FastMCP):
     @mcp.tool()
     def get_street_assessment_data_tool(date: str) -> StreetAssessmentResult:
         """
-        获取【乡镇街道】考核排名数据。
-        返回包含：受理量、解决数、满意数、三率、综合成绩。
+        只获取【乡镇街道】在当日的所属考核口径下的当日汇总明细（非趋势）。
+        返回：受理量、解决数、满意数、三率、综合成绩及排名列表。
+        不用于生成“倒数三街镇趋势表”。
         """
         try:
             return get_street_assessment_data(date)
@@ -61,5 +63,19 @@ def register_statistics_tools(mcp: FastMCP):
         """
         try:
             return get_unit_assessment_data(date)
+        except BusinessError as e:
+            raise e
+
+    @mcp.tool()
+    def get_lagging_street_rank_trends_tool(date: str):
+        """
+        【专用工具】生成“落后街镇排名动态监控”所需的全部数据。
+            给定 date(YYYY-MM-DD)：
+            - 自动识别该日“三率综合成绩”倒数3个街镇
+            - 自动计算该日所属“月考核期”（每月19日00:00起，截止到当日12:00）
+            - 返回这3个街镇在该月考核期内“每日综合排名（累计口径）”趋势序列
+        """
+        try:
+            return get_lagging_street_rank_trends(date)
         except BusinessError as e:
             raise e

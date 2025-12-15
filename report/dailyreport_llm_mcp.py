@@ -62,6 +62,34 @@ def _get_prompts(date_str: str):
 ##
 ##不要输出其他额外##
 """
+    q_street_bottom3_rank = f"""**任务目标：** 生成“落后街镇排名动态监控”趋势表
+**基准日期：** {date_str}
+
+请执行以下步骤：
+1.  **锁定对象：** 识别出 {date_str} 当日综合考核排名**倒数后三位**的街镇（下文称为 Town_A, Town_B, Town_C）。
+2.  **确定周期：** 锁定 {date_str} 所在的完整“月考核周期”（Start_Date 至 End_Date）。
+3.  **获取数据：** 查询这三个特定街镇在上述周期内，**每一天**的综合排名数据。
+4.  **输出表格：** 生成一份严格的 Markdown 表格。
+
+**格式约束：**
+* **严禁**生成任何分析、总结、前言或后缀文字。
+* **只需要生成排名变化表格即可**。
+* **动态表头：** 表格的第一行必须显示具体的街镇名称，不要使用“街镇1”这种代号。
+* **内容：** 单元格内仅填充“排名数字”（整数）。
+
+**期望输出格式示例（仅参考结构，请替换为实际数据）：**
+
+## 后三街镇（[Town_A]、[Town_B]、[Town_C]）月度排名趋势
+
+| 日期 | [Town_A名称] | [Town_B名称] | [Town_C名称] |
+| :--- | :--- | :--- | :--- |
+| xxxx-xx-xx | 14 | 12 | 16 |
+| ... | ... | ... | ... |
+| ... | ... | ... | ... |
+| ... | ... | ... | ... |
+| {date_str} | 16 | 15 | 14 |
+只需要生成这个表格
+"""
     # --- 街道 Prompt ---
     q_street = f"""请统计{date_str}的街道镇乡综合成绩情况。根据提供的各个街道镇乡的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
 请根据提供的数据中的街道镇乡数据（这是一个包含 {street_count} 个街道数据的列表），直接生成 markdown 表格(输出只包含表名和表格)。
@@ -132,12 +160,12 @@ def _get_prompts(date_str: str):
 | 汇总 |  | [总受理量] | [总有效回访] | [总联系数] | [总解决数] | [总满意数] | [总基本满意] | [平均响应率]% | [平均解决率]% | [平均满意率]% | [平均综合成绩] |
 """
 
-    return q_daily_report,q_street,q_unit
+    return q_daily_report,q_street_bottom3_rank,q_street,q_unit
 
 
 async def generate_daily_report(date_str: str,mcp_entry: str):
     # 1. 获取构造好的 Prompts
-    q_daily,q_street,q_unit = _get_prompts(date_str)
+    q_daily,q_street_bottom3_rank,q_street,q_unit = _get_prompts(date_str)
     
     mcp_client = MCPClientWrapper(mcp_entry=mcp_entry)
     
@@ -148,16 +176,20 @@ async def generate_daily_report(date_str: str,mcp_entry: str):
         print("主体日报生成完毕。")
     async with mcp_client.session:
         print(">> 正在生成街道统计表...")
-        answer2 = await mcp_client.chat(q_street)
+        answer2 = await mcp_client.chat(q_street_bottom3_rank)
+        print("街道统计表生成完毕。")
+    async with mcp_client.session:
+        print(">> 正在生成街道统计表...")
+        answer3 = await mcp_client.chat(q_street)
         print("街道统计表生成完毕。")
     async with mcp_client.session:
         print(">> 正在生成委办局统计表...")
-        answer3 = await mcp_client.chat(q_unit)
+        answer4 = await mcp_client.chat(q_unit)
         print("委办局统计表生成完毕。")
 
     print("生成完毕，正在合并结果...")
-    answer = answer1 + "\n\n" + answer2 + "\n\n" + answer3
-    return answer
+    answer = answer1 + "\n\n" + answer2 + "\n\n" + answer3  + "\n\n" + answer4
+    return answer2
 
 if __name__ == "__main__":
     MCP_ENTRY = "http://127.0.0.1:9001/daily_report_mcp"
