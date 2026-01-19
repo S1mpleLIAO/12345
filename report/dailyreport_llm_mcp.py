@@ -5,14 +5,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
+from typing import Optional, Callable, Awaitable, Dict, Any
 import asyncio
+
 from mcp_llm_clint import MCPClientWrapper
 from config.loader import config
 
 
-def _get_prompts(date_str: str):
+def _get_prompts(date_str: str) -> Dict[str, str]:
     """
-    构造并返回三个 Prompt 字符串。
+    构造并返回四个 Prompt 字符串：
+    1) 主体日报
+    2) 倒数三街镇趋势表
+    3) 街镇三率表
+    4) 区直单位三率表
     """
     street_count = len(config.raw_streets)
     unit_count = len(config.raw_units)
@@ -63,6 +69,7 @@ def _get_prompts(date_str: str):
 ##
 ##不要输出其他额外##
 """
+
     q_street_bottom3_rank = f"""**任务目标：** 生成“落后街镇排名动态监控”趋势表
 **基准日期：** {date_str}
 
@@ -91,7 +98,7 @@ def _get_prompts(date_str: str):
 | {date_str} | 16 | 15 | 14 |
 只需要生成这个表格
 """
-    # --- 街道 Prompt ---
+
     q_street = f"""请统计{date_str}的街道镇乡综合成绩情况。根据提供的各个街道镇乡的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
 请根据提供的数据中的街道镇乡数据（这是一个包含 {street_count} 个街道数据的列表），直接生成 markdown 表格(输出只包含表名和表格)。
 
@@ -126,7 +133,6 @@ def _get_prompts(date_str: str):
 | 汇总 |  | [总受理量] | [总有效回访] | [总联系数] | [总解决数] | [总满意数] | [总基本满意] | [平均响应率]% | [平均解决率]% | [平均满意率]% | [平均综合成绩] |
 """
 
-    # --- 区直单位 Prompt ---
     q_unit = f"""请统计{date_str}的考核期各个区直单位综合成绩情况。根据提供的各个区直单位的各种数据，生成一份严格的 **Markdown** 格式日报综合成绩情况。
 
 **提供的数据字段对应关系如下：**
@@ -168,7 +174,16 @@ def _get_prompts(date_str: str):
     }
 
 
-async def generate_daily_report(date_str: str, mcp_entry: str):
+async def generate_daily_report(
+    date_str: str,
+    mcp_entry: str,
+    event_cb: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None,
+) -> str:
+    """
+    生成日报（4 段）并拼接成最终 Markdown。
+
+    event_cb：可选，用于 SSE 流式输出过程事件。
+    """
     prompts = _get_prompts(date_str)
 
     q_daily = prompts["daily"]
@@ -178,30 +193,49 @@ async def generate_daily_report(date_str: str, mcp_entry: str):
 
     print(f"[{date_str}] 开始生成日报")
 
-    # ✅ 只连接一次 MCP
     async with MCPClientWrapper(mcp_entry=mcp_entry) as mcp_client:
-        # 建议开启 reasoning_summary=True，更容易看到“为什么选工具”
-        # debug=True 会在控制台打印全过程
-        common_kwargs = dict(
-            debug=True,
-            reasoning_summary=True,
-            # trace_path 可按需启用：每次 chat 会覆盖 trace（如果你要每段都保存，下面我也给了写法）
-        )
-
+        # 主体日报
         print(">> 正在生成主体日报...")
-        answer1 = await mcp_client.chat(q_daily, **common_kwargs)
+        answer1 = await mcp_client.chat(
+            q_daily,
+            debug=False,
+            reasoning_summary=True,
+            event_cb=event_cb,
+            section="daily",
+        )
         print("主体日报生成完毕。")
 
-        print(">> 正在生成落后三街镇月度排名趋势表...")
-        answer2 = await mcp_client.chat(q_street_bottom3_rank, **common_kwargs)
+        # 倒数三街镇趋势表
+        print(">> 正在生成倒数三街镇月度排名趋势表...")
+        answer2 = await mcp_client.chat(
+            q_street_bottom3_rank,
+            debug=False,
+            reasoning_summary=True,
+            event_cb=event_cb,
+            section="bottom3_trend",
+        )
         print("趋势表生成完毕。")
 
+        # 街道镇乡三率表
         print(">> 正在生成街道镇乡统计表...")
-        answer3 = await mcp_client.chat(q_street, **common_kwargs)
+        answer3 = await mcp_client.chat(
+            q_street,
+            debug=False,
+            reasoning_summary=True,
+            event_cb=event_cb,
+            section="street_table",
+        )
         print("街道统计表生成完毕。")
 
+        # 区直单位三率表
         print(">> 正在生成区直单位统计表...")
-        answer4 = await mcp_client.chat(q_unit, **common_kwargs)
+        answer4 = await mcp_client.chat(
+            q_unit,
+            debug=False,
+            reasoning_summary=True,
+            event_cb=event_cb,
+            section="unit_table",
+        )
         print("区直单位统计表生成完毕。")
 
     print("生成完毕，正在合并结果...")
@@ -209,8 +243,8 @@ async def generate_daily_report(date_str: str, mcp_entry: str):
     return answer
 
 
-
 if __name__ == "__main__":
     MCP_ENTRY = "http://127.0.0.1:9001/daily_report_mcp"
-    answer = asyncio.run(generate_daily_report("2025-10-12", MCP_ENTRY))
-    print("日报生成任务已完成。", answer)
+    ans = asyncio.run(generate_daily_report("2025-02-13", MCP_ENTRY))
+    print("日报生成任务已完成。")
+    print(ans)

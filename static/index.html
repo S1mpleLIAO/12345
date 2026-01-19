@@ -1,244 +1,460 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12345 智能报表生成系统</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12345 报告生成（流式过程展示）</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f5f7fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: #f6f7f9;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1100px;
+        header {
+            padding: 14px 18px;
+            background: #111827;
+            color: #fff;
         }
 
-        h1 {
-            font-size: 26px;
-            margin: 0 0 16px 0;
+        header h1 {
+            font-size: 16px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .wrap {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 14px;
+            padding: 14px;
+            height: calc(100vh - 52px);
+            box-sizing: border-box;
         }
 
         .card {
-            background: white;
+            background: #fff;
             border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 6px 18px rgba(0,0,0,.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h2 {
+            font-size: 14px;
+            margin: 0;
+            padding: 12px 14px;
+            border-bottom: 1px solid #eef0f2;
+            background: #fafafa;
         }
 
         .controls {
+            padding: 12px 14px;
+            border-bottom: 1px solid #eef0f2;
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             gap: 10px;
-            margin-bottom: 12px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        label {
-            font-size: 14px;
-            color: #333;
-        }
-
-        select, input, button {
-            font-size: 14px;
+        input[type="date"] {
             padding: 8px 10px;
-            border-radius: 8px;
-            border: 1px solid #d0d7de;
-            outline: none;
+            border: 1px solid #d6dae0;
+            border-radius: 10px;
         }
 
         button {
+            padding: 8px 12px;
+            border: 0;
+            border-radius: 10px;
             cursor: pointer;
             background: #2563eb;
-            color: white;
-            border: none;
+            color: #fff;
+            font-weight: 600;
         }
+
         button:disabled {
             opacity: .6;
             cursor: not-allowed;
         }
 
-        #dateWrapper, #yearWrapper {
-            display: inline-flex;
+        .status {
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        .trace {
+            padding: 12px 14px;
+            overflow: auto;
+            height: 100%;
+        }
+
+        .trace .evt {
+            border: 1px solid #eef0f2;
+            border-radius: 12px;
+            padding: 10px 10px;
+            margin-bottom: 10px;
+        }
+
+        .evt .top {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             gap: 8px;
+            margin-bottom: 6px;
         }
 
-        #loading {
-            display: none;
-            margin-top: 10px;
-            color: #666;
-            font-size: 14px;
+        .badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #3730a3;
         }
 
-        #result-area {
-            margin-top: 14px;
-            line-height: 1.7;
-            color: #111;
+        .meta {
+            font-size: 11px;
+            color: #6b7280;
         }
 
-        #result-area table {
+        .evt pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f9fafb;
+            border: 1px solid #eef0f2;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 6px 0 0;
+            font-size: 12px;
+        }
+
+        details {
+            margin-top: 6px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #111827;
+            font-size: 12px;
+        }
+
+        .result {
+            padding: 12px 14px;
+            overflow: auto;
+            height: 100%;
+        }
+
+        .result .placeholder {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .result .markdown-body {
+            line-height: 1.6;
+        }
+
+        .result .markdown-body table {
             border-collapse: collapse;
-            margin: 10px 0;
             width: 100%;
         }
 
-        #result-area th, #result-area td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #result-area th {
-            background-color: #f6f8fa;
-            text-align: left;
-        }
-
-        .hint {
+        .result .markdown-body th,
+        .result .markdown-body td {
+            border: 1px solid #e5e7eb;
+            padding: 6px 8px;
             font-size: 13px;
-            color: #666;
-            margin-top: 8px;
+        }
+
+        .result .markdown-body h1,
+        .result .markdown-body h2,
+        .result .markdown-body h3 {
+            margin: 12px 0 8px;
+        }
+
+        .result .markdown-body code {
+            background: #f3f4f6;
+            padding: 2px 4px;
+            border-radius: 6px;
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <h1>12345 智能报表生成系统</h1>
+    <header>
+        <h1>12345 日报生成（流式过程展示）</h1>
+    </header>
 
-    <div class="card">
-        <div class="controls">
-            <label for="reportType">报表类型：</label>
-            <select id="reportType">
-                <option value="daily" selected>日报（按日期）</option>
-                <option value="heating">供暖季报告（按年度）</option>
-                <option value="emergency">紧急敏感专报（按日期）</option>
-            </select>
-
-            <div id="dateWrapper">
-                <label for="reportDate">日期：</label>
-                <input type="date" id="reportDate" required>
+    <div class="wrap">
+        <!-- 左：过程 -->
+        <div class="card">
+            <h2>智能过程</h2>
+            <div class="controls">
+                <label>日期：</label>
+                <input id="date" type="date" />
+                <button id="btn" onclick="runDailyStream()">生成日报</button>
+                <span class="status" id="status">就绪</span>
             </div>
-
-            <div id="yearWrapper" style="display:none;">
-                <label for="heatingYear">供暖季年份：</label>
-                <input type="number" id="heatingYear" min="2000" max="2100" placeholder="例如 2024">
-            </div>
-
-            <button id="generateBtn" onclick="generateReport()">生成日报</button>
+            <div class="trace" id="trace"></div>
         </div>
 
-        <div id="loading">正在生成，请稍候...</div>
-        <div id="result-area"></div>
-        <div class="hint">说明：日报/紧急专报使用日期；供暖季报告使用年份（例如 2024 表示 2024-2025 供暖季）。</div>
+        <!-- 右：结果 -->
+        <div class="card">
+            <h2>最终日报（Markdown 渲染）</h2>
+            <div class="result" id="result">
+                <div class="placeholder">点击“生成日报”后，这里会显示最终报告。左侧会实时显示模型选择工具与调用过程。</div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const typeSelect = document.getElementById('reportType');
-        const dateWrapper = document.getElementById('dateWrapper');
-        const yearWrapper = document.getElementById('yearWrapper');
-        const btn = document.getElementById('generateBtn');
-
-        typeSelect.addEventListener('change', () => {
-            const v = typeSelect.value;
-            if (v === 'daily') {
-                dateWrapper.style.display = 'inline-flex';
-                yearWrapper.style.display = 'none';
-                btn.textContent = '生成日报';
-            } else if (v === 'emergency') {
-                dateWrapper.style.display = 'inline-flex';
-                yearWrapper.style.display = 'none';
-                btn.textContent = '生成紧急专报';
-            } else {
-                dateWrapper.style.display = 'none';
-                yearWrapper.style.display = 'inline-flex';
-                btn.textContent = '生成供暖报告';
-            }
-        });
-    });
-
-    async function generateReport() {
-        const typeSelect = document.getElementById('reportType');
-        const type = typeSelect.value;
-
-        const btn = document.getElementById('generateBtn');
-        const loading = document.getElementById('loading');
-        const resultArea = document.getElementById('result-area');
-
-        let url = '';
-        let payload = {};
-
-        if (type === 'daily') {
-            const dateStr = document.getElementById('reportDate').value;
-            if (!dateStr) {
-                alert('请选择日期');
-                return;
-            }
-            url = '/api/generate_report';
-            payload = { date: dateStr };
-        } else if (type === 'emergency') {
-            const dateStr = document.getElementById('reportDate').value;
-            if (!dateStr) {
-                alert('请选择日期');
-                return;
-            }
-            url = '/api/generate_emergency_report';
-            payload = { date: dateStr };
-        } else {
-            const yearStr = document.getElementById('heatingYear').value;
-            if (!yearStr) {
-                alert('请输入供暖季年份，例如 2024');
-                return;
-            }
-            const year = parseInt(yearStr, 10);
-            if (Number.isNaN(year)) {
-                alert('年份不合法');
-                return;
-            }
-            url = '/api/generate_heating_report';
-            payload = { year: year };
+    <!-- marked 渲染 markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // -----------------------
+        // UI helpers
+        // -----------------------
+        function setStatus(text) {
+            document.getElementById("status").textContent = text;
         }
 
-        // UI 状态切换
-        btn.disabled = true;
-        loading.style.display = 'block';
-        resultArea.innerHTML = '';
+        function clearPanels() {
+            document.getElementById("trace").innerHTML = "";
+            document.getElementById("result").innerHTML = '<div class="placeholder">生成中…</div>';
+        }
 
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
+        function escapeHtml(s) {
+            return (s || "").replace(/[&<>"']/g, function (m) {
+                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]);
             });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (!data || typeof data.report !== 'string') {
-                throw new Error('返回数据格式不正确');
-            }
-
-            // 使用 marked.js 将 Markdown 转换为 HTML
-            resultArea.innerHTML = marked.parse(data.report);
-        } catch (err) {
-            console.error(err);
-            alert('生成失败：' + (err && err.message ? err.message : err));
-        } finally {
-            btn.disabled = false;
-            loading.style.display = 'none';
         }
-    }
-</script>
+
+        function clip(s, n = 600) {
+            if (!s) return "";
+            return s.length <= n ? s : (s.slice(0, n) + " ...<truncated>");
+        }
+
+        function addEventCard(title, badgeText, metaText, contentText, extraObj) {
+            const trace = document.getElementById("trace");
+            const div = document.createElement("div");
+            div.className = "evt";
+
+            const top = document.createElement("div");
+            top.className = "top";
+            top.innerHTML = `
+        <div><span class="badge">${escapeHtml(badgeText)}</span> ${escapeHtml(title)}</div>
+        <div class="meta">${escapeHtml(metaText)}</div>
+      `;
+            div.appendChild(top);
+
+            if (contentText && contentText.trim()) {
+                const pre = document.createElement("pre");
+                pre.textContent = contentText;
+                div.appendChild(pre);
+            }
+
+            if (extraObj) {
+                const det = document.createElement("details");
+                const sum = document.createElement("summary");
+                sum.textContent = "查看原始事件 JSON";
+                det.appendChild(sum);
+
+                const pre2 = document.createElement("pre");
+                pre2.textContent = JSON.stringify(extraObj, null, 2);
+                det.appendChild(pre2);
+                div.appendChild(det);
+            }
+
+            trace.appendChild(div);
+            trace.scrollTop = trace.scrollHeight;
+        }
+
+        function renderTraceEvent(evt) {
+            const section = evt.section || "main";
+            const round = evt.round != null ? `Round ${evt.round}` : "";
+
+            if (evt.type === "llm_decide_tools") {
+                const summary = evt.assistant_content || "";
+                const tools = (evt.tool_calls || []).map(t => t.name).join(", ");
+                addEventCard(
+                    `模型决定是否调用工具`,
+                    `${section} · decide`,
+                    `${round}${tools ? (" · tools: " + tools) : ""}`,
+                    clip(summary, 900),
+                    evt
+                );
+                return;
+            }
+
+            if (evt.type === "tool_start") {
+                addEventCard(
+                    `开始调用工具：${evt.name}`,
+                    `${section} · tool_start`,
+                    `${round}`,
+                    `args: ${JSON.stringify(evt.args || {})}`,
+                    evt
+                );
+                return;
+            }
+
+            if (evt.type === "tool_end") {
+                addEventCard(
+                    `工具返回：${evt.name}`,
+                    `${section} · tool_end`,
+                    `${round}`,
+                    clip(evt.output || "", 900),
+                    evt
+                );
+                return;
+            }
+
+            if (evt.type === "llm_post_tools") {
+                const text = evt.assistant_content || "";
+                const tools = (evt.tool_calls || []).map(t => t.name).join(", ");
+                addEventCard(
+                    `模型基于工具结果继续`,
+                    `${section} · post`,
+                    `${round}${tools ? (" · next tools: " + tools) : " · 将生成最终输出"}`,
+                    clip(text, 900),
+                    evt
+                );
+                return;
+            }
+
+            if (evt.type === "final") {
+                addEventCard(
+                    `生成完成`,
+                    `${section} · final`,
+                    `${round}`,
+                    "final event received",
+                    evt
+                );
+                return;
+            }
+
+            if (evt.type === "error") {
+                addEventCard(
+                    `发生错误`,
+                    `${section} · error`,
+                    `${round}`,
+                    evt.message || "unknown error",
+                    evt
+                );
+                return;
+            }
+
+            // fallback
+            addEventCard(
+                `事件：${evt.type || evt.phase || "unknown"}`,
+                `${section}`,
+                `${round}`,
+                "",
+                evt
+            );
+        }
+
+        // -----------------------
+        // Stream via POST SSE (fetch + readable stream)
+        // -----------------------
+        async function runDailyStream() {
+            const dateEl = document.getElementById("date");
+            const btn = document.getElementById("btn");
+
+            const dateVal = dateEl.value;
+            if (!dateVal) {
+                alert("请选择日期");
+                return;
+            }
+
+            btn.disabled = true;
+            clearPanels();
+            setStatus("请求已发送，等待流式事件…");
+
+            try {
+                const resp = await fetch("/api/generate_report/stream", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ date: dateVal })
+                });
+
+                if (!resp.ok) {
+                    const t = await resp.text();
+                    throw new Error(`HTTP ${resp.status}: ${t}`);
+                }
+
+                const reader = resp.body.getReader();
+                const decoder = new TextDecoder("utf-8");
+                let buffer = "";
+
+                setStatus("流式接收中…");
+
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+
+                    // SSE 事件用 \n\n 分隔
+                    const parts = buffer.split("\n\n");
+                    buffer = parts.pop() || "";
+
+                    for (const part of parts) {
+                        const line = part.split("\n").find(l => l.startsWith("data: "));
+                        if (!line) continue;
+
+                        const jsonStr = line.slice(6);
+                        let msg;
+                        try {
+                            msg = JSON.parse(jsonStr);
+                        } catch (e) {
+                            console.warn("Failed to parse SSE json:", jsonStr);
+                            continue;
+                        }
+
+                        if (msg.type === "event") {
+                            renderTraceEvent(msg.data);
+                        } else if (msg.type === "final") {
+                            // 最终报告
+                            const report = msg.data.report || "";
+                            const resultEl = document.getElementById("result");
+                            if (window.marked && typeof window.marked.parse === "function") {
+                                resultEl.innerHTML = `<div class="markdown-body">${window.marked.parse(report)}</div>`;
+                            } else {
+                                // 无法加载 marked 时：用 <pre> 直接显示原始 Markdown，保证不失败
+                                resultEl.innerHTML = `<pre style="white-space:pre-wrap;word-break:break-word;">${escapeHtml(report)}</pre>
+    <div class="placeholder" style="margin-top:8px;">
+      Markdown 渲染库 marked 未加载（可能无法访问外网 CDN），已降级为纯文本显示。
+    </div>`;
+                            }
+
+                            setStatus("完成 ✅");
+                        } else if (msg.type === "error") {
+                            throw new Error(msg.data.message || "unknown error");
+                        }
+                    }
+                }
+
+                // 如果服务端没有发送 final，也结束
+                setStatus("流结束（可能已完成）");
+            } catch (err) {
+                console.error(err);
+                setStatus("失败 ❌");
+                document.getElementById("result").innerHTML =
+                    `<div class="placeholder">生成失败：${escapeHtml(err.message || String(err))}</div>`;
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        // 默认填今天（可选）
+        (function initDefaultDate() {
+            const d = new Date();
+            const yyyy = d.getFullYear();
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const dd = String(d.getDate()).padStart(2, '0');
+            document.getElementById("date").value = `${yyyy}-${mm}-${dd}`;
+        })();
+    </script>
 </body>
+
 </html>
