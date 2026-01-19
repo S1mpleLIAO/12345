@@ -1,0 +1,55 @@
+nohup: ignoring input
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                              │
+│                               FastMCP 2.13.0.2                               │
+│                                                                              │
+│                                                                              │
+│             🖥  Server name: Report-Server                                    │
+│                                                                              │
+│             📦 Transport:   HTTP                                             │
+│             🔗 Server URL:  http://0.0.0.0:9001/daily_report_mcp             │
+│                                                                              │
+│             📚 Docs:        https://gofastmcp.com                            │
+│             🚀 Hosting:     https://fastmcp.cloud                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+[01/19/26 15:28:28] INFO     Starting MCP server 'Report-Server'  server.py:2050
+                             with transport 'streamable-http' on                
+                             http://0.0.0.0:9001/daily_report_mcp               
+INFO:     Started server process [2471560]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:9001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:44632 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44636 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:44640 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44644 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/19/26 15:29:00] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:44648 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/19/26 15:29:01] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-05-12'}                             
+INFO:     127.0.0.1:44660 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-05-12'}                        
+INFO:     127.0.0.1:44676 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-05-12'}                             
+INFO:     127.0.0.1:44682 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/19/26 15:29:02] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-05-12'}                             
+INFO:     127.0.0.1:44686 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK

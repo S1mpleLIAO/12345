@@ -688,7 +688,7 @@ def _get_period_dates(date_str: str) -> Tuple[date, date]:
 
 
 
-# === 独立工具服务 1：获取街道考核期数据 ===
+# ===  1：获取街道考核期数据 ===
 def get_street_assessment_data(date_str: str) -> StreetAssessmentResult:
     start_date, end_date = _get_period_dates(date_str)
 
@@ -705,7 +705,7 @@ def get_street_assessment_data(date_str: str) -> StreetAssessmentResult:
     }
 
 
-# === 独立工具服务 2：获取区直单位考核期数据 ===
+# === 2：获取区直单位考核期数据 ===
 def get_unit_assessment_data(date_str: str) -> UnitAssessmentResult:
     start_date, end_date = _get_period_dates(date_str)
 
@@ -754,7 +754,7 @@ def get_lagging_street_rank_trends(date_str: str) -> Dict[str, Any]:
     bottom3_records = end_records[-3:] if len(end_records) >= 3 else end_records
     bottom3_names = [r["department"] for r in bottom3_records]
 
-    # ===== 2) 考核期内每日排名趋势（固定 period_start，不随 day 改变）=====
+    # ===== 2) 考核期内每日排名趋势（固定 period_start）=====
     days = _iter_dates_inclusive(period_start, period_end)
 
     items = [
