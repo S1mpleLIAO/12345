@@ -1,16 +1,18 @@
 import os
 import sys
+import asyncio
+from typing import Optional, Callable, Awaitable, Dict, Any
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-import asyncio
 from mcp_llm_clint import MCPClientWrapper
-from config.loader import config
 
-def _get_prompts(year):
+EventCB = Optional[Callable[[Dict[str, Any]], Awaitable[None]]]
 
+
+def _get_prompts(year: int):
     q_heating_report = f"""
 请统计{year}的供暖季情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
 
@@ -18,6 +20,7 @@ def _get_prompts(year):
 # 一、{year}年供暖季情况
 {year}年供暖季（{year}年11月-{year+1}年3月），我区受理供暖诉求**[今年供暖季供暖诉求件数]%**件，包括集中供热、清洁能源自采暖和燃煤取暖，整体诉求量与2023年供暖季相比同比上升/下降**[诉求量变化绝对值]** 个百分点；从区中心回访结果看，解决率 **[今年供暖季供暖诉求解决率]%**，满意率**[今年供暖季供暖诉求满意率]%**。
 ##同比计算逻辑：(今年指标 - 去年指标)，正数写“上升”，负数写“下降”，零写“持平”。数值取绝对值。##
+
 ## （一）分月受理情况
 {year}年供暖季，我区共受理供暖诉求**[今年供暖季供暖诉求件数]%**件，同比上升/下降**[诉求量变化绝对值]** 个百分点。，其中**[今年供暖季诉求量最高月份]**诉求量最高，为**[今年供暖季诉求量最高月份诉求量]**件，占比**[今年供暖季诉求量最高月份占比]%**，**[今年供暖季诉求量最低月份]**诉求量最低，为**[今年供暖季诉求量最低月份诉求量]**件，占比**[今年供暖季诉求量最低月份占比]%**
 {year-1}年与{year}年各月受理诉求量对比如下表所示：
@@ -57,51 +60,54 @@ def _get_prompts(year):
 2024年供暖季，共受理怡安园小区相关供暖诉求50件，均由保星供热公司承办，主要反映均为供暖温度不达标问题，区级回访解决率35.3%，满意率34.7%。
 3.臻品园小区供暖情况
 2024年供暖季，共受理臻品园小区相关供暖诉求93件，由雁栖诚泰热力承办，主要反映供暖温度不达标、协调办理停暖等问题，区级回访解决率27.1%，满意率22.7%。
-
 """
-    q_heating_off_report=f"""
-    请统计{year}下一年非供暖季的供暖诉求情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
-    ## ##中的内容为处理逻辑，不要输出在结果中##
-    内容如下：
-    # 二、{year}年非供暖季供暖诉求情况
-    ## （一）综合情况
-    [非供暖季起止时间月份]##写{year}下一年的非供暖季起止时间月份##，共受理集中供暖诉求[非供暖季供暖诉求件数]件。从诉求内容看，主要反映：[问题类型]，具体分类占比情况如下：
-    | 问题类型 | 数量 |占比 |
-    | :--- | :--- | :--- |
-    | [问题类型1] | [数量1] | [占比1]% |
-    |···| ··· | ··· |
-    ##表格要求：按数量降序排列，占比保留一位小数##
-    从点位分布看，主要集中在：泉河街道金台园小区38件，于家园一区15件、家天下小区11件、新新家园小区10件；庙城镇大杜两河村19件、庙城社区13件。
-    ## （二）调研点位情况
-    2025年供暖季到来前，臻品园小区尚未产生群众诉求。
-    怡安园小区受理诉求1件，诉求人反映自家暖气片固定螺栓松动，协调维修。供热公司已及时上门处置，但因诉求人对上门维修产生费用不满，区级回访结果为未解决不满意。
 
-    """
-    
-
-    return q_heating_report,q_heating_off_report
+    q_heating_off_report = f"""
+请统计{year}下一年非供暖季的供暖诉求情况。根据提供的各种数据，生成一份严格的 **Markdown** 格式报告。
+## ##中的内容为处理逻辑，不要输出在结果中##
+内容如下：
+# 二、{year}年非供暖季供暖诉求情况
+## （一）综合情况
+[非供暖季起止时间月份]##写{year}下一年的非供暖季起止时间月份##，共受理集中供暖诉求[非供暖季供暖诉求件数]件。从诉求内容看，主要反映：[问题类型]，具体分类占比情况如下：
+| 问题类型 | 数量 |占比 |
+| :--- | :--- | :--- |
+| [问题类型1] | [数量1] | [占比1]% |
+|···| ··· | ··· |
+##表格要求：按数量降序排列，占比保留一位小数##
+从点位分布看，主要集中在：泉河街道金台园小区38件，于家园一区15件、家天下小区11件、新新家园小区10件；庙城镇大杜两河村19件、庙城社区13件。
+## （二）调研点位情况
+2025年供暖季到来前，臻品园小区尚未产生群众诉求。
+怡安园小区受理诉求1件，诉求人反映自家暖气片固定螺栓松动，协调维修。供热公司已及时上门处置，但因诉求人对上门维修产生费用不满，区级回访结果为未解决不满意。
+"""
+    return q_heating_report, q_heating_off_report
 
 
-async def generate_heating_report(date_str: str, mcp_entry: str):
-    q_heating_report,q_heating_off_report = _get_prompts(date_str)
+async def generate_heating_report(
+    year: int,
+    mcp_entry: str,
+    *,
+    event_cb: EventCB = None,
+) -> str:
+    q1, q2 = _get_prompts(year)
 
-    mcp_client = MCPClientWrapper(mcp_entry=mcp_entry)
+    async with MCPClientWrapper(mcp_entry=mcp_entry) as mcp_client:
+        # 两段：供暖季、非供暖季（前端会分别显示 section）
+        ans1 = await mcp_client.chat(
+            q1,
+            section="heating_season",
+            event_cb=event_cb,
+            reasoning_summary=True,
+        )
+        ans2 = await mcp_client.chat(
+            q2,
+            section="heating_offseason",
+            event_cb=event_cb,
+            reasoning_summary=True,
+        )
 
-    async with mcp_client.session:
-        print(f"[{date_str}] 开始生成供暖报告")
-        print(">> 正在生成供暖报告...")
-        answer1 = await mcp_client.chat(q_heating_report)
-        print("主体供暖报告生成完毕。")
-    async with mcp_client.session:
-        answer2 = await mcp_client.chat(q_heating_off_report)
-        print("非供暖季供暖报告生成完毕。")
-
-    print("生成完毕...")
-    answer = answer1 + "\n\n" + answer2 
-    return answer
+    return ans1 + "\n\n" + ans2
 
 
 if __name__ == "__main__":
     MCP_ENTRY = "http://127.0.0.1:9002/heating_report_mcp"
-    answer = asyncio.run(generate_heating_report(2024, MCP_ENTRY))
-    print("供暖报告生成任务已完成。", answer)
+    print(asyncio.run(generate_heating_report(2024, MCP_ENTRY)))

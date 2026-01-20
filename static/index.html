@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>12345 日报生成（智能计划 + 流式过程）</title>
+  <title>12345 报告生成（智能计划 + 流式过程）</title>
   <style>
     body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; margin:0; background:#f6f7f9; color:#111827; }
     header { padding:14px 18px; background:#111827; color:#fff; }
@@ -14,7 +14,7 @@
     .card h2 { font-size:14px; margin:0; padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fafafa; font-weight:900; }
 
     .controls { padding:12px 14px; border-bottom:1px solid #eef0f2; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-    input[type="date"] { padding:8px 10px; border:1px solid #d6dae0; border-radius:10px; background:#fff; }
+    select, input[type="date"], input[type="number"] { padding:8px 10px; border:1px solid #d6dae0; border-radius:10px; background:#fff; }
     button { padding:8px 12px; border:0; border-radius:10px; cursor:pointer; background:#2563eb; color:#fff; font-weight:900; }
     button:disabled { opacity:.6; cursor:not-allowed; }
     .status { font-size:12px; color:#4b5563; }
@@ -63,16 +63,31 @@
   </style>
 </head>
 <body>
-  <header><h1>12345 日报生成（智能计划 + 流式过程展示）</h1></header>
+  <header><h1>12345 报告生成（智能计划 + 流式过程展示）</h1></header>
 
   <div class="wrap">
     <div class="card">
       <h2>智能过程</h2>
 
       <div class="controls">
-        <label>日期：</label>
-        <input id="date" type="date" />
-        <button id="btn" onclick="runDailyStream()">生成日报</button>
+        <label>类型：</label>
+        <select id="reportType" onchange="onTypeChange()">
+          <option value="daily">日报</option>
+          <option value="heating">供暖报告</option>
+          <option value="emergency">紧急分析报告</option>
+        </select>
+
+        <span id="dateWrap">
+          <label>日期：</label>
+          <input id="date" type="date" />
+        </span>
+
+        <span id="yearWrap" style="display:none;">
+          <label>年份：</label>
+          <input id="year" type="number" min="2000" max="2100" style="width:96px;" />
+        </span>
+
+        <button id="btn" onclick="runStream()">生成</button>
         <span class="status" id="status">就绪</span>
       </div>
 
@@ -102,27 +117,21 @@
     </div>
 
     <div class="card">
-      <h2>最终日报（Markdown 渲染）</h2>
+      <h2>最终报告（Markdown 渲染）</h2>
       <div class="result" id="result">
-        <div class="placeholder">点击“生成日报”后，这里会显示最终报告。左侧会实时显示计划与当前执行步骤。</div>
+        <div class="placeholder">点击“生成”后，这里会显示最终报告。左侧会实时显示计划与当前执行步骤。</div>
       </div>
     </div>
   </div>
 
-  <!-- marked：外网不可用时会自动降级 -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    // PLANS: section -> { steps:[], active_step, done_steps(Set), note }
-    let PLANS = {};
+    let PLANS = {};              // section -> { steps:[], active_step, done_steps(Set), note }
     let ACTIVE_SECTION = null;
 
     function setStatus(t){ document.getElementById("status").textContent = t; }
-
-    function escapeHtml(s){
-      return (s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-    }
-
+    function escapeHtml(s){ return (s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
     function clip(s,n=900){ if(!s) return ""; return s.length<=n?s:(s.slice(0,n)+" ...<truncated>"); }
 
     function clearPanels(){
@@ -179,7 +188,12 @@
     }
 
     function sectionLabel(sec){
-      const m = { daily:"主体日报", bottom3_trend:"倒三趋势", street_table:"街道表", unit_table:"区直表", main:"主流程" };
+      const m = {
+        daily:"主体日报", bottom3_trend:"倒三趋势", street_table:"街道表", unit_table:"区直表",
+        heating_season:"供暖季", heating_offseason:"非供暖季",
+        emergency:"紧急分析",
+        main:"主流程"
+      };
       return m[sec] || sec;
     }
 
@@ -193,7 +207,6 @@
         const p = PLANS[sec];
         const total = (p.steps||[]).length || 1;
         const done = p.done_steps ? p.done_steps.size : 0;
-        const active = p.active_step || 1;
         const label = `${sectionLabel(sec)} · ${done}/${total}`;
         const activeCls = sec===ACTIVE_SECTION ? "active" : "";
         return `<button class="seg-tab ${activeCls}" onclick="switchSection('${sec}')">${escapeHtml(label)}</button>`;
@@ -221,7 +234,6 @@
 
       document.getElementById("plan-note").textContent = noteOverride || p.note || "";
 
-      // ✅ progress = done / total
       const pct = Math.max(0, Math.min(100, Math.round((doneCount / total) * 100)));
       document.getElementById("progress-bar").style.width = pct + "%";
 
@@ -259,22 +271,17 @@
     }
 
     function ensurePlan(sec){
-      if(!PLANS[sec]){
-        PLANS[sec] = { steps: [], active_step: 1, done_steps: new Set(), note: "" };
-      }
-      if(!(PLANS[sec].done_steps instanceof Set)){
-        PLANS[sec].done_steps = new Set();
-      }
+      if(!PLANS[sec]) PLANS[sec] = { steps: [], active_step: 1, done_steps: new Set(), note: "" };
+      if(!(PLANS[sec].done_steps instanceof Set)) PLANS[sec].done_steps = new Set();
     }
 
     function applyPlan(sec, steps, currentStep, note){
       ensurePlan(sec);
       PLANS[sec].steps = (steps||[]).map(s => ({...s, hint: s.hint || "等待执行…"}));
       PLANS[sec].active_step = currentStep || 1;
-      PLANS[sec].note = note || PLANS[sec].note || "";
+      if(note) PLANS[sec].note = note;
     }
 
-    // ---- event handler ----
     function renderTraceEvent(evt){
       const sec = evt.section || "main";
       const round = evt.round != null ? `Round ${evt.round}` : "";
@@ -290,9 +297,8 @@
         return;
       }
 
-      // ✅ 后端动态扩展 plan 时会发 plan_update
       if(evt.type === "plan_update"){
-        applyPlan(sec, evt.steps || [], evt.current_step || (PLANS[sec]?.active_step||1), evt.note || PLANS[sec]?.note || "");
+        applyPlan(sec, evt.steps || [], evt.current_step || (PLANS[sec]?.active_step||1), evt.note || "");
         ACTIVE_SECTION = sec;
         showPlanArea();
         rebuildTabs();
@@ -304,10 +310,8 @@
       if(evt.type === "tool_start"){
         ensurePlan(sec);
         ACTIVE_SECTION = sec;
-
         if(evt.step){
           PLANS[sec].active_step = evt.step;
-          // hint：执行中
           PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
             s.step === evt.step ? ({...s, hint:"执行中：正在调用工具并查询数据…"}) : s
           );
@@ -315,11 +319,9 @@
           rebuildTabs();
           renderActivePlan(`正在执行：${sectionLabel(sec)} · 第 ${evt.step} 步…`);
         }
-
         addEventCard(cont, `开始调用工具：${evt.name}`, `${sec} · tool_start`,
           `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
-          `args: ${JSON.stringify(evt.args || {})}`, evt
-        );
+          `args: ${JSON.stringify(evt.args || {})}`, evt);
         return;
       }
 
@@ -328,22 +330,16 @@
         ACTIVE_SECTION = sec;
 
         if(evt.step){
-          // ✅ 标记完成
           PLANS[sec].done_steps.add(evt.step);
-
-          // hint：完成
           PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
             s.step === evt.step ? ({...s, hint:"✅ 已完成：数据已拿到"}) : s
           );
-
-          // active_step：如果当前 active 恰好是这个 step，则尝试指向下一个未完成 step
           const total = (PLANS[sec].steps||[]).length || evt.step;
           if(PLANS[sec].active_step === evt.step){
             let next = evt.step + 1;
             while(next <= total && PLANS[sec].done_steps.has(next)) next++;
             PLANS[sec].active_step = Math.min(next, total);
           }
-
           showPlanArea();
           rebuildTabs();
           renderActivePlan(`第 ${evt.step} 步完成 ✅`);
@@ -351,8 +347,7 @@
 
         addEventCard(cont, `工具返回：${evt.name}`, `${sec} · tool_end`,
           `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
-          clip(evt.output || "", 900), evt
-        );
+          clip(evt.output || "", 900), evt);
         return;
       }
 
@@ -360,17 +355,15 @@
         const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
         addEventCard(cont, "模型决定是否调用工具", `${sec} · decide`,
           `${round}${tools ? (" · tools: " + tools) : ""}`,
-          clip(evt.assistant_content || "", 900), evt
-        );
+          clip(evt.assistant_content || "", 900), evt);
         return;
       }
 
       if(evt.type === "llm_post_tools"){
         const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
         addEventCard(cont, "模型基于工具结果继续", `${sec} · post`,
-          `${round}${tools ? (" · next tools: " + tools) : " · 将生成该段输出"}`,
-          clip(evt.assistant_content || "", 900), evt
-        );
+          `${round}${tools ? (" · next tools: " + tools) : " · 将生成输出"}`,
+          clip(evt.assistant_content || "", 900), evt);
         return;
       }
 
@@ -382,20 +375,37 @@
       addEventCard(cont, `事件：${evt.type || "unknown"}`, `${sec}`, `${round}`, "", evt);
     }
 
-    async function runDailyStream(){
-      const dateVal = document.getElementById("date").value;
+    function onTypeChange(){
+      const t = document.getElementById("reportType").value;
+      document.getElementById("dateWrap").style.display = (t === "heating") ? "none" : "inline-flex";
+      document.getElementById("yearWrap").style.display = (t === "heating") ? "inline-flex" : "none";
+    }
+
+    async function runStream(){
       const btn = document.getElementById("btn");
-      if(!dateVal){ alert("请选择日期"); return; }
+      const reportType = document.getElementById("reportType").value;
+
+      const payload = { report_type: reportType };
+
+      if(reportType === "heating"){
+        const y = parseInt(document.getElementById("year").value || "", 10);
+        if(!y){ alert("请输入年份"); return; }
+        payload.year = y;
+      } else {
+        const d = document.getElementById("date").value;
+        if(!d){ alert("请选择日期"); return; }
+        payload.date = d;
+      }
 
       btn.disabled = true;
       clearPanels();
       setStatus("请求已发送，等待流式事件…");
 
       try{
-        const resp = await fetch("/api/generate_report/stream", {
+        const resp = await fetch("/api/generate/stream", {
           method:"POST",
           headers:{ "Content-Type":"application/json" },
-          body: JSON.stringify({ date: dateVal })
+          body: JSON.stringify(payload)
         });
 
         if(!resp.ok){
@@ -426,7 +436,6 @@
             if(msg.type === "event"){
               renderTraceEvent(msg.data);
             } else if(msg.type === "final"){
-              // ✅ final：把所有 section 的 steps 全部标记 done
               for(const sec of Object.keys(PLANS)){
                 const p = PLANS[sec];
                 const total = (p.steps||[]).length || 0;
@@ -453,12 +462,14 @@
       }
     }
 
-    (function initDefaultDate(){
+    (function initDefault(){
       const d = new Date();
       const yyyy = d.getFullYear();
       const mm = String(d.getMonth()+1).padStart(2,'0');
       const dd = String(d.getDate()).padStart(2,'0');
       document.getElementById("date").value = `${yyyy}-${mm}-${dd}`;
+      document.getElementById("year").value = String(yyyy);
+      onTypeChange();
     })();
   </script>
 </body>

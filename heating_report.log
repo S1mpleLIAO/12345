@@ -20,274 +20,34 @@ nohup: ignoring input
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[01/04/26 16:55:29] INFO     Starting MCP server                  server.py:2050
+[01/20/26 10:32:28] INFO     Starting MCP server                  server.py:2050
                              'HeatingReport-Server' with                        
                              transport 'streamable-http' on                     
                              http://0.0.0.0:9002/heating_report_m               
                              cp                                                 
-INFO:     Started server process [646311]
+INFO:     Started server process [3112300]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:9002 (Press CTRL+C to quit)
-INFO:     127.0.0.1:40122 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40126 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:40136 - "GET /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40138 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/05/26 11:34:11] DEBUG    [HeatingReport-Server] Handler        server.py:687
+INFO:     127.0.0.1:47344 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47352 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47354 - "GET /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47366 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/20/26 10:32:51] DEBUG    [HeatingReport-Server] Handler        server.py:687
                              called: list_tools                                 
-INFO:     127.0.0.1:40150 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/05/26 11:34:12] DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2024}                                     
-[01/05/26 11:34:12] Error calling tool 'get_heating_report_data'                
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:813 in _write_bytes                 │
-                    │                                                          │
-                    │    810 │   def _write_bytes(self, data):                 │
-                    │    811 │   │   self._sock.settimeout(self._write_timeout │
-                    │    812 │   │   try:                                      │
-                    │ ❱  813 │   │   │   self._sock.sendall(data)              │
-                    │    814 │   │   except OSError as e:                      │
-                    │    815 │   │   │   self._force_close()                   │
-                    │    816 │   │   │   raise err.OperationalError(           │
-                    ╰──────────────────────────────────────────────────────────╯
-                    BrokenPipeError: [Errno 32] Broken pipe                     
-                                                                                
-                    During handling of the above exception, another exception   
-                    occurred:                                                   
-                                                                                
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 7 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:865 in _execute_command             │
-                    │                                                          │
-                    │    862 │   │   # calling self..write_packet()            │
-                    │    863 │   │   prelude = struct.pack("<iB", packet_size, │
-                    │    864 │   │   packet = prelude + sql[: packet_size - 1] │
-                    │ ❱  865 │   │   self._write_bytes(packet)                 │
-                    │    866 │   │   if DEBUG:                                 │
-                    │    867 │   │   │   dump_packet(packet)                   │
-                    │    868 │   │   self._next_seq_id = 1                     │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:816 in _write_bytes                 │
-                    │                                                          │
-                    │    813 │   │   │   self._sock.sendall(data)              │
-                    │    814 │   │   except OSError as e:                      │
-                    │    815 │   │   │   self._force_close()                   │
-                    │ ❱  816 │   │   │   raise err.OperationalError(           │
-                    │    817 │   │   │   │   CR.CR_SERVER_GONE_ERROR, f"MySQL  │
-                    │    818 │   │   │   )                                     │
-                    │    819                                                   │
-                    ╰──────────────────────────────────────────────────────────╯
-                    OperationalError: (2006, "MySQL server has gone away        
-                    (BrokenPipeError(32, 'Broken pipe'))")                      
-INFO:     127.0.0.1:40164 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-                    DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2023}                                     
-                    Error calling tool 'get_heating_report_data'                
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 6 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:574 in query                        │
-                    │                                                          │
-                    │    571 │   │   #     print("DEBUG: sending query:", sql) │
-                    │    572 │   │   if isinstance(sql, str):                  │
-                    │    573 │   │   │   sql = sql.encode(self.encoding, "surr │
-                    │ ❱  574 │   │   self._execute_command(COMMAND.COM_QUERY,  │
-                    │    575 │   │   self._affected_rows = self._read_query_re │
-                    │    576 │   │   return self._affected_rows                │
-                    │    577                                                   │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:844 in _execute_command             │
-                    │                                                          │
-                    │    841 │   │   :raise ValueError: If no username was spe │
-                    │    842 │   │   """                                       │
-                    │    843 │   │   if not self._sock:                        │
-                    │ ❱  844 │   │   │   raise err.InterfaceError(0, "")       │
-                    │    845 │   │                                             │
-                    │    846 │   │   # If the last query was unbuffered, make  │
-                    │    847 │   │   # sending new commands                    │
-                    ╰──────────────────────────────────────────────────────────╯
-                    InterfaceError: (0, '')                                     
-INFO:     127.0.0.1:40180 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/05/26 11:34:13] DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2023}                                     
-[01/05/26 11:34:13] Error calling tool 'get_heating_report_data'                
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 6 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:574 in query                        │
-                    │                                                          │
-                    │    571 │   │   #     print("DEBUG: sending query:", sql) │
-                    │    572 │   │   if isinstance(sql, str):                  │
-                    │    573 │   │   │   sql = sql.encode(self.encoding, "surr │
-                    │ ❱  574 │   │   self._execute_command(COMMAND.COM_QUERY,  │
-                    │    575 │   │   self._affected_rows = self._read_query_re │
-                    │    576 │   │   return self._affected_rows                │
-                    │    577                                                   │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:844 in _execute_command             │
-                    │                                                          │
-                    │    841 │   │   :raise ValueError: If no username was spe │
-                    │    842 │   │   """                                       │
-                    │    843 │   │   if not self._sock:                        │
-                    │ ❱  844 │   │   │   raise err.InterfaceError(0, "")       │
-                    │    845 │   │                                             │
-                    │    846 │   │   # If the last query was unbuffered, make  │
-                    │    847 │   │   # sending new commands                    │
-                    ╰──────────────────────────────────────────────────────────╯
-                    InterfaceError: (0, '')                                     
-INFO:     127.0.0.1:40190 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47378 - "POST /heating_report_mcp HTTP/1.1" 200 OK
                     DEBUG    [HeatingReport-Server] Handler       server.py:1061
                              called: call_tool                                  
                              get_heating_report_data with                       
                              {'year': 2024}                                     
-                    Error calling tool 'get_heating_report_data'                
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 6 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:574 in query                        │
-                    │                                                          │
-                    │    571 │   │   #     print("DEBUG: sending query:", sql) │
-                    │    572 │   │   if isinstance(sql, str):                  │
-                    │    573 │   │   │   sql = sql.encode(self.encoding, "surr │
-                    │ ❱  574 │   │   self._execute_command(COMMAND.COM_QUERY,  │
-                    │    575 │   │   self._affected_rows = self._read_query_re │
-                    │    576 │   │   return self._affected_rows                │
-                    │    577                                                   │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:844 in _execute_command             │
-                    │                                                          │
-                    │    841 │   │   :raise ValueError: If no username was spe │
-                    │    842 │   │   """                                       │
-                    │    843 │   │   if not self._sock:                        │
-                    │ ❱  844 │   │   │   raise err.InterfaceError(0, "")       │
-                    │    845 │   │                                             │
-                    │    846 │   │   # If the last query was unbuffered, make  │
-                    │    847 │   │   # sending new commands                    │
-                    ╰──────────────────────────────────────────────────────────╯
-                    InterfaceError: (0, '')                                     
-INFO:     127.0.0.1:40194 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40196 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40212 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:40226 - "GET /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40240 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/05/26 11:34:15] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+INFO:     127.0.0.1:47382 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/20/26 10:32:52] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+                             called: call_tool                                  
+                             get_heating_report_data with                       
+                             {'year': 2023}                                     
+INFO:     127.0.0.1:52080 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/20/26 10:32:59] DEBUG    [HeatingReport-Server] Handler       server.py:1061
                              called: call_tool                                  
                              get_heating_off_season_stats with                  
                              {'year': 2024}                                     
-[01/05/26 11:34:15] Error calling tool 'get_heating_off_season_stats'           
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 6 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:574 in query                        │
-                    │                                                          │
-                    │    571 │   │   #     print("DEBUG: sending query:", sql) │
-                    │    572 │   │   if isinstance(sql, str):                  │
-                    │    573 │   │   │   sql = sql.encode(self.encoding, "surr │
-                    │ ❱  574 │   │   self._execute_command(COMMAND.COM_QUERY,  │
-                    │    575 │   │   self._affected_rows = self._read_query_re │
-                    │    576 │   │   return self._affected_rows                │
-                    │    577                                                   │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:844 in _execute_command             │
-                    │                                                          │
-                    │    841 │   │   :raise ValueError: If no username was spe │
-                    │    842 │   │   """                                       │
-                    │    843 │   │   if not self._sock:                        │
-                    │ ❱  844 │   │   │   raise err.InterfaceError(0, "")       │
-                    │    845 │   │                                             │
-                    │    846 │   │   # If the last query was unbuffered, make  │
-                    │    847 │   │   # sending new commands                    │
-                    ╰──────────────────────────────────────────────────────────╯
-                    InterfaceError: (0, '')                                     
-INFO:     127.0.0.1:40244 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/05/26 11:34:16] DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_off_season_stats with                  
-                             {'year': 2024}                                     
-[01/05/26 11:34:16] Error calling tool 'get_heating_off_season_stats'           
-                    ╭─────────── Traceback (most recent call last) ────────────╮
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool_manager.py:160 in call_tool             │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/fa │
-                    │ stmcp/tools/tool.py:319 in run                           │
-                    │                                                          │
-                    │                 ... 6 frames hidden ...                  │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:574 in query                        │
-                    │                                                          │
-                    │    571 │   │   #     print("DEBUG: sending query:", sql) │
-                    │    572 │   │   if isinstance(sql, str):                  │
-                    │    573 │   │   │   sql = sql.encode(self.encoding, "surr │
-                    │ ❱  574 │   │   self._execute_command(COMMAND.COM_QUERY,  │
-                    │    575 │   │   self._affected_rows = self._read_query_re │
-                    │    576 │   │   return self._affected_rows                │
-                    │    577                                                   │
-                    │                                                          │
-                    │ /root/anaconda3/envs/mcp/lib/python3.10/site-packages/py │
-                    │ mysql/connections.py:844 in _execute_command             │
-                    │                                                          │
-                    │    841 │   │   :raise ValueError: If no username was spe │
-                    │    842 │   │   """                                       │
-                    │    843 │   │   if not self._sock:                        │
-                    │ ❱  844 │   │   │   raise err.InterfaceError(0, "")       │
-                    │    845 │   │                                             │
-                    │    846 │   │   # If the last query was unbuffered, make  │
-                    │    847 │   │   # sending new commands                    │
-                    ╰──────────────────────────────────────────────────────────╯
-                    InterfaceError: (0, '')                                     
-INFO:     127.0.0.1:40252 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     Shutting down
-ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [646311]
+INFO:     127.0.0.1:52096 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
