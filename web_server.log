@@ -549,3 +549,129 @@ INFO:     Finished server process [2499327]
 INFO:     Started server process [2504558]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     127.0.0.1:39744 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39744 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-12] 开始生成日报
+INFO:     127.0.0.1:39744 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2504558]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3083325]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3083325]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3084185]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3084185]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3084203]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:56340 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56340 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-23] 开始生成日报
+INFO:     127.0.0.1:56354 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3084203]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3089079]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3089079]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3089482]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3089482]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3089819]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50240 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50240 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-12] 开始生成日报
+INFO:     127.0.0.1:50248 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:43306 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43306 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-12] 开始生成日报
+INFO:     127.0.0.1:43290 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:40138 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-10] 开始生成日报
+INFO:     127.0.0.1:40146 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3089819]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3100922]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:59224 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59224 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[2025-10-13] 开始生成日报
+INFO:     127.0.0.1:59224 - "POST /api/generate_report/stream HTTP/1.1" 200 OK

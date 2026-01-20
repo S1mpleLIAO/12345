@@ -1,460 +1,465 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12345 报告生成（流式过程展示）</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-            margin: 0;
-            background: #f6f7f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>12345 日报生成（智能计划 + 流式过程）</title>
+  <style>
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; margin:0; background:#f6f7f9; color:#111827; }
+    header { padding:14px 18px; background:#111827; color:#fff; }
+    header h1 { font-size:16px; margin:0; font-weight:900; }
 
-        header {
-            padding: 14px 18px;
-            background: #111827;
-            color: #fff;
-        }
+    .wrap { display:grid; grid-template-columns: 440px 1fr; gap:14px; padding:14px; height: calc(100vh - 52px); box-sizing:border-box; }
+    .card { background:#fff; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06); overflow:hidden; display:flex; flex-direction:column; min-height:0; }
+    .card h2 { font-size:14px; margin:0; padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fafafa; font-weight:900; }
 
-        header h1 {
-            font-size: 16px;
-            margin: 0;
-            font-weight: 600;
-        }
+    .controls { padding:12px 14px; border-bottom:1px solid #eef0f2; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    input[type="date"] { padding:8px 10px; border:1px solid #d6dae0; border-radius:10px; background:#fff; }
+    button { padding:8px 12px; border:0; border-radius:10px; cursor:pointer; background:#2563eb; color:#fff; font-weight:900; }
+    button:disabled { opacity:.6; cursor:not-allowed; }
+    .status { font-size:12px; color:#4b5563; }
 
-        .wrap {
-            display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 14px;
-            padding: 14px;
-            height: calc(100vh - 52px);
-            box-sizing: border-box;
-        }
+    .left-body { display:flex; flex-direction:column; min-height:0; }
 
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+    .plan-area { padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fff; display:none; }
+    .plan-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+    .badge { font-size:11px; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:900; }
+    .meta { font-size:12px; color:#6b7280; }
 
-        .card h2 {
-            font-size: 14px;
-            margin: 0;
-            padding: 12px 14px;
-            border-bottom: 1px solid #eef0f2;
-            background: #fafafa;
-        }
+    .seg-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+    .seg-tab { font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid #e5e7eb; background:#fff; cursor:pointer; font-weight:800; color:#111827; }
+    .seg-tab.active { background:#111827; color:#fff; border-color:#111827; }
 
-        .controls {
-            padding: 12px 14px;
-            border-bottom: 1px solid #eef0f2;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .plan-note { background:#f9fafb; border:1px solid #eef0f2; border-radius:12px; padding:8px 10px; font-size:12px; color:#374151; white-space:pre-wrap; word-break:break-word; }
 
-        input[type="date"] {
-            padding: 8px 10px;
-            border: 1px solid #d6dae0;
-            border-radius: 10px;
-        }
+    .progress-wrap { height:8px; background:#eef0f2; border-radius:999px; overflow:hidden; margin-top:10px; }
+    .progress-bar { height:100%; width:0%; background:#2563eb; border-radius:999px; transition: width .2s ease; }
 
-        button {
-            padding: 8px 12px;
-            border: 0;
-            border-radius: 10px;
-            cursor: pointer;
-            background: #2563eb;
-            color: #fff;
-            font-weight: 600;
-        }
+    .steps { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
+    .step-item { border:1px solid #eef0f2; border-radius:12px; padding:10px 10px; background:#fff; }
+    .step-item.active { background:#eef2ff; border-color:#c7d2fe; }
+    .step-item.done { background:#f0fdf4; border-color:#bbf7d0; }
+    .step-top { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .step-title { font-weight:900; font-size:13px; }
+    .step-tool { font-size:11px; color:#6b7280; text-align:right; max-width:52%; word-break:break-word; }
+    .step-sub { margin-top:6px; font-size:12px; color:#374151; line-height:1.4; }
 
-        button:disabled {
-            opacity: .6;
-            cursor: not-allowed;
-        }
+    details { border-top:1px solid #eef0f2; margin-top:10px; padding-top:10px; }
+    summary { cursor:pointer; font-size:12px; color:#111827; font-weight:900; }
 
-        .status {
-            font-size: 12px;
-            color: #4b5563;
-        }
+    .trace { padding:12px 14px; overflow:auto; flex:1; min-height:0; }
+    .evt { border:1px solid #eef0f2; border-radius:12px; padding:10px 10px; margin-bottom:10px; background:#fff; }
+    .evt .top { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px; }
+    .evt .title { font-weight:900; font-size:13px; }
+    .evt pre { white-space:pre-wrap; word-break:break-word; background:#f9fafb; border:1px solid #eef0f2; border-radius:10px; padding:8px; margin:6px 0 0; font-size:12px; }
 
-        .trace {
-            padding: 12px 14px;
-            overflow: auto;
-            height: 100%;
-        }
-
-        .trace .evt {
-            border: 1px solid #eef0f2;
-            border-radius: 12px;
-            padding: 10px 10px;
-            margin-bottom: 10px;
-        }
-
-        .evt .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .badge {
-            font-size: 11px;
-            padding: 2px 8px;
-            border-radius: 999px;
-            background: #eef2ff;
-            color: #3730a3;
-        }
-
-        .meta {
-            font-size: 11px;
-            color: #6b7280;
-        }
-
-        .evt pre {
-            white-space: pre-wrap;
-            word-break: break-word;
-            background: #f9fafb;
-            border: 1px solid #eef0f2;
-            border-radius: 10px;
-            padding: 8px;
-            margin: 6px 0 0;
-            font-size: 12px;
-        }
-
-        details {
-            margin-top: 6px;
-        }
-
-        summary {
-            cursor: pointer;
-            color: #111827;
-            font-size: 12px;
-        }
-
-        .result {
-            padding: 12px 14px;
-            overflow: auto;
-            height: 100%;
-        }
-
-        .result .placeholder {
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        .result .markdown-body {
-            line-height: 1.6;
-        }
-
-        .result .markdown-body table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .result .markdown-body th,
-        .result .markdown-body td {
-            border: 1px solid #e5e7eb;
-            padding: 6px 8px;
-            font-size: 13px;
-        }
-
-        .result .markdown-body h1,
-        .result .markdown-body h2,
-        .result .markdown-body h3 {
-            margin: 12px 0 8px;
-        }
-
-        .result .markdown-body code {
-            background: #f3f4f6;
-            padding: 2px 4px;
-            border-radius: 6px;
-        }
-    </style>
+    .result { padding:12px 14px; overflow:auto; height:100%; }
+    .placeholder { color:#6b7280; font-size:13px; }
+    .markdown-body { line-height:1.7; }
+    .markdown-body table { border-collapse:collapse; width:100%; }
+    .markdown-body th,.markdown-body td { border:1px solid #e5e7eb; padding:6px 8px; font-size:13px; }
+    .markdown-body h1,.markdown-body h2,.markdown-body h3 { margin:12px 0 8px; }
+    .markdown-body code { background:#f3f4f6; padding:2px 4px; border-radius:6px; }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>12345 日报生成（流式过程展示）</h1>
-    </header>
+  <header><h1>12345 日报生成（智能计划 + 流式过程展示）</h1></header>
 
-    <div class="wrap">
-        <!-- 左：过程 -->
-        <div class="card">
-            <h2>智能过程</h2>
-            <div class="controls">
-                <label>日期：</label>
-                <input id="date" type="date" />
-                <button id="btn" onclick="runDailyStream()">生成日报</button>
-                <span class="status" id="status">就绪</span>
-            </div>
-            <div class="trace" id="trace"></div>
+  <div class="wrap">
+    <div class="card">
+      <h2>智能过程</h2>
+
+      <div class="controls">
+        <label>日期：</label>
+        <input id="date" type="date" />
+        <button id="btn" onclick="runDailyStream()">生成日报</button>
+        <span class="status" id="status">就绪</span>
+      </div>
+
+      <div class="left-body">
+        <div class="plan-area" id="plan-area">
+          <div class="plan-head">
+            <div><span class="badge">计划</span> <span style="font-weight:900;">执行步骤</span></div>
+            <div class="meta" id="plan-meta"></div>
+          </div>
+
+          <div class="seg-tabs" id="seg-tabs"></div>
+
+          <div class="plan-note" id="plan-note"></div>
+
+          <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+          <div class="steps" id="steps"></div>
+
+          <details>
+            <summary>展开：显示详细事件流（工具调用原始日志）</summary>
+            <div class="trace" id="trace" style="max-height:260px;"></div>
+          </details>
         </div>
 
-        <!-- 右：结果 -->
-        <div class="card">
-            <h2>最终日报（Markdown 渲染）</h2>
-            <div class="result" id="result">
-                <div class="placeholder">点击“生成日报”后，这里会显示最终报告。左侧会实时显示模型选择工具与调用过程。</div>
-            </div>
-        </div>
+        <div class="trace" id="trace-fallback"></div>
+      </div>
     </div>
 
-    <!-- marked 渲染 markdown -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // -----------------------
-        // UI helpers
-        // -----------------------
-        function setStatus(text) {
-            document.getElementById("status").textContent = text;
-        }
+    <div class="card">
+      <h2>最终日报（Markdown 渲染）</h2>
+      <div class="result" id="result">
+        <div class="placeholder">点击“生成日报”后，这里会显示最终报告。左侧会实时显示计划与当前执行步骤。</div>
+      </div>
+    </div>
+  </div>
 
-        function clearPanels() {
-            document.getElementById("trace").innerHTML = "";
-            document.getElementById("result").innerHTML = '<div class="placeholder">生成中…</div>';
-        }
+  <!-- marked：外网不可用时会自动降级 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-        function escapeHtml(s) {
-            return (s || "").replace(/[&<>"']/g, function (m) {
-                return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]);
-            });
-        }
+  <script>
+    // PLANS: section -> { steps:[], active_step, done_steps(Set), note }
+    let PLANS = {};
+    let ACTIVE_SECTION = null;
 
-        function clip(s, n = 600) {
-            if (!s) return "";
-            return s.length <= n ? s : (s.slice(0, n) + " ...<truncated>");
-        }
+    function setStatus(t){ document.getElementById("status").textContent = t; }
 
-        function addEventCard(title, badgeText, metaText, contentText, extraObj) {
-            const trace = document.getElementById("trace");
-            const div = document.createElement("div");
-            div.className = "evt";
+    function escapeHtml(s){
+      return (s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
 
-            const top = document.createElement("div");
-            top.className = "top";
-            top.innerHTML = `
-        <div><span class="badge">${escapeHtml(badgeText)}</span> ${escapeHtml(title)}</div>
+    function clip(s,n=900){ if(!s) return ""; return s.length<=n?s:(s.slice(0,n)+" ...<truncated>"); }
+
+    function clearPanels(){
+      PLANS = {};
+      ACTIVE_SECTION = null;
+      document.getElementById("plan-area").style.display = "none";
+      document.getElementById("plan-meta").textContent = "";
+      document.getElementById("plan-note").textContent = "";
+      document.getElementById("seg-tabs").innerHTML = "";
+      document.getElementById("steps").innerHTML = "";
+      document.getElementById("progress-bar").style.width = "0%";
+      document.getElementById("trace").innerHTML = "";
+      document.getElementById("trace-fallback").innerHTML = "";
+      document.getElementById("result").innerHTML = '<div class="placeholder">生成中…</div>';
+    }
+
+    function addEventCard(containerId, title, badgeText, metaText, contentText, extraObj){
+      const trace = document.getElementById(containerId);
+      const div = document.createElement("div");
+      div.className = "evt";
+
+      const top = document.createElement("div");
+      top.className = "top";
+      top.innerHTML = `
+        <div class="title"><span class="badge">${escapeHtml(badgeText)}</span> ${escapeHtml(title)}</div>
         <div class="meta">${escapeHtml(metaText)}</div>
       `;
-            div.appendChild(top);
+      div.appendChild(top);
 
-            if (contentText && contentText.trim()) {
-                const pre = document.createElement("pre");
-                pre.textContent = contentText;
-                div.appendChild(pre);
-            }
+      if(contentText && contentText.trim()){
+        const pre = document.createElement("pre");
+        pre.textContent = contentText;
+        div.appendChild(pre);
+      }
 
-            if (extraObj) {
-                const det = document.createElement("details");
-                const sum = document.createElement("summary");
-                sum.textContent = "查看原始事件 JSON";
-                det.appendChild(sum);
+      if(extraObj){
+        const det = document.createElement("details");
+        const sum = document.createElement("summary");
+        sum.textContent = "查看原始事件 JSON";
+        det.appendChild(sum);
+        const pre2 = document.createElement("pre");
+        pre2.textContent = JSON.stringify(extraObj, null, 2);
+        det.appendChild(pre2);
+        div.appendChild(det);
+      }
 
-                const pre2 = document.createElement("pre");
-                pre2.textContent = JSON.stringify(extraObj, null, 2);
-                det.appendChild(pre2);
-                div.appendChild(det);
-            }
+      trace.appendChild(div);
+      trace.scrollTop = trace.scrollHeight;
+    }
 
-            trace.appendChild(div);
-            trace.scrollTop = trace.scrollHeight;
+    function showPlanArea(){
+      document.getElementById("plan-area").style.display = "block";
+      document.getElementById("trace-fallback").style.display = "none";
+    }
+
+    function sectionLabel(sec){
+      const m = { daily:"主体日报", bottom3_trend:"倒三趋势", street_table:"街道表", unit_table:"区直表", main:"主流程" };
+      return m[sec] || sec;
+    }
+
+    function rebuildTabs(){
+      const tabsEl = document.getElementById("seg-tabs");
+      const secs = Object.keys(PLANS);
+      if(!secs.length){ tabsEl.innerHTML=""; return; }
+      if(!ACTIVE_SECTION || !PLANS[ACTIVE_SECTION]) ACTIVE_SECTION = secs[0];
+
+      tabsEl.innerHTML = secs.map(sec => {
+        const p = PLANS[sec];
+        const total = (p.steps||[]).length || 1;
+        const done = p.done_steps ? p.done_steps.size : 0;
+        const active = p.active_step || 1;
+        const label = `${sectionLabel(sec)} · ${done}/${total}`;
+        const activeCls = sec===ACTIVE_SECTION ? "active" : "";
+        return `<button class="seg-tab ${activeCls}" onclick="switchSection('${sec}')">${escapeHtml(label)}</button>`;
+      }).join("");
+    }
+
+    function switchSection(sec){
+      ACTIVE_SECTION = sec;
+      renderActivePlan("切换到：" + sectionLabel(sec));
+      rebuildTabs();
+    }
+
+    function renderActivePlan(noteOverride){
+      if(!ACTIVE_SECTION || !PLANS[ACTIVE_SECTION]) return;
+      showPlanArea();
+
+      const p = PLANS[ACTIVE_SECTION];
+      const steps = p.steps || [];
+      const total = steps.length || 1;
+      const activeStep = p.active_step || 1;
+      const doneCount = p.done_steps ? p.done_steps.size : 0;
+
+      document.getElementById("plan-meta").textContent =
+        `当前：${sectionLabel(ACTIVE_SECTION)} · 第 ${Math.min(activeStep, total)} / ${total} 步`;
+
+      document.getElementById("plan-note").textContent = noteOverride || p.note || "";
+
+      // ✅ progress = done / total
+      const pct = Math.max(0, Math.min(100, Math.round((doneCount / total) * 100)));
+      document.getElementById("progress-bar").style.width = pct + "%";
+
+      document.getElementById("steps").innerHTML = steps.map(s => {
+        const isDone = p.done_steps && p.done_steps.has(s.step);
+        const isActive = (!isDone) && (s.step === activeStep);
+        const cls = isDone ? "step-item done" : isActive ? "step-item active" : "step-item";
+        const icon = isDone ? "✅" : isActive ? "▶️" : "•";
+        return `
+          <div class="${cls}">
+            <div class="step-top">
+              <div class="step-title">${icon} Step ${s.step}：${escapeHtml(s.title || "")}</div>
+              <div class="step-tool">${escapeHtml(s.tool || "")}</div>
+            </div>
+            <div class="step-sub">${escapeHtml(s.hint || "")}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderMarkdown(report){
+      const resultEl = document.getElementById("result");
+      if(window.marked && typeof window.marked.parse === "function"){
+        resultEl.innerHTML = `<div class="markdown-body">${window.marked.parse(report||"")}</div>`;
+      } else {
+        resultEl.innerHTML = `
+          <pre style="white-space:pre-wrap;word-break:break-word;">${escapeHtml(report || "")}</pre>
+          <div class="placeholder" style="margin-top:8px;">marked 未加载（可能无法访问外网 CDN），已降级为纯文本显示。</div>
+        `;
+      }
+    }
+
+    function detailedContainer(){
+      return Object.keys(PLANS).length ? "trace" : "trace-fallback";
+    }
+
+    function ensurePlan(sec){
+      if(!PLANS[sec]){
+        PLANS[sec] = { steps: [], active_step: 1, done_steps: new Set(), note: "" };
+      }
+      if(!(PLANS[sec].done_steps instanceof Set)){
+        PLANS[sec].done_steps = new Set();
+      }
+    }
+
+    function applyPlan(sec, steps, currentStep, note){
+      ensurePlan(sec);
+      PLANS[sec].steps = (steps||[]).map(s => ({...s, hint: s.hint || "等待执行…"}));
+      PLANS[sec].active_step = currentStep || 1;
+      PLANS[sec].note = note || PLANS[sec].note || "";
+    }
+
+    // ---- event handler ----
+    function renderTraceEvent(evt){
+      const sec = evt.section || "main";
+      const round = evt.round != null ? `Round ${evt.round}` : "";
+      const cont = detailedContainer();
+
+      if(evt.type === "plan"){
+        applyPlan(sec, evt.steps || [], evt.current_step || 1, evt.note || "已生成执行计划。");
+        ACTIVE_SECTION = sec;
+        showPlanArea();
+        rebuildTabs();
+        renderActivePlan(PLANS[sec].note);
+        addEventCard(cont, "生成执行计划", `${sec} · plan`, `${round}`, clip(evt.note||"",400), evt);
+        return;
+      }
+
+      // ✅ 后端动态扩展 plan 时会发 plan_update
+      if(evt.type === "plan_update"){
+        applyPlan(sec, evt.steps || [], evt.current_step || (PLANS[sec]?.active_step||1), evt.note || PLANS[sec]?.note || "");
+        ACTIVE_SECTION = sec;
+        showPlanArea();
+        rebuildTabs();
+        renderActivePlan(evt.note || "计划已更新。");
+        addEventCard(cont, "计划更新", `${sec} · plan_update`, `${round}`, clip(evt.note||"",400), evt);
+        return;
+      }
+
+      if(evt.type === "tool_start"){
+        ensurePlan(sec);
+        ACTIVE_SECTION = sec;
+
+        if(evt.step){
+          PLANS[sec].active_step = evt.step;
+          // hint：执行中
+          PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
+            s.step === evt.step ? ({...s, hint:"执行中：正在调用工具并查询数据…"}) : s
+          );
+          showPlanArea();
+          rebuildTabs();
+          renderActivePlan(`正在执行：${sectionLabel(sec)} · 第 ${evt.step} 步…`);
         }
 
-        function renderTraceEvent(evt) {
-            const section = evt.section || "main";
-            const round = evt.round != null ? `Round ${evt.round}` : "";
+        addEventCard(cont, `开始调用工具：${evt.name}`, `${sec} · tool_start`,
+          `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
+          `args: ${JSON.stringify(evt.args || {})}`, evt
+        );
+        return;
+      }
 
-            if (evt.type === "llm_decide_tools") {
-                const summary = evt.assistant_content || "";
-                const tools = (evt.tool_calls || []).map(t => t.name).join(", ");
-                addEventCard(
-                    `模型决定是否调用工具`,
-                    `${section} · decide`,
-                    `${round}${tools ? (" · tools: " + tools) : ""}`,
-                    clip(summary, 900),
-                    evt
-                );
-                return;
-            }
+      if(evt.type === "tool_end"){
+        ensurePlan(sec);
+        ACTIVE_SECTION = sec;
 
-            if (evt.type === "tool_start") {
-                addEventCard(
-                    `开始调用工具：${evt.name}`,
-                    `${section} · tool_start`,
-                    `${round}`,
-                    `args: ${JSON.stringify(evt.args || {})}`,
-                    evt
-                );
-                return;
-            }
+        if(evt.step){
+          // ✅ 标记完成
+          PLANS[sec].done_steps.add(evt.step);
 
-            if (evt.type === "tool_end") {
-                addEventCard(
-                    `工具返回：${evt.name}`,
-                    `${section} · tool_end`,
-                    `${round}`,
-                    clip(evt.output || "", 900),
-                    evt
-                );
-                return;
-            }
+          // hint：完成
+          PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
+            s.step === evt.step ? ({...s, hint:"✅ 已完成：数据已拿到"}) : s
+          );
 
-            if (evt.type === "llm_post_tools") {
-                const text = evt.assistant_content || "";
-                const tools = (evt.tool_calls || []).map(t => t.name).join(", ");
-                addEventCard(
-                    `模型基于工具结果继续`,
-                    `${section} · post`,
-                    `${round}${tools ? (" · next tools: " + tools) : " · 将生成最终输出"}`,
-                    clip(text, 900),
-                    evt
-                );
-                return;
-            }
+          // active_step：如果当前 active 恰好是这个 step，则尝试指向下一个未完成 step
+          const total = (PLANS[sec].steps||[]).length || evt.step;
+          if(PLANS[sec].active_step === evt.step){
+            let next = evt.step + 1;
+            while(next <= total && PLANS[sec].done_steps.has(next)) next++;
+            PLANS[sec].active_step = Math.min(next, total);
+          }
 
-            if (evt.type === "final") {
-                addEventCard(
-                    `生成完成`,
-                    `${section} · final`,
-                    `${round}`,
-                    "final event received",
-                    evt
-                );
-                return;
-            }
-
-            if (evt.type === "error") {
-                addEventCard(
-                    `发生错误`,
-                    `${section} · error`,
-                    `${round}`,
-                    evt.message || "unknown error",
-                    evt
-                );
-                return;
-            }
-
-            // fallback
-            addEventCard(
-                `事件：${evt.type || evt.phase || "unknown"}`,
-                `${section}`,
-                `${round}`,
-                "",
-                evt
-            );
+          showPlanArea();
+          rebuildTabs();
+          renderActivePlan(`第 ${evt.step} 步完成 ✅`);
         }
 
-        // -----------------------
-        // Stream via POST SSE (fetch + readable stream)
-        // -----------------------
-        async function runDailyStream() {
-            const dateEl = document.getElementById("date");
-            const btn = document.getElementById("btn");
+        addEventCard(cont, `工具返回：${evt.name}`, `${sec} · tool_end`,
+          `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
+          clip(evt.output || "", 900), evt
+        );
+        return;
+      }
 
-            const dateVal = dateEl.value;
-            if (!dateVal) {
-                alert("请选择日期");
-                return;
-            }
+      if(evt.type === "llm_decide_tools"){
+        const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
+        addEventCard(cont, "模型决定是否调用工具", `${sec} · decide`,
+          `${round}${tools ? (" · tools: " + tools) : ""}`,
+          clip(evt.assistant_content || "", 900), evt
+        );
+        return;
+      }
 
-            btn.disabled = true;
-            clearPanels();
-            setStatus("请求已发送，等待流式事件…");
+      if(evt.type === "llm_post_tools"){
+        const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
+        addEventCard(cont, "模型基于工具结果继续", `${sec} · post`,
+          `${round}${tools ? (" · next tools: " + tools) : " · 将生成该段输出"}`,
+          clip(evt.assistant_content || "", 900), evt
+        );
+        return;
+      }
 
-            try {
-                const resp = await fetch("/api/generate_report/stream", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ date: dateVal })
-                });
+      if(evt.type === "error"){
+        addEventCard(cont, "发生错误", `${sec} · error`, `${round}`, evt.message || "unknown error", evt);
+        return;
+      }
 
-                if (!resp.ok) {
-                    const t = await resp.text();
-                    throw new Error(`HTTP ${resp.status}: ${t}`);
-                }
+      addEventCard(cont, `事件：${evt.type || "unknown"}`, `${sec}`, `${round}`, "", evt);
+    }
 
-                const reader = resp.body.getReader();
-                const decoder = new TextDecoder("utf-8");
-                let buffer = "";
+    async function runDailyStream(){
+      const dateVal = document.getElementById("date").value;
+      const btn = document.getElementById("btn");
+      if(!dateVal){ alert("请选择日期"); return; }
 
-                setStatus("流式接收中…");
+      btn.disabled = true;
+      clearPanels();
+      setStatus("请求已发送，等待流式事件…");
 
-                while (true) {
-                    const { value, done } = await reader.read();
-                    if (done) break;
+      try{
+        const resp = await fetch("/api/generate_report/stream", {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify({ date: dateVal })
+        });
 
-                    buffer += decoder.decode(value, { stream: true });
-
-                    // SSE 事件用 \n\n 分隔
-                    const parts = buffer.split("\n\n");
-                    buffer = parts.pop() || "";
-
-                    for (const part of parts) {
-                        const line = part.split("\n").find(l => l.startsWith("data: "));
-                        if (!line) continue;
-
-                        const jsonStr = line.slice(6);
-                        let msg;
-                        try {
-                            msg = JSON.parse(jsonStr);
-                        } catch (e) {
-                            console.warn("Failed to parse SSE json:", jsonStr);
-                            continue;
-                        }
-
-                        if (msg.type === "event") {
-                            renderTraceEvent(msg.data);
-                        } else if (msg.type === "final") {
-                            // 最终报告
-                            const report = msg.data.report || "";
-                            const resultEl = document.getElementById("result");
-                            if (window.marked && typeof window.marked.parse === "function") {
-                                resultEl.innerHTML = `<div class="markdown-body">${window.marked.parse(report)}</div>`;
-                            } else {
-                                // 无法加载 marked 时：用 <pre> 直接显示原始 Markdown，保证不失败
-                                resultEl.innerHTML = `<pre style="white-space:pre-wrap;word-break:break-word;">${escapeHtml(report)}</pre>
-    <div class="placeholder" style="margin-top:8px;">
-      Markdown 渲染库 marked 未加载（可能无法访问外网 CDN），已降级为纯文本显示。
-    </div>`;
-                            }
-
-                            setStatus("完成 ✅");
-                        } else if (msg.type === "error") {
-                            throw new Error(msg.data.message || "unknown error");
-                        }
-                    }
-                }
-
-                // 如果服务端没有发送 final，也结束
-                setStatus("流结束（可能已完成）");
-            } catch (err) {
-                console.error(err);
-                setStatus("失败 ❌");
-                document.getElementById("result").innerHTML =
-                    `<div class="placeholder">生成失败：${escapeHtml(err.message || String(err))}</div>`;
-            } finally {
-                btn.disabled = false;
-            }
+        if(!resp.ok){
+          const t = await resp.text();
+          throw new Error(`HTTP ${resp.status}: ${t}`);
         }
 
-        // 默认填今天（可选）
-        (function initDefaultDate() {
-            const d = new Date();
-            const yyyy = d.getFullYear();
-            const mm = String(d.getMonth() + 1).padStart(2, '0');
-            const dd = String(d.getDate()).padStart(2, '0');
-            document.getElementById("date").value = `${yyyy}-${mm}-${dd}`;
-        })();
-    </script>
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+        let buffer = "";
+        setStatus("流式接收中…");
+
+        while(true){
+          const {value, done} = await reader.read();
+          if(done) break;
+
+          buffer += decoder.decode(value, {stream:true});
+          const parts = buffer.split("\n\n");
+          buffer = parts.pop() || "";
+
+          for(const part of parts){
+            const line = part.split("\n").find(l => l.startsWith("data: "));
+            if(!line) continue;
+
+            let msg;
+            try{ msg = JSON.parse(line.slice(6)); } catch(e){ continue; }
+
+            if(msg.type === "event"){
+              renderTraceEvent(msg.data);
+            } else if(msg.type === "final"){
+              // ✅ final：把所有 section 的 steps 全部标记 done
+              for(const sec of Object.keys(PLANS)){
+                const p = PLANS[sec];
+                const total = (p.steps||[]).length || 0;
+                for(let i=1;i<=total;i++) p.done_steps.add(i);
+              }
+              if(ACTIVE_SECTION) renderActivePlan("最终报告已生成 ✅");
+
+              renderMarkdown(msg.data.report || "");
+              setStatus("完成 ✅");
+            } else if(msg.type === "error"){
+              throw new Error(msg.data.message || "unknown error");
+            }
+          }
+        }
+
+        setStatus("流结束（可能已完成）");
+      } catch(err){
+        console.error(err);
+        setStatus("失败 ❌");
+        document.getElementById("result").innerHTML =
+          `<div class="placeholder">生成失败：${escapeHtml(err.message || String(err))}</div>`;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    (function initDefaultDate(){
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+      document.getElementById("date").value = `${yyyy}-${mm}-${dd}`;
+    })();
+  </script>
 </body>
-
 </html>
