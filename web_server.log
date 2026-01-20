@@ -740,3 +740,446 @@ INFO:     127.0.0.1:46672 - "POST /api/generate/stream HTTP/1.1" 200 OK
 INFO:     127.0.0.1:57294 - "GET / HTTP/1.1" 200 OK
 INFO:     127.0.0.1:57294 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 INFO:     127.0.0.1:57304 - "POST /api/generate/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57402 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:56210 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56210 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56216 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-11-09] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:32908 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:59792 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59792 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59806 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:33722 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33722 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3111998]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3137546]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3137546]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3137585]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3137585]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3137609]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3137609]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3137770]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3137770]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3137816]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60340 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3137816]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3138589]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:55316 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3138589]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3138876]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:33864 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3138876]
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/liao/12345/web_server.py", line 12, in <module>
+    from report.dailyreport_llm_mcp import generate_daily_report
+  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
+    from mcp_llm_clint import MCPClientWrapper
+  File "/root/liao/12345/mcp_llm_clint.py", line 181
+    return f"正在进行：{title}…"
+IndentationError: unexpected indent
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/liao/12345/web_server.py", line 12, in <module>
+    from report.dailyreport_llm_mcp import generate_daily_report
+  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
+    from mcp_llm_clint import MCPClientWrapper
+  File "/root/liao/12345/mcp_llm_clint.py", line 181
+    return f"正在进行：{title}…"
+IndentationError: unexpected indent
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/liao/12345/web_server.py", line 12, in <module>
+    from report.dailyreport_llm_mcp import generate_daily_report
+  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
+    from mcp_llm_clint import MCPClientWrapper
+  File "/root/liao/12345/mcp_llm_clint.py", line 181
+    return f"正在进行：{title}…"
+IndentationError: unexpected indent
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3141827]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:33594 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3141827]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3142868]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:39368 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3142868]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3143311]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3143311]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [3143480]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49064 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49064 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49064 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49070 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:37430 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:34260 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34260 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34270 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-09] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:57508 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57508 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57524 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:60948 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60948 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60958 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-10] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:57288 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57288 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57288 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-10] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:40208 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40208 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58712 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-11] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:58190 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58190 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58202 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:36466 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36466 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36466 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36466 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36478 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:32980 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32980 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32980 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:32994 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32994 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32994 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50236 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-10] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+INFO:     127.0.0.1:50082 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:50098 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51120 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51120 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51128 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51128 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51128 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:49558 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-11] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:53434 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53434 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48188 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48188 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53660 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41834 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43560 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43560 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43562 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34830 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37780 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37780 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37786 - "GET / HTTP/1.1" 200 OK

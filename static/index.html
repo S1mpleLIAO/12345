@@ -3,38 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>12345 报告生成（智能计划 + 流式过程）</title>
+  <title>12345 智能工作台</title>
   <style>
-    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; margin:0; background:#f6f7f9; color:#111827; }
-    header { padding:14px 18px; background:#111827; color:#fff; }
-    header h1 { font-size:16px; margin:0; font-weight:900; }
+    /* ========== 1. 全局与基础布局 ========== */
+    html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; background:#f6f7f9; color:#111827; display: flex; }
+    
+    /* ========== 2. 侧边栏样式 ========== */
+    .sidebar { width: 220px; background: #111827; color: #fff; display: flex; flex-direction: column; flex-shrink: 0; }
+    .sidebar-header { height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; border-bottom: 1px solid #1f2937; letter-spacing: 1px; }
+    .nav-item { padding: 16px 20px; cursor: pointer; color: #9ca3af; font-size: 14px; font-weight: 500; transition: all 0.2s; border-left: 4px solid transparent; display: flex; align-items: center; gap: 10px; }
+    .nav-item:hover { background: #1f2937; color: #fff; }
+    .nav-item.active { background: #1f2937; color: #fff; border-left-color: #3b82f6; }
+    
+    /* ========== 3. 主内容容器 ========== */
+    .main-container { flex: 1; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    
+    .page-view { 
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+      display: none; 
+      background: #f6f7f9; 
+      flex-direction: column; 
+      overflow: hidden; 
+      padding: 20px;    
+      box-sizing: border-box;
+    }
 
-    .wrap { display:grid; grid-template-columns: 440px 1fr; gap:14px; padding:14px; height: calc(100vh - 52px); box-sizing:border-box; }
-    .card { background:#fff; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06); overflow:hidden; display:flex; flex-direction:column; min-height:0; }
-    .card h2 { font-size:14px; margin:0; padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fafafa; font-weight:900; }
-
+    /* ========== 4. 页面1：报表生成 (保持原样) ========== */
+    .report-wrap { display:grid; grid-template-columns: 440px 1fr; gap:14px; height: 100%; }
+    .card { background:#fff; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,0.06); overflow:hidden; display:flex; flex-direction:column; min-height:0; border: 1px solid #e5e7eb; }
+    .card h2 { font-size:14px; margin:0; padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fafafa; font-weight:900; color: #374151; }
     .controls { padding:12px 14px; border-bottom:1px solid #eef0f2; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-    select, input[type="date"], input[type="number"] { padding:8px 10px; border:1px solid #d6dae0; border-radius:10px; background:#fff; }
-    button { padding:8px 12px; border:0; border-radius:10px; cursor:pointer; background:#2563eb; color:#fff; font-weight:900; }
+    select, input[type="date"], input[type="number"] { padding:8px 10px; border:1px solid #d6dae0; border-radius:10px; background:#fff; font-size: 13px; }
+    button { padding:8px 12px; border:0; border-radius:10px; cursor:pointer; background:#2563eb; color:#fff; font-weight:700; font-size: 13px; }
     button:disabled { opacity:.6; cursor:not-allowed; }
     .status { font-size:12px; color:#4b5563; }
-
-    .left-body { display:flex; flex-direction:column; min-height:0; }
-
-    .plan-area { padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fff; display:none; }
+    .left-body { display:flex; flex-direction:column; min-height:0; flex: 1; overflow: hidden; }
+    .plan-area { padding:12px 14px; border-bottom:1px solid #eef0f2; background:#fff; display:none; flex-shrink: 0; max-height: 50%; overflow-y: auto; }
     .plan-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
     .badge { font-size:11px; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-weight:900; }
     .meta { font-size:12px; color:#6b7280; }
-
     .seg-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
     .seg-tab { font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid #e5e7eb; background:#fff; cursor:pointer; font-weight:800; color:#111827; }
     .seg-tab.active { background:#111827; color:#fff; border-color:#111827; }
-
     .plan-note { background:#f9fafb; border:1px solid #eef0f2; border-radius:12px; padding:8px 10px; font-size:12px; color:#374151; white-space:pre-wrap; word-break:break-word; }
-
     .progress-wrap { height:8px; background:#eef0f2; border-radius:999px; overflow:hidden; margin-top:10px; }
     .progress-bar { height:100%; width:0%; background:#2563eb; border-radius:999px; transition: width .2s ease; }
-
     .steps { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
     .step-item { border:1px solid #eef0f2; border-radius:12px; padding:10px 10px; background:#fff; }
     .step-item.active { background:#eef2ff; border-color:#c7d2fe; }
@@ -43,91 +57,230 @@
     .step-title { font-weight:900; font-size:13px; }
     .step-tool { font-size:11px; color:#6b7280; text-align:right; max-width:52%; word-break:break-word; }
     .step-sub { margin-top:6px; font-size:12px; color:#374151; line-height:1.4; }
-
     details { border-top:1px solid #eef0f2; margin-top:10px; padding-top:10px; }
     summary { cursor:pointer; font-size:12px; color:#111827; font-weight:900; }
-
     .trace { padding:12px 14px; overflow:auto; flex:1; min-height:0; }
     .evt { border:1px solid #eef0f2; border-radius:12px; padding:10px 10px; margin-bottom:10px; background:#fff; }
     .evt .top { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px; }
     .evt .title { font-weight:900; font-size:13px; }
     .evt pre { white-space:pre-wrap; word-break:break-word; background:#f9fafb; border:1px solid #eef0f2; border-radius:10px; padding:8px; margin:6px 0 0; font-size:12px; }
-
     .result { padding:12px 14px; overflow:auto; height:100%; }
     .placeholder { color:#6b7280; font-size:13px; }
     .markdown-body { line-height:1.7; }
-    .markdown-body table { border-collapse:collapse; width:100%; }
+    .markdown-body table { border-collapse:collapse; width:100%; margin: 10px 0; }
     .markdown-body th,.markdown-body td { border:1px solid #e5e7eb; padding:6px 8px; font-size:13px; }
     .markdown-body h1,.markdown-body h2,.markdown-body h3 { margin:12px 0 8px; }
     .markdown-body code { background:#f3f4f6; padding:2px 4px; border-radius:6px; }
+
+    /* ========== 5. 页面2：接单识别 (样式优化) ========== */
+    .order-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 上部：上传区 */
+    .upload-section { flex: 0 0 auto; }
+    .upload-box { 
+      border: 2px dashed #d1d5db; border-radius: 12px; padding: 25px; 
+      text-align: center; background: #fff; cursor: pointer; transition: all 0.2s; 
+    }
+    .upload-box:hover { border-color: #3b82f6; background: #eff6ff; }
+    .upload-icon { font-size: 36px; margin-bottom: 8px; display: block; }
+    .file-name { margin-top: 8px; font-weight: 600; color: #111827; font-size:14px; }
+
+    /* 中部：流式日志区 */
+    .process-log-box {
+      flex: 0 0 140px; 
+      background: #1e1e1e;
+      color: #00ff00;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-y: auto;
+      border: 1px solid #374151;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .log-line { line-height: 1.4; border-bottom: 1px dashed #333; padding-bottom:2px; }
+    .log-time { color: #888; margin-right: 8px; }
+    .log-node { color: #569cd6; font-weight: bold; margin-right: 5px; }
+
+    /* 下部：结果区 */
+    .analysis-section {
+      flex: 1;
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 20px; 
+      min-height: 0;
+    }
+    .res-card {
+      background: #fff; border-radius: 12px; border: 1px solid #e5e7eb;
+      display: flex; flex-direction: column; overflow: hidden; height: 100%;
+    }
+    .res-head {
+      flex: 0 0 45px; display: flex; align-items: center; padding: 0 15px;
+      font-weight: 900; font-size: 14px; border-bottom: 1px solid #f3f4f6; background: #fafafa;
+    }
+    .res-list {
+      flex: 1; overflow-y: auto; padding: 15px; margin: 0; list-style: none;
+    }
+    
+    /* 列表项交互样式 */
+    .res-item {
+      padding: 10px; 
+      border-radius: 6px; 
+      margin-bottom: 8px; 
+      font-size: 13px; 
+      line-height: 1.5; 
+      word-break: break-all;
+      cursor: pointer;          /* 鼠标变成手型 */
+      transition: all 0.2s ease; /* 添加动画 */
+      user-select: none;        /* 防止快速点击选中文本 */
+      position: relative;
+    }
+    .res-item:hover {
+      opacity: 0.9;
+      transform: translateX(2px); /* 悬停微动 */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .res-item:active {
+      transform: scale(0.99);
+    }
+
+    .item-asked { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+    .item-asked:hover::after {
+        content: " ➔ 移至待确认"; font-size: 10px; color: #166534; opacity: 0.6; float: right;
+    }
+
+    .item-missing { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; font-weight: 600; }
+    .item-missing:hover::after {
+        content: " ➔ 移至已确认"; font-size: 10px; color: #991b1b; opacity: 0.6; float: right;
+    }
+
+    .empty-tip { color: #9ca3af; text-align: center; padding: 20px; font-size: 13px; font-style: italic; }
+
   </style>
 </head>
 <body>
-  <header><h1>12345 报告生成（智能计划 + 流式过程展示）</h1></header>
 
-  <div class="wrap">
-    <div class="card">
-      <h2>智能过程</h2>
+  <div class="sidebar">
+    <div class="sidebar-header">🚀 12345 智能工作台</div>
+    <div class="nav-item active" onclick="switchPage('report', this)">
+      <span>📊</span> 智能报表生成
+    </div>
+    <div class="nav-item" onclick="switchPage('order', this)">
+      <span>🎧</span> 接单识别助手
+    </div>
+  </div>
 
-      <div class="controls">
-        <label>类型：</label>
-        <select id="reportType" onchange="onTypeChange()">
-          <option value="daily">日报</option>
-          <option value="heating">供暖报告</option>
-          <option value="emergency">紧急分析报告</option>
-        </select>
+  <div class="main-container">
 
-        <span id="dateWrap">
-          <label>日期：</label>
-          <input id="date" type="date" />
-        </span>
-
-        <span id="yearWrap" style="display:none;">
-          <label>年份：</label>
-          <input id="year" type="number" min="2000" max="2100" style="width:96px;" />
-        </span>
-
-        <button id="btn" onclick="runStream()">生成</button>
-        <span class="status" id="status">就绪</span>
-      </div>
-
-      <div class="left-body">
-        <div class="plan-area" id="plan-area">
-          <div class="plan-head">
-            <div><span class="badge">计划</span> <span style="font-weight:900;">执行步骤</span></div>
-            <div class="meta" id="plan-meta"></div>
+    <div id="page-report" class="page-view" style="display:flex;">
+      <div class="report-wrap">
+        <div class="card">
+          <h2>智能过程</h2>
+          <div class="controls">
+            <select id="reportType" onchange="onTypeChange()">
+              <option value="daily">日报</option>
+              <option value="heating">供暖报告</option>
+              <option value="emergency">紧急分析报告</option>
+            </select>
+            <span id="dateWrap"><input id="date" type="date" /></span>
+            <span id="yearWrap" style="display:none;"><input id="year" type="number" min="2000" max="2100" style="width:96px;" /></span>
+            <button id="btn" onclick="runStream()">生成</button>
+            <span class="status" id="status">就绪</span>
           </div>
 
-          <div class="seg-tabs" id="seg-tabs"></div>
-
-          <div class="plan-note" id="plan-note"></div>
-
-          <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
-
-          <div class="steps" id="steps"></div>
-
-          <details>
-            <summary>展开：显示详细事件流（工具调用原始日志）</summary>
-            <div class="trace" id="trace" style="max-height:260px;"></div>
-          </details>
+          <div class="left-body">
+            <div class="plan-area" id="plan-area">
+              <div class="plan-head">
+                <div><span class="badge">计划</span> <span style="font-weight:900;">执行步骤</span></div>
+                <div class="meta" id="plan-meta"></div>
+              </div>
+              <div class="seg-tabs" id="seg-tabs"></div>
+              <div class="plan-note" id="plan-note"></div>
+              <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+              <div class="steps" id="steps"></div>
+              <details>
+                <summary>展开：显示详细事件流</summary>
+                <div class="trace" id="trace-detail" style="max-height:260px;"></div>
+              </details>
+            </div>
+            <div class="trace" id="trace-fallback"></div>
+          </div>
         </div>
 
-        <div class="trace" id="trace-fallback"></div>
+        <div class="card">
+          <h2>最终报告（Markdown 渲染）</h2>
+          <div class="result" id="result">
+            <div class="placeholder">点击“生成”后，这里会显示最终报告。</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h2>最终报告（Markdown 渲染）</h2>
-      <div class="result" id="result">
-        <div class="placeholder">点击“生成”后，这里会显示最终报告。左侧会实时显示计划与当前执行步骤。</div>
+    <div id="page-order" class="page-view" style="display:none;">
+      <div class="order-container">
+        
+        <div class="card upload-section">
+          <h2>🎧 上传诉求录音</h2>
+          <div style="padding: 15px 20px;">
+            <div class="upload-box" onclick="document.getElementById('audioInput').click()">
+              <span class="upload-icon">📂</span>
+              <div>点击上传音频文件 (.mp3, .wav, .m4a)</div>
+              <div class="file-name" id="fileName"></div>
+              <input type="file" id="audioInput" accept="audio/*" style="display:none" onchange="handleFileSelect(this)" />
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+              <button onclick="startAnalysis()" id="btnAnalyze" style="font-size: 14px; padding: 8px 25px;">🚀 开始流式分析</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="processLog" class="process-log-box">
+            <div class="log-line">>>> 等待任务开始...</div>
+        </div>
+
+        <div class="analysis-section">
+          <div class="res-card">
+            <div class="res-head" style="color: #166534;">✅ 已确认信息 (Asked)</div>
+            <ul class="res-list" id="list-asked">
+                <div class="empty-tip">暂无数据</div>
+            </ul>
+          </div>
+          <div class="res-card">
+            <div class="res-head" style="color: #991b1b;">❓ 需补问信息 (Missing)</div>
+            <ul class="res-list" id="list-missing">
+                <div class="empty-tip">暂无数据</div>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    let PLANS = {};              // section -> { steps:[], active_step, done_steps(Set), note }
+    /* ================= 页面切换逻辑 ================= */
+    function switchPage(pageId, navEl) {
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      navEl.classList.add('active');
+      document.querySelectorAll('.page-view').forEach(el => el.style.display = 'none');
+      document.getElementById('page-' + pageId).style.display = 'flex';
+    }
+
+    /* ================= 页面1 JS：报表生成 (原样保留) ================= */
+    let PLANS = {};
     let ACTIVE_SECTION = null;
 
     function setStatus(t){ document.getElementById("status").textContent = t; }
@@ -135,38 +288,29 @@
     function clip(s,n=900){ if(!s) return ""; return s.length<=n?s:(s.slice(0,n)+" ...<truncated>"); }
 
     function clearPanels(){
-      PLANS = {};
-      ACTIVE_SECTION = null;
+      PLANS = {}; ACTIVE_SECTION = null;
       document.getElementById("plan-area").style.display = "none";
       document.getElementById("plan-meta").textContent = "";
       document.getElementById("plan-note").textContent = "";
       document.getElementById("seg-tabs").innerHTML = "";
       document.getElementById("steps").innerHTML = "";
       document.getElementById("progress-bar").style.width = "0%";
-      document.getElementById("trace").innerHTML = "";
+      document.getElementById("trace-detail").innerHTML = ""; 
       document.getElementById("trace-fallback").innerHTML = "";
       document.getElementById("result").innerHTML = '<div class="placeholder">生成中…</div>';
     }
 
     function addEventCard(containerId, title, badgeText, metaText, contentText, extraObj){
       const trace = document.getElementById(containerId);
+      if(!trace) return;
       const div = document.createElement("div");
       div.className = "evt";
-
-      const top = document.createElement("div");
-      top.className = "top";
-      top.innerHTML = `
-        <div class="title"><span class="badge">${escapeHtml(badgeText)}</span> ${escapeHtml(title)}</div>
-        <div class="meta">${escapeHtml(metaText)}</div>
-      `;
-      div.appendChild(top);
-
+      div.innerHTML = `<div class="top"><div class="title"><span class="badge">${escapeHtml(badgeText)}</span> ${escapeHtml(title)}</div><div class="meta">${escapeHtml(metaText)}</div></div>`;
       if(contentText && contentText.trim()){
         const pre = document.createElement("pre");
         pre.textContent = contentText;
         div.appendChild(pre);
       }
-
       if(extraObj){
         const det = document.createElement("details");
         const sum = document.createElement("summary");
@@ -177,202 +321,77 @@
         det.appendChild(pre2);
         div.appendChild(det);
       }
-
       trace.appendChild(div);
       trace.scrollTop = trace.scrollHeight;
     }
 
-    function showPlanArea(){
-      document.getElementById("plan-area").style.display = "block";
-      document.getElementById("trace-fallback").style.display = "none";
-    }
-
-    function sectionLabel(sec){
-      const m = {
-        daily:"主体日报", bottom3_trend:"倒三趋势", street_table:"街道表", unit_table:"区直表",
-        heating_season:"供暖季", heating_offseason:"非供暖季",
-        emergency:"紧急分析",
-        main:"主流程"
-      };
-      return m[sec] || sec;
-    }
+    function showPlanArea(){ document.getElementById("plan-area").style.display = "block"; document.getElementById("trace-fallback").style.display = "none"; }
+    function sectionLabel(sec){ const m = { daily:"主体日报", bottom3_trend:"倒三趋势", street_table:"街道表", unit_table:"区直表", heating_season:"供暖季", heating_offseason:"非供暖季", emergency:"紧急分析", main:"主流程" }; return m[sec] || sec; }
 
     function rebuildTabs(){
       const tabsEl = document.getElementById("seg-tabs");
       const secs = Object.keys(PLANS);
       if(!secs.length){ tabsEl.innerHTML=""; return; }
       if(!ACTIVE_SECTION || !PLANS[ACTIVE_SECTION]) ACTIVE_SECTION = secs[0];
-
       tabsEl.innerHTML = secs.map(sec => {
         const p = PLANS[sec];
-        const total = (p.steps||[]).length || 1;
         const done = p.done_steps ? p.done_steps.size : 0;
-        const label = `${sectionLabel(sec)} · ${done}/${total}`;
+        const total = (p.steps||[]).length || 1;
         const activeCls = sec===ACTIVE_SECTION ? "active" : "";
-        return `<button class="seg-tab ${activeCls}" onclick="switchSection('${sec}')">${escapeHtml(label)}</button>`;
+        return `<button class="seg-tab ${activeCls}" onclick="switchSection('${sec}')">${escapeHtml(sectionLabel(sec))} · ${done}/${total}</button>`;
       }).join("");
     }
-
-    function switchSection(sec){
-      ACTIVE_SECTION = sec;
-      renderActivePlan("切换到：" + sectionLabel(sec));
-      rebuildTabs();
-    }
+    window.switchSection = function(sec){ ACTIVE_SECTION = sec; renderActivePlan("切换到：" + sectionLabel(sec)); rebuildTabs(); }
 
     function renderActivePlan(noteOverride){
       if(!ACTIVE_SECTION || !PLANS[ACTIVE_SECTION]) return;
       showPlanArea();
-
       const p = PLANS[ACTIVE_SECTION];
       const steps = p.steps || [];
       const total = steps.length || 1;
       const activeStep = p.active_step || 1;
-      const doneCount = p.done_steps ? p.done_steps.size : 0;
-
-      document.getElementById("plan-meta").textContent =
-        `当前：${sectionLabel(ACTIVE_SECTION)} · 第 ${Math.min(activeStep, total)} / ${total} 步`;
-
+      document.getElementById("plan-meta").textContent = `当前：${sectionLabel(ACTIVE_SECTION)} · 第 ${Math.min(activeStep, total)} / ${total} 步`;
       document.getElementById("plan-note").textContent = noteOverride || p.note || "";
-
-      const pct = Math.max(0, Math.min(100, Math.round((doneCount / total) * 100)));
+      const pct = Math.max(0, Math.min(100, Math.round(((p.done_steps?p.done_steps.size:0) / total) * 100)));
       document.getElementById("progress-bar").style.width = pct + "%";
-
       document.getElementById("steps").innerHTML = steps.map(s => {
         const isDone = p.done_steps && p.done_steps.has(s.step);
         const isActive = (!isDone) && (s.step === activeStep);
         const cls = isDone ? "step-item done" : isActive ? "step-item active" : "step-item";
         const icon = isDone ? "✅" : isActive ? "▶️" : "•";
-        return `
-          <div class="${cls}">
-            <div class="step-top">
-              <div class="step-title">${icon} Step ${s.step}：${escapeHtml(s.title || "")}</div>
-              <div class="step-tool">${escapeHtml(s.tool || "")}</div>
-            </div>
-            <div class="step-sub">${escapeHtml(s.hint || "")}</div>
-          </div>
-        `;
+        return `<div class="${cls}"><div class="step-top"><div class="step-title">${icon} Step ${s.step}：${escapeHtml(s.title || "")}</div><div class="step-tool">${escapeHtml(s.tool || "")}</div></div><div class="step-sub">${escapeHtml(s.hint || "")}</div></div>`;
       }).join("");
     }
 
     function renderMarkdown(report){
       const resultEl = document.getElementById("result");
-      if(window.marked && typeof window.marked.parse === "function"){
-        resultEl.innerHTML = `<div class="markdown-body">${window.marked.parse(report||"")}</div>`;
-      } else {
-        resultEl.innerHTML = `
-          <pre style="white-space:pre-wrap;word-break:break-word;">${escapeHtml(report || "")}</pre>
-          <div class="placeholder" style="margin-top:8px;">marked 未加载（可能无法访问外网 CDN），已降级为纯文本显示。</div>
-        `;
-      }
+      if(window.marked && typeof window.marked.parse === "function"){ resultEl.innerHTML = `<div class="markdown-body">${window.marked.parse(report||"")}</div>`; } 
+      else { resultEl.innerHTML = `<pre style="white-space:pre-wrap;">${escapeHtml(report || "")}</pre>`; }
     }
 
-    function detailedContainer(){
-      return Object.keys(PLANS).length ? "trace" : "trace-fallback";
-    }
-
-    function ensurePlan(sec){
-      if(!PLANS[sec]) PLANS[sec] = { steps: [], active_step: 1, done_steps: new Set(), note: "" };
-      if(!(PLANS[sec].done_steps instanceof Set)) PLANS[sec].done_steps = new Set();
-    }
-
-    function applyPlan(sec, steps, currentStep, note){
-      ensurePlan(sec);
-      PLANS[sec].steps = (steps||[]).map(s => ({...s, hint: s.hint || "等待执行…"}));
-      PLANS[sec].active_step = currentStep || 1;
-      if(note) PLANS[sec].note = note;
-    }
+    function detailedContainer(){ return Object.keys(PLANS).length ? "trace-detail" : "trace-fallback"; }
+    function ensurePlan(sec){ if(!PLANS[sec]) PLANS[sec] = { steps: [], active_step: 1, done_steps: new Set(), note: "" }; }
 
     function renderTraceEvent(evt){
       const sec = evt.section || "main";
-      const round = evt.round != null ? `Round ${evt.round}` : "";
       const cont = detailedContainer();
-
+      const round = evt.round != null ? `Round ${evt.round}` : "";
+      
       if(evt.type === "plan"){
-        applyPlan(sec, evt.steps || [], evt.current_step || 1, evt.note || "已生成执行计划。");
-        ACTIVE_SECTION = sec;
-        showPlanArea();
-        rebuildTabs();
-        renderActivePlan(PLANS[sec].note);
-        addEventCard(cont, "生成执行计划", `${sec} · plan`, `${round}`, clip(evt.note||"",400), evt);
-        return;
+        ensurePlan(sec); PLANS[sec].steps = (evt.steps||[]).map(s=>({...s, hint:s.hint||"等待执行"})); PLANS[sec].active_step = evt.current_step||1; PLANS[sec].note=evt.note;
+        ACTIVE_SECTION = sec; showPlanArea(); rebuildTabs(); renderActivePlan(evt.note);
+        addEventCard(cont, "生成计划", `${sec}`, round, evt.note); return;
       }
-
-      if(evt.type === "plan_update"){
-        applyPlan(sec, evt.steps || [], evt.current_step || (PLANS[sec]?.active_step||1), evt.note || "");
-        ACTIVE_SECTION = sec;
-        showPlanArea();
-        rebuildTabs();
-        renderActivePlan(evt.note || "计划已更新。");
-        addEventCard(cont, "计划更新", `${sec} · plan_update`, `${round}`, clip(evt.note||"",400), evt);
-        return;
-      }
-
       if(evt.type === "tool_start"){
-        ensurePlan(sec);
-        ACTIVE_SECTION = sec;
-        if(evt.step){
-          PLANS[sec].active_step = evt.step;
-          PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
-            s.step === evt.step ? ({...s, hint:"执行中：正在调用工具并查询数据…"}) : s
-          );
-          showPlanArea();
-          rebuildTabs();
-          renderActivePlan(`正在执行：${sectionLabel(sec)} · 第 ${evt.step} 步…`);
-        }
-        addEventCard(cont, `开始调用工具：${evt.name}`, `${sec} · tool_start`,
-          `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
-          `args: ${JSON.stringify(evt.args || {})}`, evt);
-        return;
+        ensurePlan(sec); ACTIVE_SECTION=sec; if(evt.step) { PLANS[sec].active_step=evt.step; renderActivePlan(`正在执行 Step ${evt.step}...`); }
+        addEventCard(cont, `调用工具: ${evt.name}`, `${sec}`, round, JSON.stringify(evt.args)); return;
       }
-
       if(evt.type === "tool_end"){
-        ensurePlan(sec);
-        ACTIVE_SECTION = sec;
-
-        if(evt.step){
-          PLANS[sec].done_steps.add(evt.step);
-          PLANS[sec].steps = (PLANS[sec].steps||[]).map(s =>
-            s.step === evt.step ? ({...s, hint:"✅ 已完成：数据已拿到"}) : s
-          );
-          const total = (PLANS[sec].steps||[]).length || evt.step;
-          if(PLANS[sec].active_step === evt.step){
-            let next = evt.step + 1;
-            while(next <= total && PLANS[sec].done_steps.has(next)) next++;
-            PLANS[sec].active_step = Math.min(next, total);
-          }
-          showPlanArea();
-          rebuildTabs();
-          renderActivePlan(`第 ${evt.step} 步完成 ✅`);
-        }
-
-        addEventCard(cont, `工具返回：${evt.name}`, `${sec} · tool_end`,
-          `${round}${evt.step ? (" · Step " + evt.step) : ""}`,
-          clip(evt.output || "", 900), evt);
-        return;
+        ensurePlan(sec); ACTIVE_SECTION=sec; if(evt.step) { PLANS[sec].done_steps.add(evt.step); renderActivePlan(`Step ${evt.step} 完成`); }
+        addEventCard(cont, `工具返回: ${evt.name}`, `${sec}`, round, clip(evt.output||"")); return;
       }
-
-      if(evt.type === "llm_decide_tools"){
-        const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
-        addEventCard(cont, "模型决定是否调用工具", `${sec} · decide`,
-          `${round}${tools ? (" · tools: " + tools) : ""}`,
-          clip(evt.assistant_content || "", 900), evt);
-        return;
-      }
-
-      if(evt.type === "llm_post_tools"){
-        const tools = (evt.tool_calls||[]).map(t=>t.name).join(", ");
-        addEventCard(cont, "模型基于工具结果继续", `${sec} · post`,
-          `${round}${tools ? (" · next tools: " + tools) : " · 将生成输出"}`,
-          clip(evt.assistant_content || "", 900), evt);
-        return;
-      }
-
-      if(evt.type === "error"){
-        addEventCard(cont, "发生错误", `${sec} · error`, `${round}`, evt.message || "unknown error", evt);
-        return;
-      }
-
-      addEventCard(cont, `事件：${evt.type || "unknown"}`, `${sec}`, `${round}`, "", evt);
+      if(evt.type === "final" || evt.type === "error") return; 
+      addEventCard(cont, `事件: ${evt.type}`, `${sec}`, round, "");
     }
 
     function onTypeChange(){
@@ -384,91 +403,272 @@
     async function runStream(){
       const btn = document.getElementById("btn");
       const reportType = document.getElementById("reportType").value;
-
       const payload = { report_type: reportType };
-
       if(reportType === "heating"){
-        const y = parseInt(document.getElementById("year").value || "", 10);
-        if(!y){ alert("请输入年份"); return; }
-        payload.year = y;
+        payload.year = parseInt(document.getElementById("year").value||0);
+        if(!payload.year){ alert("请输入年份"); return; }
       } else {
-        const d = document.getElementById("date").value;
-        if(!d){ alert("请选择日期"); return; }
-        payload.date = d;
+        payload.date = document.getElementById("date").value;
+        if(!payload.date){ alert("请选择日期"); return; }
       }
-
-      btn.disabled = true;
-      clearPanels();
-      setStatus("请求已发送，等待流式事件…");
-
-      try{
-        const resp = await fetch("/api/generate/stream", {
-          method:"POST",
-          headers:{ "Content-Type":"application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if(!resp.ok){
-          const t = await resp.text();
-          throw new Error(`HTTP ${resp.status}: ${t}`);
-        }
-
+      
+      btn.disabled = true; clearPanels(); setStatus("请求中...");
+      try {
+        const resp = await fetch("/api/generate/stream", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
+        if(!resp.ok) throw new Error(resp.statusText);
         const reader = resp.body.getReader();
-        const decoder = new TextDecoder("utf-8");
+        const decoder = new TextDecoder();
         let buffer = "";
-        setStatus("流式接收中…");
-
+        setStatus("接收流...");
         while(true){
           const {value, done} = await reader.read();
           if(done) break;
-
           buffer += decoder.decode(value, {stream:true});
           const parts = buffer.split("\n\n");
-          buffer = parts.pop() || "";
-
+          buffer = parts.pop()||"";
           for(const part of parts){
-            const line = part.split("\n").find(l => l.startsWith("data: "));
+            const line = part.split("\n").find(l=>l.startsWith("data: "));
             if(!line) continue;
-
-            let msg;
-            try{ msg = JSON.parse(line.slice(6)); } catch(e){ continue; }
-
-            if(msg.type === "event"){
-              renderTraceEvent(msg.data);
-            } else if(msg.type === "final"){
-              for(const sec of Object.keys(PLANS)){
-                const p = PLANS[sec];
-                const total = (p.steps||[]).length || 0;
-                for(let i=1;i<=total;i++) p.done_steps.add(i);
+            try {
+              const msg = JSON.parse(line.slice(6));
+              if(msg.type==="event") renderTraceEvent(msg.data);
+              else if(msg.type==="final") {
+                renderMarkdown(msg.data.report); setStatus("完成 ✅");
+                for(let k in PLANS) { let p=PLANS[k]; (p.steps||[]).forEach(s=>p.done_steps.add(s.step)); }
+                renderActivePlan("最终报告已生成");
               }
-              if(ACTIVE_SECTION) renderActivePlan("最终报告已生成 ✅");
-
-              renderMarkdown(msg.data.report || "");
-              setStatus("完成 ✅");
-            } else if(msg.type === "error"){
-              throw new Error(msg.data.message || "unknown error");
-            }
+              else if(msg.type==="error") throw new Error(msg.data.message);
+            } catch(e){}
           }
         }
+        setStatus("结束");
+      } catch(e){ console.error(e); setStatus("失败 ❌"); document.getElementById("result").innerText = e.message; } finally { btn.disabled = false; }
+    }
 
-        setStatus("流结束（可能已完成）");
-      } catch(err){
-        console.error(err);
-        setStatus("失败 ❌");
-        document.getElementById("result").innerHTML =
-          `<div class="placeholder">生成失败：${escapeHtml(err.message || String(err))}</div>`;
-      } finally {
-        btn.disabled = false;
+
+    /* ================= 页面2 JS：接单识别 (流式 + 交互点击) ================= */
+    const DIFY_CONFIG = {
+      apiKey: "app-rBYgj9vKWewVLflK64xFtDap",
+      baseUrl: "http://121.43.245.245:5001/v1",
+      user: "frontend-direct-user"
+    };
+
+    let selectedFile = null;
+
+    function handleFileSelect(input) {
+      if (input.files && input.files[0]) {
+        selectedFile = input.files[0];
+        document.getElementById('fileName').textContent = "已选择: " + selectedFile.name;
       }
     }
 
+    function logProcess(msg, type="info") {
+        const box = document.getElementById("processLog");
+        const div = document.createElement("div");
+        div.className = "log-line";
+        const time = new Date().toLocaleTimeString();
+        
+        let content = `<span class="log-time">[${time}]</span> ${msg}`;
+        if(type === 'node') content = `<span class="log-time">[${time}]</span> <span class="log-node">⚙️ 节点执行</span> ${msg}`;
+        if(type === 'finish') content = `<span class="log-time">[${time}]</span> <span style="color:#0f0">✅ ${msg}</span>`;
+        if(type === 'error') content = `<span class="log-time">[${time}]</span> <span style="color:#f55">❌ ${msg}</span>`;
+        
+        div.innerHTML = content;
+        box.appendChild(div);
+        box.scrollTop = box.scrollHeight;
+    }
+
+    // 更新空状态提示
+    function updateEmptyState(listId, text) {
+        const list = document.getElementById(listId);
+        // 如果没有 li 元素，显示提示；否则移除提示
+        const hasItems = list.querySelectorAll('li').length > 0;
+        
+        // 查找现有的 empty-tip
+        let tip = list.querySelector('.empty-tip');
+        
+        if (!hasItems) {
+            if (!tip) {
+                tip = document.createElement('div');
+                tip.className = 'empty-tip';
+                tip.textContent = text;
+                list.appendChild(tip);
+            }
+        } else {
+            if (tip) tip.remove();
+        }
+    }
+
+    // 列表项点击移动函数
+    function moveItem(element, targetType) {
+        // targetType: 'asked' (移到左边) | 'missing' (移到右边)
+        const text = element.textContent;
+        const targetListId = targetType === 'asked' ? 'list-asked' : 'list-missing';
+        const targetList = document.getElementById(targetListId);
+        
+        // 创建新元素
+        const newItem = document.createElement("li");
+        newItem.textContent = text;
+        
+        if (targetType === 'asked') {
+            newItem.className = "res-item item-asked";
+            newItem.onclick = function() { moveItem(this, 'missing'); };
+        } else {
+            newItem.className = "res-item item-missing";
+            newItem.onclick = function() { moveItem(this, 'asked'); };
+        }
+        
+        // 添加到目标列表
+        targetList.appendChild(newItem);
+        
+        // 移除原元素
+        element.remove();
+        
+        // 更新空状态提示
+        updateEmptyState('list-asked', '无');
+        updateEmptyState('list-missing', '信息完整');
+    }
+
+    async function startAnalysis() {
+      if (!selectedFile) { alert("请先选择一个音频文件！"); return; }
+      
+      const btn = document.getElementById('btnAnalyze');
+      const listAsked = document.getElementById('list-asked');
+      const listMissing = document.getElementById('list-missing');
+      const logBox = document.getElementById("processLog");
+
+      // 重置UI
+      listAsked.innerHTML = ""; listMissing.innerHTML = "";
+      updateEmptyState('list-asked', '等待数据...');
+      updateEmptyState('list-missing', '等待数据...');
+      
+      logBox.innerHTML = '<div class="log-line">>>> 准备开始任务...</div>';
+      btn.disabled = true;
+
+      try {
+        logProcess("正在上传音频文件...");
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        formData.append("user", DIFY_CONFIG.user);
+        const uploadResp = await fetch(`${DIFY_CONFIG.baseUrl}/files/upload`, {
+          method: "POST",
+          headers: { "Authorization": `Bearer ${DIFY_CONFIG.apiKey}` },
+          body: formData
+        });
+        if (!uploadResp.ok) throw new Error(`上传失败 (${uploadResp.status})`);
+        const uploadJson = await uploadResp.json();
+        const fileId = uploadJson.id;
+        logProcess(`文件上传成功 (ID: ${fileId})`);
+
+        logProcess("启动工作流 (流式模式)...");
+        const payload = {
+          inputs: { "audio": { "type": "audio", "transfer_method": "local_file", "upload_file_id": fileId } },
+          response_mode: "streaming",
+          user: DIFY_CONFIG.user
+        };
+
+        const response = await fetch(`${DIFY_CONFIG.baseUrl}/workflows/run`, {
+          method: "POST",
+          headers: { "Authorization": `Bearer ${DIFY_CONFIG.apiKey}`, "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error(`工作流调用失败 (${response.status})`);
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+        let buffer = "";
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n\n");
+          buffer = lines.pop();
+
+          for (const line of lines) {
+             if (!line.startsWith("data: ")) continue;
+             const jsonStr = line.replace("data: ", "").trim();
+             if (!jsonStr) continue;
+
+             try {
+                const data = JSON.parse(jsonStr);
+                switch(data.event) {
+                    case "workflow_started": logProcess("工作流已启动", "info"); break;
+                    case "node_started": logProcess(`节点开始: ${data.data.title || "Unknown"}`, "node"); break;
+                    case "node_finished": logProcess(`节点完成: ${data.data.title || "Unknown"}`, "info"); break;
+                    case "workflow_finished":
+                        logProcess("工作流执行完毕，正在渲染结果...", "finish");
+                        const outputs = data.data.outputs;
+                        renderResult(outputs);
+                        break;
+                    case "error": logProcess(`发生错误: ${data.message}`, "error"); break;
+                }
+             } catch (e) { console.warn("JSON解析错误", e); }
+          }
+        }
+        
+      } catch (e) {
+        console.error(e);
+        logProcess(`执行异常: ${e.message}`, "error");
+        alert("执行失败: " + e.message);
+      } finally { 
+        btn.disabled = false; 
+      }
+    }
+
+    function renderResult(resultData) {
+        const listAsked = document.getElementById('list-asked');
+        const listMissing = document.getElementById('list-missing');
+
+        if (typeof resultData === 'string') {
+             try {
+                const cleanStr = resultData.replace(/```json/g, "").replace(/```/g, "").trim();
+                resultData = JSON.parse(cleanStr);
+             } catch(e) { logProcess("结果解析失败", "error"); }
+        } else if (resultData && resultData.text) {
+             try {
+                const cleanStr = resultData.text.replace(/```json/g, "").replace(/```/g, "").trim();
+                resultData = JSON.parse(cleanStr);
+             } catch(e) {}
+        }
+
+        const askedArr = resultData["asked_questions已经问了的问题"] || resultData["asked_questions"] || [];
+        const missingArr = resultData["missing_questions还需要追问的问题"] || resultData["missing_questions"] || [];
+
+        // 清空列表（会移除 Loading 提示）
+        listAsked.innerHTML = "";
+        listMissing.innerHTML = "";
+
+        askedArr.forEach(q => { 
+            const li = document.createElement("li"); 
+            li.className = "res-item item-asked"; 
+            li.textContent = q;
+            // 绑定点击事件：移到右边
+            li.onclick = function() { moveItem(this, 'missing'); };
+            listAsked.appendChild(li); 
+        });
+
+        missingArr.forEach(q => { 
+            const li = document.createElement("li"); 
+            li.className = "res-item item-missing"; 
+            li.textContent = q;
+            // 绑定点击事件：移到左边
+            li.onclick = function() { moveItem(this, 'asked'); };
+            listMissing.appendChild(li); 
+        });
+
+        // 检查是否为空并显示提示
+        updateEmptyState('list-asked', '无');
+        updateEmptyState('list-missing', '信息完整');
+    }
+
+    // Init
     (function initDefault(){
       const d = new Date();
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth()+1).padStart(2,'0');
-      const dd = String(d.getDate()).padStart(2,'0');
-      document.getElementById("date").value = `${yyyy}-${mm}-${dd}`;
-      document.getElementById("year").value = String(yyyy);
+      document.getElementById("date").value = new Date().toISOString().split('T')[0];
+      document.getElementById("year").value = d.getFullYear();
       onTypeChange();
     })();
   </script>
