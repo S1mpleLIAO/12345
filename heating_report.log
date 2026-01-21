@@ -51,3 +51,25 @@ INFO:     127.0.0.1:52080 - "POST /heating_report_mcp HTTP/1.1" 200 OK
                              get_heating_off_season_stats with                  
                              {'year': 2024}                                     
 INFO:     127.0.0.1:52096 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39596 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39598 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:39608 - "GET /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39618 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/21/26 13:10:16] DEBUG    [HeatingReport-Server] Handler        server.py:687
+                             called: list_tools                                 
+INFO:     127.0.0.1:39626 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [HeatingReport-Server] Handler       server.py:1061
+                             called: call_tool                                  
+                             get_heating_report_data with                       
+                             {'year': 2024}                                     
+INFO:     127.0.0.1:39638 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/21/26 13:10:17] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+                             called: call_tool                                  
+                             get_heating_report_data with                       
+                             {'year': 2023}                                     
+INFO:     127.0.0.1:42420 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/21/26 13:10:23] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+                             called: call_tool                                  
+                             get_heating_off_season_stats with                  
+                             {'year': 2024}                                     
+INFO:     127.0.0.1:42430 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
