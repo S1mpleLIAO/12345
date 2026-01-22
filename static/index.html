@@ -22,7 +22,10 @@
     <div class="nav-item" data-page="tickets">
       <span>📋</span> 工单列表
     </div>
-        <div class="nav-item active" data-page="report">
+    <div class="nav-item" data-page="assistant">
+      <span>🤖</span> 接单助手
+    </div>
+    <div class="nav-item active" data-page="report">
       <span>📊</span> 智能报表生成
     </div>
   </div>
@@ -217,6 +220,27 @@
 
       </div>
     </div>
+    <!-- Page X: assistant -->
+    <div id="page-assistant" class="page-view" style="display:none;">
+      <div class="assistant-wrap">
+        <div class="assistant-card">
+          <div class="assistant-head">
+            <div class="assistant-title">您好！我是AI智能助手，有什么可以帮助您的吗？</div>
+          </div>
+
+          <div class="assistant-body" id="assistantMsgs">
+            <div class="assistant-empty">在下方输入诉求内容，点击发送即可得到“处置部门 + 理由”。</div>
+          </div>
+
+          <div class="assistant-inputbar">
+            <textarea id="assistantInput" class="assistant-input"
+              placeholder="请输入诉求内容...（Enter 发送，Ctrl+Enter 换行）"></textarea>
+            <button id="assistantSend" class="assistant-send">发送</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
   </div>
@@ -229,6 +253,7 @@
   <script src="/static/js/report.js"></script>
   <script src="/static/js/order.js"></script>
   <script src="/static/js/elements.js"></script>
+  <script src="/static/js/assistant.js"></script>
   <script src="/static/js/tickets_local.js"></script>
 
 </body>

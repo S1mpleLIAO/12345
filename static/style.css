@@ -1160,5 +1160,117 @@ summary{
   display:flex;
   justify-content:flex-end;
 }
+/* ===== Page: 接单助手 assistant ===== */
+.assistant-wrap{
+  height:100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top: 20px;
+}
+
+.assistant-card{
+  width: min(1100px, 100%);
+  height: min(720px, calc(100vh - 120px));
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.assistant-head{
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+.assistant-title{
+  font-weight: 900;
+  color: var(--text);
+  font-size: 14px;
+}
 
 
+.assistant-body{
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.assistant-empty{
+  color: var(--muted);
+  font-size: 13px;
+  padding: 6px 2px;
+}
+
+.msg{
+  display:flex;
+  margin: 10px 0;
+}
+.msg.user{ justify-content:flex-end; }
+.msg.bot{ justify-content:flex-start; }
+
+
+.bubble{
+  max-width: 76%;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  border: 1px solid var(--border);
+
+  /* 关键：完整换行 + 不被撑爆 */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  /* 关键：内容太长时气泡内部也能滚动 */
+  max-height: 360px;
+  overflow: auto;
+}
+
+.msg.user .bubble{
+  background: linear-gradient(180deg, var(--primary), var(--primary-600));
+  color: #fff;
+  border-color: rgba(37,99,235,0.25);
+}
+
+.msg.bot .bubble{
+  background: #f8fbff;
+  color: var(--text);
+}
+
+.assistant-inputbar{
+  border-top: 1px solid var(--border);
+  padding: 12px;
+  display:flex;
+  gap: 10px;
+  align-items:flex-end;
+  background: #ffffff;
+}
+
+.assistant-input{
+  flex:1;
+  min-height: 44px;
+  max-height: 140px;
+  resize: vertical;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.assistant-send{
+  width: 96px;
+  height: 44px;
+  border-radius: 14px;
+  font-weight: 900;
+}
