@@ -1875,3 +1875,549 @@ INFO:     127.0.0.1:40188 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:40190 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:40206 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
 INFO:     127.0.0.1:40212 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:34138 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34138 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34142 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34138 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34156 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34158 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34170 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34176 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58412 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58416 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44824 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-11] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:47282 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47282 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47288 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47282 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47290 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47298 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47292 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47300 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47292 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47292 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47292 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47288 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47298 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47290 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47282 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47300 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47292 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47292 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47444 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51426 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51434 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51446 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51460 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51476 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51476 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51476 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51434 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51476 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51446 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51460 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51476 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51476 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40702 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49874 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49874 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49876 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49876 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44236 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44252 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:44236 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55426 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55426 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55426 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55426 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55446 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55458 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55462 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55464 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55464 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55464 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55458 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55446 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55464 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55462 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55464 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51100 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51100 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51112 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51100 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51120 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51146 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51136 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51152 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51152 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53104 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41058 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41058 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41088 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41090 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41092 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41098 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41098 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49316 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49316 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49316 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:37902 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37902 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37916 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37916 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37930 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37944 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37958 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37968 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37968 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51448 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51448 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51438 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51448 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51470 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51472 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51478 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51478 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51482 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59894 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59908 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59926 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59912 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59942 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59946 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59912 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59926 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59908 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59942 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59946 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59946 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59926 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59908 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59942 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59912 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59894 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43934 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:43942 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:43942 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43956 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43960 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43976 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43986 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43976 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43960 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43956 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43986 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57166 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57166 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57166 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57182 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57202 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57208 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57208 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57208 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57208 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57202 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57182 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57166 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51776 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36234 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36234 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:36240 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:45814 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45338 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45338 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45352 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45338 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45360 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45372 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45388 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45380 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45388 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43666 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43666 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43666 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43666 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43672 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43672 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43680 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43686 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43696 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43708 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43708 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38632 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38632 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38632 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38632 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38636 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38632 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38644 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38652 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38668 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38682 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38682 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38254 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38254 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38262 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38262 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38274 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38284 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38288 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38302 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38288 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35304 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35304 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35308 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35308 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35324 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35340 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35348 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35352 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35352 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38410 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38410 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38422 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38410 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38432 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38426 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38434 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38444 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38444 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38444 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38426 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38444 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38432 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38422 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38410 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38434 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38426 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38426 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55978 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55988 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50236 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50236 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50242 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38684 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38684 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38700 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57850 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57850 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57860 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33358 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33358 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33374 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33358 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33386 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33394 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33398 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33404 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33404 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48298 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59056 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59056 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59062 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59062 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59056 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59062 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59062 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59056 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59056 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41162 - "GET /?id=d2c51cb9-3164-4e63-a2de-e8c1998c1089&vscodeBrowserReqId=1769054328557 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41178 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41178 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39578 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39578 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:39578 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:39578 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39594 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43642 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43642 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:43648 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51088 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51088 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51098 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51088 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51106 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51120 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51126 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51138 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38860 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38860 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60816 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60816 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60822 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60816 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60832 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60850 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60852 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60844 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60850 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60850 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59728 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59728 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59728 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59732 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59728 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59744 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59758 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59760 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59766 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50958 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54052 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54052 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54058 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54052 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54060 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54064 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54072 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54082 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54082 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52084 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52084 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52094 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52094 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52108 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52122 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52124 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52124 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52124 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52124 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52094 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52084 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52122 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52108 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55432 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55432 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55444 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55432 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55452 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55460 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55462 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55468 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55468 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46414 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46414 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46422 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46414 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46424 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46440 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46468 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46456 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46456 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57570 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57570 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57570 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57608 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57600 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57634 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57620 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57620 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58384 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58384 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58390 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58384 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58396 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58400 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58422 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58412 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58412 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47826 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50130 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50130 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50142 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50130 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50154 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50156 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50158 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50160 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50160 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59998 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60010 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60008 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60018 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60026 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60026 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56206 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47358 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47358 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47368 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47368 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47376 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47386 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47382 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47394 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47394 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47400 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45272 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45272 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45286 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45272 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45298 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45300 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45302 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45306 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45300 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46738 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46738 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46752 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46752 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46754 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46766 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46780 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46784 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46784 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33092 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33092 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33100 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33092 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33110 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33118 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33116 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33130 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33116 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46436 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46436 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46452 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46452 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46468 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46456 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46474 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46480 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46480 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35658 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35658 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35664 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35664 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35676 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35688 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35694 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35700 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35700 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57858 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57858 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57862 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57858 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57874 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57886 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57910 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57902 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57902 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54596 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36710 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36710 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36714 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36710 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36728 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36744 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36758 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36768 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36768 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49664 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49664 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49664 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49680 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49684 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49690 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49702 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49702 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41552 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:46312 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57008 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57008 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57022 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57008 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57036 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57044 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57048 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57054 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57054 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46778 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46778 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46780 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46778 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46798 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46788 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46812 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46822 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46812 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60794 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45958 - "POST /api/generate/stream HTTP/1.1" 200 OK

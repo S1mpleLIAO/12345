@@ -477,6 +477,39 @@ summary{
   flex-direction:column;
   gap: 4px;
 }
+/* ====== 接单识别助手：对话内容 + 日志 两栏固定高度，不随内容变长 ====== */
+#page-order .order-stream-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* 固定左右两块的整体高度 */
+#page-order .order-conv-card,
+#page-order .order-log-wrap{
+  height: 180px;      /* 你想更高就改这里，比如 420px */
+  min-height: 180px;
+}
+
+/* 左侧对话内容：内部滚动 */
+#page-order .order-conv-card{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#page-order .order-conv-body{
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+/* 右侧日志：固定高度 + 内部滚动 */
+#page-order #processLog.process-log-box{
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+}
 
 .log-line{
   line-height: 1.5;
@@ -1273,4 +1306,235 @@ summary{
   height: 44px;
   border-radius: 14px;
   font-weight: 900;
+}
+/* ====== 接单识别助手：新增“对话内容 + 日志并排” ====== */
+
+/* 上传区 audio 播放器 */
+.order-audio{
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.order-audio audio{
+  width: 100%;
+}
+
+/* 对话内容 + 日志：同一行，两列各占一半 */
+.order-stream-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  min-height: 0;
+}
+
+/* 左侧：对话内容卡片 */
+.order-conv-card{
+  background:#fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+.order-conv-head{
+  height: 46px;
+  display:flex;
+  align-items:center;
+  padding: 0 15px;
+  font-weight: 900;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+.order-conv-body{
+  margin: 0;
+  padding: 12px 14px;
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+  background: #f8fbff;
+  border-top: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* 右侧：日志容器（复用原 process-log-box） */
+.order-log-wrap{
+  min-height:0;
+}
+.order-log-wrap .process-log-box{
+  height: 100%;
+  flex: 1;
+}
+/* ===== 派单助手：回答块 + 详情按钮 + 弹窗 ===== */
+
+.assist-answer{
+  width: 100%;
+}
+.assist-answer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+}
+.assist-dept{
+  font-weight: 800;
+  line-height: 1.2;
+}
+/* 详情按钮：低干扰强调版（推荐最终方案） */
+.assist-detail-btn{
+  border: 1px solid #c7ddff;
+  background: #f5f9ff;
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+
+.assist-detail-btn:hover{
+  background: #eaf2ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.assist-detail-btn:active{
+  background: #dbeafe;
+}
+
+
+.assist-reason{
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* 弹窗遮罩 */
+.assist-mask{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+/* 弹窗主体 */
+.assist-modal{
+  width: min(980px, 96vw);
+  max-height: min(78vh, 720px);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  display:flex;
+  flex-direction:column;
+}
+.assist-modal-head{
+  height: 52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 14px 0 16px;
+  border-bottom: 1px solid #e9eef6;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+}
+.assist-modal-title{
+  font-weight: 900;
+}
+.assist-modal-close{
+  border: none;
+  background: #f3f6fb;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  cursor:pointer;
+}
+.assist-modal-close:hover{
+  background:#eaf0fb;
+}
+.assist-modal-body{
+  padding: 14px;
+  overflow:auto;
+}
+
+/* 两列 */
+.assist-detail-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.assist-detail-col{
+  border: 1px solid #e9eef6;
+  border-radius: 14px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  min-height: 200px;
+}
+.assist-detail-col-title{
+  padding: 10px 12px;
+  font-weight: 900;
+  border-bottom: 1px solid #eef3fb;
+  background:#fafcff;
+}
+.assist-detail-list{
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+/* 每条卡片 */
+.assist-item{
+  border: 1px solid #e9eef6;
+  border-radius: 12px;
+  padding: 10px 10px;
+  background: #fff;
+}
+.assist-item-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.assist-item-badge{
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef6ff;
+  border: 1px solid #dbeafe;
+  color: #1d4ed8;
+}
+.assist-item-type{
+  font-size: 12px;
+  color: #6b7280;
+}
+.assist-item-text{
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color:#111827;
+}
+
+/* 小屏改一列 */
+@media (max-width: 860px){
+  .assist-detail-grid{ grid-template-columns: 1fr; }
 }
