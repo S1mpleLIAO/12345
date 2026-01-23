@@ -63,6 +63,7 @@ class MCPClientWrapper:
             await self._mcp_client_ctx.__aexit__(exc_type, exc, tb)
         self._mcp_client_ctx = None
         self.session = None
+        print("MCP client disconnected.")
 
     async def prepare_tools(self):
         if self.session is None:
