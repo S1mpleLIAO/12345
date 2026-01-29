@@ -20,56 +20,34 @@ nohup: ignoring input
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[01/20/26 10:32:28] INFO     Starting MCP server                  server.py:2050
+[01/27/26 01:14:24] INFO     Starting MCP server                  server.py:2050
                              'HeatingReport-Server' with                        
                              transport 'streamable-http' on                     
                              http://0.0.0.0:9002/heating_report_m               
                              cp                                                 
-INFO:     Started server process [3112300]
+INFO:     Started server process [357649]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:9002 (Press CTRL+C to quit)
-INFO:     127.0.0.1:47344 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47352 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:47354 - "GET /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47366 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/20/26 10:32:51] DEBUG    [HeatingReport-Server] Handler        server.py:687
+INFO:     127.0.0.1:34410 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34412 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:34418 - "GET /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34426 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/27/26 01:15:00] DEBUG    [HeatingReport-Server] Handler        server.py:687
                              called: list_tools                                 
-INFO:     127.0.0.1:47378 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34434 - "POST /heating_report_mcp HTTP/1.1" 200 OK
                     DEBUG    [HeatingReport-Server] Handler       server.py:1061
                              called: call_tool                                  
                              get_heating_report_data with                       
                              {'year': 2024}                                     
-INFO:     127.0.0.1:47382 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/20/26 10:32:52] DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2023}                                     
-INFO:     127.0.0.1:52080 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/20/26 10:32:59] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+INFO:     127.0.0.1:34440 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/27/26 01:15:01] DEBUG    [HeatingReport-Server] Handler       server.py:1061
                              called: call_tool                                  
                              get_heating_off_season_stats with                  
                              {'year': 2024}                                     
-INFO:     127.0.0.1:52096 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39596 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39598 - "POST /heating_report_mcp HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:39608 - "GET /heating_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39618 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/21/26 13:10:16] DEBUG    [HeatingReport-Server] Handler        server.py:687
-                             called: list_tools                                 
-INFO:     127.0.0.1:39626 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-                    DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2024}                                     
-INFO:     127.0.0.1:39638 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/21/26 13:10:17] DEBUG    [HeatingReport-Server] Handler       server.py:1061
-                             called: call_tool                                  
-                             get_heating_report_data with                       
-                             {'year': 2023}                                     
-INFO:     127.0.0.1:42420 - "POST /heating_report_mcp HTTP/1.1" 200 OK
-[01/21/26 13:10:23] DEBUG    [HeatingReport-Server] Handler       server.py:1061
+INFO:     127.0.0.1:47792 - "POST /heating_report_mcp HTTP/1.1" 200 OK
+[01/27/26 01:15:08] DEBUG    [HeatingReport-Server] Handler       server.py:1061
                              called: call_tool                                  
                              get_heating_off_season_stats with                  
                              {'year': 2024}                                     
-INFO:     127.0.0.1:42430 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47804 - "DELETE /heating_report_mcp HTTP/1.1" 200 OK

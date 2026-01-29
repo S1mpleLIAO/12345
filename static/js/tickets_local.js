@@ -477,7 +477,7 @@
       btn.textContent = "识别中...";
 
       try{
-        hint.textContent = "正在调用 Dify 工作流识别地址...";
+        hint.textContent = "正在调用AddressWorkflow识别地址...";
         const res = await runAddressWorkflow(item["主要内容"] || "");
 
         document.getElementById("ai_town").textContent = res.town || "—";

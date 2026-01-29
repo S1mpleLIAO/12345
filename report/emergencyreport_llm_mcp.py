@@ -53,17 +53,25 @@ def _get_prompts(date_str: str) -> str:
 async def generate_emergency_report(
     date_str: str,
     mcp_entry: str,
-    *,
-    event_cb: EventCB = None,
+    event_cb: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None,
 ) -> str:
-    prompt = _get_prompts(date_str)
+    """
+    生成紧急敏感诉求报告
+    """
+    prompts = _get_prompts(date_str)
+    
+    print(f"[{date_str}] 开始生成紧急敏感诉求日报")
+    
     async with MCPClientWrapper(mcp_entry=mcp_entry) as mcp_client:
         ans = await mcp_client.chat(
-            prompt,
-            section="emergency",
-            event_cb=event_cb,
+            prompts,
+            debug=False,
             reasoning_summary=True,
+            event_cb=event_cb,
+            section="emergency",
         )
+    
+    print("紧急敏感诉求日报生成完毕。")
     return ans
 
 

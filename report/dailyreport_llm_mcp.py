@@ -180,6 +180,7 @@ async def generate_daily_report(
     event_cb: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None,
 ) -> str:
     """
+    
     生成日报（4 段）并拼接成最终 Markdown。
 
     event_cb：可选，用于 SSE 流式输出过程事件。

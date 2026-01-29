@@ -5,7 +5,7 @@ from services.heating_report_service import get_full_heating_report_data,_query_
 from services.emergency_report_service import get_emergency_month_daily_rates,get_emergency_appeals_for_date,get_emergency_category_stats
 if __name__ == "__main__":
 
-    s_data = get_street_assessment_data("2025-1-27")
+    s_data = get_street_assessment_data("2025-10-13")
     print("2024年非 gongneng season 统计结果为：",s_data)
     
     

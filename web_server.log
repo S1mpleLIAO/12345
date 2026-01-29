@@ -1,516 +1,34 @@
 nohup: ignoring input
 INFO:     Will watch for changes in these directories: ['/root/liao/12345']
 INFO:     Uvicorn running on http://0.0.0.0:8889 (Press CTRL+C to quit)
-INFO:     Started reloader process [648633] using StatReload
+INFO:     Started reloader process [119600] using StatReload
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [648647]
+INFO:     Started server process [119621]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:43734 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43734 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54528 - "GET / HTTP/1.1" 200 OK
-收到【日报】生成请求，日期: 2025-06-06
-[2025-06-06] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成委办局统计表...
-委办局统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:52918 - "POST /api/generate_report HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41310 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-收到【日报】生成请求，日期: 2025-06-05
-[2025-06-05] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成委办局统计表...
-委办局统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:38114 - "POST /api/generate_report HTTP/1.1" 200 OK
-收到【供暖报告】生成请求，年份: 2024
-[2024] 开始生成供暖报告
->> 正在生成供暖报告...
-主体供暖报告生成完毕。
-非供暖季供暖报告生成完毕。
-生成完毕...
-INFO:     127.0.0.1:42976 - "POST /api/generate_heating_report HTTP/1.1" 200 OK
-收到【日报】生成请求，日期: 2025-06-05
-[2025-06-05] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成委办局统计表...
-委办局统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:37882 - "POST /api/generate_report HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55984 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55984 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49042 - "GET / HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [648647]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2393382]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2393382]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2393575]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2393575]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2404744]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2404744]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2416038]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2416038]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2416255]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2416255]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2418810]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2418810]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2419079]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2419079]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2420919]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2420919]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2422806]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2422806]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2463815]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2463815]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2463891]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2463891]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2464853]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2464853]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2465300]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2465300]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2465322]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2465322]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2466030]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2466030]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2466548]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2466548]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2466588]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2466588]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2466661]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2466661]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2467619]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:36998 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-收到【日报】生成请求，日期: 2025-05-13
-[2025-05-13] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成街道统计表...
-街道统计表生成完毕。
->> 正在生成委办局统计表...
-委办局统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:37010 - "POST /api/generate_report HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2467619]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2470041]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2470041]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2470185]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2470185]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2471120]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2471120]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2471774]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2471774]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2471866]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2471866]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2472383]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/daily_report_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2472383]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2472471]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/daily_report_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2472471]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2472829]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'tools/daily_report_tool.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2472829]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2475157]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:45594 - "GET / HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2475157]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2494468]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2494468]
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
-    exitcode = _main(fd, parent_sentinel)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
-    prepare(preparation_data)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
-    _fixup_main_from_path(data['init_main_from_path'])
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
-    main_content = runpy.run_path(main_path,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
-    return _run_module_code(code, init_globals, run_name,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
-    _run_code(code, mod_globals, init_globals,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/liao/12345/web_server.py", line 12, in <module>
-    from dailyreport_llm_mcp import generate_daily_report
-ModuleNotFoundError: No module named 'dailyreport_llm_mcp'
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2495466]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2495466]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2495594]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2495594]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2495721]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2495721]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2497017]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:36924 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36924 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36924 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36924 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36924 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36920 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2497017]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2499327]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:51752 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51752 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:51752 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38860 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38860 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38864 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38860 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46482 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46498 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46502 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46508 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46508 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57462 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57462 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57478 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57462 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57488 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57500 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60116 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45892 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-13] 开始生成日报
 >> 正在生成主体日报...
 主体日报生成完毕。
 >> 正在生成倒数三街镇月度排名趋势表...
@@ -519,162 +37,119 @@ INFO:     127.0.0.1:51752 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
 街道统计表生成完毕。
 >> 正在生成区直单位统计表...
 区直单位统计表生成完毕。
+MCP client disconnected.
 生成完毕，正在合并结果...
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:40336 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:40336 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40336 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40336 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40336 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:40336 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
+INFO:     127.0.0.1:58214 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58214 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58222 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58214 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58236 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58246 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58254 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58222 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58236 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58246 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58214 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53380 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50706 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50706 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50720 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50706 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50722 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50742 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50754 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50754 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53530 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53530 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53530 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53542 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53550 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53552 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53530 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53542 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53530 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53570 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53592 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53612 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53592 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53598 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53598 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53612 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53612 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56066 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56066 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56070 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56066 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56070 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56078 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56070 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56066 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56066 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54484 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51816 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'report/emergencyreport_llm_mcp.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [2499327]
+INFO:     Finished server process [119621]
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2504558]
+INFO:     Started server process [354338]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:39744 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39744 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:39744 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
+INFO:     127.0.0.1:46608 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46620 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46608 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46620 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46622 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46636 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46648 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46656 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46656 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60980 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'report/emergencyreport_llm_mcp.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [2504558]
+INFO:     Finished server process [354338]
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3083325]
+INFO:     Started server process [356482]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3083325]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3084185]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'db/connection.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3084185]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3084203]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:56340 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56340 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-23] 开始生成日报
-INFO:     127.0.0.1:56354 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3084203]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3089079]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3089079]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3089482]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3089482]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3089819]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:50240 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50240 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:50248 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:43306 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43306 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-12] 开始生成日报
-INFO:     127.0.0.1:43290 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:40138 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44184 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44184 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44190 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44184 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44192 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44208 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44196 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44224 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44224 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49228 - "POST /api/generate/stream HTTP/1.1" 200 OK
 [2025-10-10] 开始生成日报
-INFO:     127.0.0.1:40146 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3089819]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3100922]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:59224 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59224 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-[2025-10-13] 开始生成日报
-INFO:     127.0.0.1:59224 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
 >> 正在生成主体日报...
 主体日报生成完毕。
 >> 正在生成倒数三街镇月度排名趋势表...
@@ -683,64 +158,47 @@ INFO:     127.0.0.1:59224 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
 街道统计表生成完毕。
 >> 正在生成区直单位统计表...
 区直单位统计表生成完毕。
+MCP client disconnected.
 生成完毕，正在合并结果...
-[2025-10-13] 开始生成日报
-INFO:     127.0.0.1:39870 - "POST /api/generate_report/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40002 - "POST /api/generate/stream HTTP/1.1" 200 OK
 WARNING:  StatReload detected changes in 'report/heatingreport_llm_mcp.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [3100922]
+INFO:     Finished server process [356482]
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3111625]
+INFO:     Started server process [357487]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/emergencyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3111625]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3111746]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/emergencyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3111746]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3111770]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3111770]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3111998]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:46666 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46666 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46672 - "POST /api/generate/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57294 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57294 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57304 - "POST /api/generate/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57402 - "POST /api/generate/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50494 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50494 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50502 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50494 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50516 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50530 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50524 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50540 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50540 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50540 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2024] 开始生成供暖季专题报告
+>> 正在生成供暖季综合分析...
+>> 正在生成非供暖季数据分析...
+MCP client disconnected.
+供暖专题报告生成完毕，正在合并结果...
+INFO:     127.0.0.1:38304 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38304 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38306 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38306 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38328 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38314 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38340 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38330 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38314 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45698 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40816 - "POST /api/generate/stream HTTP/1.1" 200 OK
 [2025-10-12] 开始生成日报
 >> 正在生成主体日报...
 主体日报生成完毕。
@@ -750,1646 +208,68 @@ INFO:     127.0.0.1:57402 - "POST /api/generate/stream HTTP/1.1" 200 OK
 街道统计表生成完毕。
 >> 正在生成区直单位统计表...
 区直单位统计表生成完毕。
+MCP client disconnected.
 生成完毕，正在合并结果...
-INFO:     127.0.0.1:56210 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56210 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56216 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-11-09] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:32908 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:59792 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59792 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59806 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:33722 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33722 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3111998]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3137546]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3137546]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3137585]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3137585]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3137609]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3137609]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3137770]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3137770]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3137816]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:60340 - "POST /api/generate/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3137816]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3138589]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:55316 - "POST /api/generate/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3138589]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3138876]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:33864 - "POST /api/generate/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3138876]
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
-    exitcode = _main(fd, parent_sentinel)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
-    prepare(preparation_data)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
-    _fixup_main_from_path(data['init_main_from_path'])
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
-    main_content = runpy.run_path(main_path,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
-    return _run_module_code(code, init_globals, run_name,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
-    _run_code(code, mod_globals, init_globals,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/liao/12345/web_server.py", line 12, in <module>
-    from report.dailyreport_llm_mcp import generate_daily_report
-  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
-    from mcp_llm_clint import MCPClientWrapper
-  File "/root/liao/12345/mcp_llm_clint.py", line 181
-    return f"正在进行：{title}…"
-IndentationError: unexpected indent
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
-    exitcode = _main(fd, parent_sentinel)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
-    prepare(preparation_data)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
-    _fixup_main_from_path(data['init_main_from_path'])
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
-    main_content = runpy.run_path(main_path,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
-    return _run_module_code(code, init_globals, run_name,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
-    _run_code(code, mod_globals, init_globals,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/liao/12345/web_server.py", line 12, in <module>
-    from report.dailyreport_llm_mcp import generate_daily_report
-  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
-    from mcp_llm_clint import MCPClientWrapper
-  File "/root/liao/12345/mcp_llm_clint.py", line 181
-    return f"正在进行：{title}…"
-IndentationError: unexpected indent
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
-    exitcode = _main(fd, parent_sentinel)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
-    prepare(preparation_data)
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
-    _fixup_main_from_path(data['init_main_from_path'])
-  File "/root/anaconda3/envs/mcp/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
-    main_content = runpy.run_path(main_path,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 289, in run_path
-    return _run_module_code(code, init_globals, run_name,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 96, in _run_module_code
-    _run_code(code, mod_globals, init_globals,
-  File "/root/anaconda3/envs/mcp/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/liao/12345/web_server.py", line 12, in <module>
-    from report.dailyreport_llm_mcp import generate_daily_report
-  File "/root/liao/12345/report/dailyreport_llm_mcp.py", line 11, in <module>
-    from mcp_llm_clint import MCPClientWrapper
-  File "/root/liao/12345/mcp_llm_clint.py", line 181
-    return f"正在进行：{title}…"
-IndentationError: unexpected indent
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3141827]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:33594 - "POST /api/generate/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3141827]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3142868]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:39368 - "POST /api/generate/stream HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'mcp_llm_clint.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3142868]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3143311]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'report/dailyreport_llm_mcp.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3143311]
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [3143480]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:49064 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49064 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49064 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49070 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:37430 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:34260 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34260 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:34270 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-09] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:57508 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57508 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57524 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:60948 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60948 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60958 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-10] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:57288 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57288 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57288 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-10] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:40208 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40208 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58712 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-11] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:58190 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58190 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58202 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:36466 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36466 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36466 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36466 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36478 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:32980 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32980 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32980 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:32994 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32994 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32994 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50236 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-10] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-INFO:     127.0.0.1:50082 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:50098 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51120 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51120 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51128 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51128 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51128 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:49558 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-11] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:53434 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53434 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48188 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48188 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48188 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:53660 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53660 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41834 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41834 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43560 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43560 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43562 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34830 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34830 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:37780 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37780 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:37786 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60496 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60496 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50582 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50582 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59234 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59234 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40568 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40568 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47092 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47092 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:33250 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33250 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55978 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55978 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:44108 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44108 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57344 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57344 - "GET /styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57332 - "GET /js/app.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57354 - "GET /js/report.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57360 - "GET /js/order.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57374 - "GET /js/elements.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57374 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57374 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57374 - "GET /styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57360 - "GET /js/app.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57354 - "GET /js/report.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57332 - "GET /js/order.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57378 - "GET /js/elements.js HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57378 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41544 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41544 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41554 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41562 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41582 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41582 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41582 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41582 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41568 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41562 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41584 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41584 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41584 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41584 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41562 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41594 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41594 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41594 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41594 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41562 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41600 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41562 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41604 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41612 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41612 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41612 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41612 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41562 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41568 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41604 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41604 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41604 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41604 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41568 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41562 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41554 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34046 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34046 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56736 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56744 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56736 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56750 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56762 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56766 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40428 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40428 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40418 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40436 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40434 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40438 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40438 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40438 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40438 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40438 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40438 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40438 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:53878 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53894 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53896 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53900 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53894 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:37410 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37410 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:37422 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37422 - "GET /static/styles.css HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:37426 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37426 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40544 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40550 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40568 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40566 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40566 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38280 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38290 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38304 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38312 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38328 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38328 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57678 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57678 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57680 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57682 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57684 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57692 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:58326 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:50466 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50482 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50466 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50486 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50502 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50518 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50518 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50518 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-10] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:50422 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50422 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50430 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50438 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50444 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50452 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50452 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36676 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36676 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36678 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36694 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36702 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36716 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36716 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58786 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58786 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58800 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58802 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58814 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58826 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58826 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59128 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59128 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59136 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59138 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59144 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59166 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59158 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59158 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50080 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50080 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:50084 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:50084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50080 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42992 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43022 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43006 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43034 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43034 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43034 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43034 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43022 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43006 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42992 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43044 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43060 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43044 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54060 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54060 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54072 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54092 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54074 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54078 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54108 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54092 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48948 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48948 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48956 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48958 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48984 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48974 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48990 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48990 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60352 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60360 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:55206 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55206 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55214 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55224 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55236 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55242 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55258 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55258 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:35910 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35910 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35914 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35916 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35932 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35934 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35942 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35942 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:32986 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32986 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33002 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33016 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33022 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33030 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33042 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33042 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46856 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46856 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46858 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46862 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46866 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46880 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46870 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46870 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46870 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46870 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:46870 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46870 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46870 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:46870 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41094 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41094 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39916 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39916 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39918 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39924 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39932 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39942 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39938 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39938 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43858 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43858 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43862 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43894 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43878 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43902 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43906 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43906 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43906 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43906 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43902 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43894 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43858 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43862 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43878 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43862 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43862 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43902 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43862 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43858 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43894 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43906 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43878 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43862 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59514 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59514 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59526 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59532 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59544 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59564 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59548 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59548 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59548 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59564 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59532 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59544 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59548 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59526 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59514 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59548 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46992 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46992 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47876 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47886 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47902 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47914 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47928 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47914 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43950 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43950 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43956 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43958 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43972 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43986 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43990 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43990 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43990 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43990 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43950 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43986 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43972 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43958 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43956 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43990 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38686 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38686 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38688 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38702 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38708 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38706 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38720 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38720 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38720 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38688 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38686 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38706 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38720 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38702 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38708 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38720 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60388 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-10] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:39060 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39076 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39060 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:39080 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:39080 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39080 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39080 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39076 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39060 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56402 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56408 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56418 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56418 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56428 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56428 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56436 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56446 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56450 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56454 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56458 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56454 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56454 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56458 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56446 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56428 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56450 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56454 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56436 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56428 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52794 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52810 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:52794 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:52794 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52794 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52794 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52794 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52606 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52606 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52606 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52606 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:52616 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52616 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52616 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52616 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:52616 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52616 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:50776 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:56458 - "POST /api/generate/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40938 - "POST /api/generate/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50712 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50712 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50726 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50736 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50748 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50750 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50766 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50766 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50712 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50766 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50726 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50750 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50736 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50748 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52528 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:38258 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38258 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38262 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38258 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38268 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38272 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38286 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38286 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49446 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49446 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49456 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49456 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57832 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57832 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57842 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57832 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57858 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57868 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57900 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57884 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57884 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38046 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38046 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38054 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38046 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38062 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38070 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38072 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38088 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38088 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55212 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55212 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55224 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55212 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55226 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55242 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55258 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55250 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55258 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59146 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59146 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59148 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59146 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59156 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59160 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59168 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59176 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59168 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:35344 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35344 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35358 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35344 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35360 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35370 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35386 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35390 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35390 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52328 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52328 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:52338 - "GET /static/js/dispatch.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:56486 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56486 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56500 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56500 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56514 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56528 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56536 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56552 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56552 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56552 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56552 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56514 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56500 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56486 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56536 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56528 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56514 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56552 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60892 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60892 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60894 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60892 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60906 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60920 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60928 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60936 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60928 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36260 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36260 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36268 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36260 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36270 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36276 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36284 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36296 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36296 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60390 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60390 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60400 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60390 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60410 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60414 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60420 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60422 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60422 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:45830 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45830 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45840 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45840 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45852 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45846 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45862 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45870 - "GET /static/js/dispatch.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45870 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52576 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52576 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52586 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52592 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52606 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52618 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52622 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52622 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56140 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:46076 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46076 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46090 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46076 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46094 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46104 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46108 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46124 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46124 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55764 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55764 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55768 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55764 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55778 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55784 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55798 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55790 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55790 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60706 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60706 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60708 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60708 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60710 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60726 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60734 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60746 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60746 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59502 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59506 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59502 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59506 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59536 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59522 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59552 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59550 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44212 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:44212 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44212 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44224 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44224 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44238 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44244 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44260 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44266 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44266 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55906 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55908 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:55906 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55906 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55906 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55908 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55908 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55924 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55954 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55932 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55946 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55932 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40650 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40650 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40662 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40662 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40680 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40692 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40706 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40676 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40676 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40676 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40676 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40692 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40706 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40680 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40650 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40662 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40692 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40676 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36270 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36270 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36274 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36270 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36288 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36302 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36304 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36308 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36304 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36304 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36274 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36304 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36270 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36302 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36308 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36288 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36304 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36304 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47094 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:40164 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40164 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40180 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40164 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40188 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40190 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40206 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:40212 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:34138 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34138 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34142 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34138 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34156 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34158 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34170 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34176 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58412 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58416 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44824 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58866 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-11] 开始生成日报
->> 正在生成主体日报...
-主体日报生成完毕。
->> 正在生成倒数三街镇月度排名趋势表...
-趋势表生成完毕。
->> 正在生成街道镇乡统计表...
-街道统计表生成完毕。
->> 正在生成区直单位统计表...
-区直单位统计表生成完毕。
-生成完毕，正在合并结果...
-INFO:     127.0.0.1:47282 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47282 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47288 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47282 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47290 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47298 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47292 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47300 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47292 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47292 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47292 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47288 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47298 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47290 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47282 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47300 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47292 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47292 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47444 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51426 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51426 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51434 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51426 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51446 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51460 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51462 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51476 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51476 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51476 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51462 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51434 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51476 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51446 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51460 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51476 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51476 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:40702 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49874 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49874 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49876 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49876 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49876 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49876 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:44236 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44252 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:44236 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:55426 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55426 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55426 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55426 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55442 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55442 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55446 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55458 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55462 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55464 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55464 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55464 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55442 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55458 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55446 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55464 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55462 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55442 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55464 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51100 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51100 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51112 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51100 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51120 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51146 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51136 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51152 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51152 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:53104 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41058 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41058 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41074 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41074 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41088 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41090 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41092 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41098 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41098 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49316 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49316 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:49316 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:37902 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37902 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37930 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37944 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37958 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37968 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37968 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51448 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51448 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51438 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51448 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51462 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51470 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51472 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51478 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51478 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51482 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59894 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59908 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59926 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59912 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59942 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59946 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59912 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59926 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59908 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59942 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59946 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59946 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59926 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59908 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59942 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59912 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59894 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43934 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43934 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:43942 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:43942 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43942 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43942 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43934 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43934 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43956 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43960 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43976 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43986 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43934 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43934 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43942 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43976 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43960 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43956 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43986 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43942 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43942 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57166 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57166 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57176 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57166 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57182 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57194 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57202 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57208 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57208 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57208 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57194 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57208 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57202 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57176 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57182 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57166 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57176 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51776 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36234 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36234 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:36240 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:45814 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:45338 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45338 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45352 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45338 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45360 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45372 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45388 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45380 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45388 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43666 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43666 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43666 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43666 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43672 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43672 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43680 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43686 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43696 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43708 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43708 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38632 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38632 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38632 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38632 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38636 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38632 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38644 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38652 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38668 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38682 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38682 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38254 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38254 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38262 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38262 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38274 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38288 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38302 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38288 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:35304 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35304 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35308 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35308 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35324 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35340 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35348 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35352 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35352 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38410 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38410 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38422 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38410 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38432 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38426 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38434 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38444 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38444 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38444 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38426 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38444 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38432 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38422 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38410 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38434 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38426 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38426 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55978 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:55988 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50236 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50236 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50242 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38684 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38684 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38700 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57850 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57850 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57860 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:33358 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33358 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33374 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33358 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33386 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33394 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33398 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33404 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33404 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48298 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59056 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59056 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59062 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59062 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59056 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59062 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59062 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59056 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59056 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41162 - "GET /?id=d2c51cb9-3164-4e63-a2de-e8c1998c1089&vscodeBrowserReqId=1769054328557 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41162 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41162 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41162 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41162 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41178 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41178 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41162 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39578 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39578 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:39578 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:39578 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:39594 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:43642 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43642 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:43648 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:51088 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51088 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51098 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51088 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51106 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51120 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51126 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51138 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:51138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:38860 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38860 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60816 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60816 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60822 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60816 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60832 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60850 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60852 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60844 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60850 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60850 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59728 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59728 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59728 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59732 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59728 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59744 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59758 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59760 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59766 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50958 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54052 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54052 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54058 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54052 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54060 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54064 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54072 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54082 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54082 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52084 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52094 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52094 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52112 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52108 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52122 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52124 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52124 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52124 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52124 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52112 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52094 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52084 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52122 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52108 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52112 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52112 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:55432 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55432 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55444 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55432 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55452 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55460 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55462 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55468 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55468 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46414 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46414 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46422 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46414 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46424 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46440 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46456 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46456 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57570 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57570 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57586 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57570 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57608 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57600 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57634 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57620 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57620 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58384 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58384 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58390 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58384 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58396 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58400 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58422 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58412 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58412 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47826 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50130 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50130 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50142 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50130 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50154 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50156 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50158 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50160 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50160 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59998 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59998 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60000 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59998 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60010 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60008 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60018 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60026 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60026 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56206 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47358 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47358 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47368 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47368 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47376 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47386 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47382 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47394 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47394 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:47400 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:45272 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45272 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45286 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45272 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45298 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45300 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45302 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45306 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45300 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46738 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46738 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46752 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46752 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46754 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46718 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46718 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46726 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46718 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46740 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46742 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46756 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
 INFO:     127.0.0.1:46766 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46780 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46784 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46784 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:33092 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33092 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33100 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33092 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33110 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33118 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33116 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33130 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33116 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46436 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46436 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46452 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46452 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46456 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46474 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46480 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46480 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:35658 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35658 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35664 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35664 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35676 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35688 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35694 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35700 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35700 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57858 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57858 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57862 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57858 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57874 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57886 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57910 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57902 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57902 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54596 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36710 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36710 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36714 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36710 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36728 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36744 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36758 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36768 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36768 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49664 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49664 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49666 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49664 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49680 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49684 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49690 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49702 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49702 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41552 - "POST /api/generate/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46766 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36476 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33378 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33378 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33388 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33378 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33418 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33402 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33430 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33430 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36400 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53302 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53314 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53330 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53348 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53338 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53352 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53352 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35740 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36500 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36500 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36502 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36500 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36504 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36514 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36522 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36532 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36514 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40026 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45866 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45866 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45878 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45866 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45884 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45886 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45888 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45900 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45888 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42334 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42334 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42350 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42334 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42356 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42358 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42372 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42380 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42380 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50422 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42144 - "POST /api/generate/stream HTTP/1.1" 200 OK
 [2025-10-12] 开始生成日报
 >> 正在生成主体日报...
 主体日报生成完毕。
@@ -2399,25 +279,350 @@ INFO:     127.0.0.1:41552 - "POST /api/generate/stream HTTP/1.1" 200 OK
 街道统计表生成完毕。
 >> 正在生成区直单位统计表...
 区直单位统计表生成完毕。
+MCP client disconnected.
 生成完毕，正在合并结果...
-INFO:     127.0.0.1:46312 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57008 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57008 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57022 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57008 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57036 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57044 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57048 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57054 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57054 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46778 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46778 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46780 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46778 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46798 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46788 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46812 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46822 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46812 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60794 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:45958 - "POST /api/generate/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50432 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50440 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50444 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50456 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50460 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50456 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47104 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34722 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34722 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34724 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34722 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34734 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34762 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34738 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34748 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34748 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34748 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34738 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34762 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34724 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34748 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34734 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34722 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34738 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34748 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52976 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52976 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52980 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52980 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52984 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53006 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53016 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53016 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50478 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50478 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50480 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50480 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50486 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50492 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50508 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50510 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50508 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50720 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50720 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50726 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57090 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-10-12] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     127.0.0.1:52680 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52686 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55062 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55062 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55064 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55062 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55076 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55080 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55106 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55092 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55092 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38442 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38456 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38456 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38460 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38470 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38472 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38482 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38482 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55016 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55016 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55030 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55016 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55030 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55046 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55056 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55060 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55066 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55066 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48266 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37916 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48274 - "POST /api/assistant HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56262 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56262 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56262 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56282 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56266 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56286 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56302 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56302 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35774 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35774 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35774 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35798 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35802 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35810 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35816 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36142 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36142 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36150 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36142 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36150 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36158 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36160 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36166 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36176 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34270 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34270 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34274 - "GET /static/js/batch.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:34270 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34270 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34274 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34270 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34274 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34278 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34262 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34288 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34302 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34302 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58622 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58622 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58622 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58636 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58650 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58666 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58680 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36842 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36858 - "GET /static/js/batch.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:36842 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:47208 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47208 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47220 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47220 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47230 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47220 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47240 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47254 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47258 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47254 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40072 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40072 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40072 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40092 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40088 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40100 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40116 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40078 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48570 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48570 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48580 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48570 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48580 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48584 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48588 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48604 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48598 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48580 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40154 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40154 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40170 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40154 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40170 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40182 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40176 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40198 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40214 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40170 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39078 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39078 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39092 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39078 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39092 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39106 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39094 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39116 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39132 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39092 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49386 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49388 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39216 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43876 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43876 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43862 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43876 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43862 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43884 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43896 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43910 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43904 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43862 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40580 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40590 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60104 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33102 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57270 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40338 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40338 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40342 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40338 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40342 - "GET /static/js/batch.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40354 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40378 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40366 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:40390 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:35150 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50116 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50116 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50120 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50116 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50120 - "GET /static/js/batch.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50122 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50124 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50126 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50138 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50138 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43676 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43676 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43680 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43676 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43686 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43692 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43720 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43706 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43706 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53204 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'test.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [357487]
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/mcp/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [862926]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:51432 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51432 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51438 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51432 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51446 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51478 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51464 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51478 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42848 - "POST /api/generate/stream HTTP/1.1" 200 OK
