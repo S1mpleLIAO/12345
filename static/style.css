@@ -2,9 +2,9 @@
    12345 智能工作台 - 淡蓝主题完整版
    文件：static/style.css
 ================================ */
-* {
+/* * {
   font-size: 22px !important;
-}
+} */
 
 /* ===== 0) 主题变量（淡蓝） ===== */
 :root{
@@ -1540,4 +1540,79 @@ summary{
 /* 小屏改一列 */
 @media (max-width: 860px){
   .assist-detail-grid{ grid-template-columns: 1fr; }
+}
+/* ... 原有 CSS ... */
+
+/* 优化：工单表格列较多时，保持布局整洁 */
+.tickets-table th, .tickets-table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+/* 闪电图标颜色 */
+.kv-k { display: flex; align-items: center; gap: 4px; }
+
+/* 智能派单弹窗中的 Checkbox 样式 */
+.ai-check {
+  margin-right: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* 按钮禁用样式微调 */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+/* 增加派单理由的行高，防止文字挤压 */
+.td-clamp-2 {
+  line-height: 1.5;
+}
+
+/* 新增：工单详情里的引用列表容器 */
+.ticket-detail-refs .addr-panel {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+/* ... 原有 CSS ... */
+
+/* 新增：更正按钮样式 (warning) */
+.btn-mini.warning {
+  background: #fff;
+  border-color: #f59e0b; /* Amber-500 */
+  color: #b45309;       /* Amber-700 */
+}
+
+.btn-mini.warning:hover {
+  background: #fffbeb; /* Amber-50 */
+  border-color: #f59e0b;
+}
+
+/* 更正弹窗中的输入框样式 */
+.correct-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 4px;
+  color: #334155;
+}
+.correct-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 4px;
+  resize: vertical;
 }

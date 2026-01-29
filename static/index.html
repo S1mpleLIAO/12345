@@ -16,9 +16,6 @@
     <div class="nav-item" data-page="order">
       <span>🎧</span> 接单识别助手
     </div>
-    <!-- <div class="nav-item" data-page="elements">
-      <span>🧩</span> 诉求要素提取
-    </div> -->
     <div class="nav-item" data-page="tickets">
       <span>📋</span> 工单列表
     </div>
@@ -32,7 +29,6 @@
 
   <div class="main-container">
 
-    <!-- Page 1: report -->
     <div id="page-report" class="page-view" style="display:none;">
       <div class="report-wrap">
         <div class="card">
@@ -88,7 +84,6 @@
       </div>
     </div>
 
-    <!-- Page 2: order -->
     <div id="page-order" class="page-view" style="display:flex;">
       <div class="order-container">
 
@@ -112,15 +107,12 @@
           </div>
         </div>
 
-        <!-- ✅ 改动点 1：这里改成“对话内容 + 日志”并排两列 -->
         <div class="order-stream-row">
-          <!-- 左：对话内容（conversion/conversation） -->
           <div class="order-conv-card">
             <div class="order-conv-head">💬 对话内容（conversion）</div>
             <pre id="conversationBox" class="order-conv-body">暂无数据</pre>
           </div>
 
-          <!-- 右：流式过程日志（复用原来的 processLog） -->
           <div class="order-log-wrap">
             <div id="processLog" class="process-log-box">
               <div class="log-line">>>> 等待任务开始...</div>
@@ -146,7 +138,6 @@
       </div>
     </div>
 
-    <!-- Page 3: elements -->
     <div id="page-elements" class="page-view" style="display:none;">
       <div class="elements-container">
 
@@ -162,8 +153,6 @@
             </div>
           </div>
         </div>
-
-        <!-- ✅ 改动点 2：这里删除你误贴的 order-stream-row，避免重复 id -->
 
         <div class="elements-result-grid">
           <div class="res-card">
@@ -184,7 +173,6 @@
       </div>
     </div>
 
-    <!-- Page 4: tickets -->
     <div id="page-tickets" class="page-view" style="display:none;">
       <div class="tickets-container">
 
@@ -211,17 +199,22 @@
             <table class="tickets-table">
               <thead>
                 <tr>
-                  <th style="width:80px;">序号</th>
-                  <th>主要内容</th>
-                  <th style="width:160px;">被反映街乡镇</th>
-                  <th style="width:140px;">所在村社区</th>
-                  <th style="width:150px;">二级承办单位简称</th>
+                  <th style="width:60px;">序号</th>
+                  <th style="width:200px;">主要内容</th>
+                  <th style="width:100px;">被反映街乡镇</th>
+                  <th style="width:100px;">所在村社区</th>
+                  <th style="width:100px;">承办单位(原)</th>
+                  <th style="width:110px; color:#2563eb;">⚡️处置部门</th>
+                  <th style="width:140px; color:#2563eb;">⚡️派单理由</th>
+                  <th style="width:80px; color:#2563eb;">⚡️历史</th>
+                  <th style="width:80px; color:#2563eb;">⚡️规则</th>
+                  <th style="width:60px; color:#64748b;">备注</th>
                   <th style="width:120px;">操作</th>
                 </tr>
               </thead>
               <tbody id="ticketsTbody">
                 <tr>
-                  <td colspan="6" class="tickets-empty">暂无数据</td>
+                  <td colspan="11" class="tickets-empty">暂无数据</td>
                 </tr>
               </tbody>
             </table>
@@ -236,7 +229,6 @@
       </div>
     </div>
 
-    <!-- Page X: assistant -->
     <div id="page-assistant" class="page-view" style="display:none;">
       <div class="assistant-wrap">
         <div class="assistant-card">
@@ -258,7 +250,6 @@
     </div>
 
   </div>
-  <!-- 派单助手：详情弹窗（history/rules） -->
   <div id="assistDetailMask" class="assist-mask" style="display:none;">
     <div class="assist-modal" role="dialog" aria-modal="true">
       <div class="assist-modal-head">
@@ -283,10 +274,8 @@
   </div>
 
 
-  <!-- third-party -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- your scripts -->
   <script src="/static/js/app.js"></script>
   <script src="/static/js/report.js"></script>
   <script src="/static/js/order.js"></script>
