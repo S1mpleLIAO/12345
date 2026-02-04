@@ -314,3 +314,290 @@ INFO:     127.0.0.1:40716 - "POST /daily_report_mcp HTTP/1.1" 200 OK
                              get_unit_assessment_data_tool with                 
                              {'date': '2025-10-12'}                             
 INFO:     127.0.0.1:38764 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36318 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36322 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:36326 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36332 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:19] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:36334 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:20] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:36340 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:36344 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:36352 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:21] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:36362 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:26] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:47290 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:31] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:42530 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[01/29/26 07:54:38] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:49208 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53474 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53482 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:39:42] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:53500 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:39:43] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:53516 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:53532 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:39:44] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:53540 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:59264 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:39:48] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:59270 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:39:54] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:56470 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/02/26 05:40:01] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:51002 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44232 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44242 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:44244 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44256 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:32:56] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:44260 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:32:57] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:44276 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:55612 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:55614 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:32:58] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:55622 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:33:02] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:40830 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:33:07] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:40846 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:33:14] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:40750 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40874 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40880 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:40892 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40898 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:01] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:40912 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:02] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-02-13'}                             
+INFO:     127.0.0.1:40920 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-02-13'}                        
+INFO:     127.0.0.1:40932 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-02-13'}                             
+INFO:     127.0.0.1:40934 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:03] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-02-13'}                             
+INFO:     127.0.0.1:40948 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:06] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-02-13'}                        
+INFO:     127.0.0.1:44488 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:12] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-02-13'}                             
+INFO:     127.0.0.1:42288 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:40:20] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-02-13'}                             
+INFO:     127.0.0.1:39886 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44988 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44994 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45002 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45006 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:10] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:45010 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:11] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:45014 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:45028 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:45044 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:12] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:45054 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:16] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-12'}                        
+INFO:     127.0.0.1:43674 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:21] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:49228 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 05:55:28] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-12'}                             
+INFO:     127.0.0.1:42772 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38352 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38368 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:38382 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38388 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:01:55] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:38400 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:01:56] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:38402 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:38416 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:60512 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:01:57] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:60528 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:02:01] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:45296 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:02:07] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:45306 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:02:14] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:48540 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57172 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57184 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57198 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57214 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:06] DEBUG    [Report-Server] Handler called:       server.py:687
+                             list_tools                                         
+INFO:     127.0.0.1:57224 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:57238 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:07] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_monthly_assessment_data_tool                   
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:50602 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+                    DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:50604 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:08] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:50612 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:12] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_lagging_street_rank_trends_tool                
+                             with {'date': '2025-10-13'}                        
+INFO:     127.0.0.1:45744 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:18] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_street_assessment_data_tool with               
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:45760 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/03/26 06:53:25] DEBUG    [Report-Server] Handler called:      server.py:1061
+                             call_tool                                          
+                             get_unit_assessment_data_tool with                 
+                             {'date': '2025-10-13'}                             
+INFO:     127.0.0.1:41862 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK

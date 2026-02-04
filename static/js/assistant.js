@@ -1,11 +1,9 @@
-/* ================= 页面：接单助手（文本 -> Dify workflow，带“详情”弹窗） ================= */
+/* ================= 页面：接单助手（文本 -> Dify workflow，带"详情"弹窗） ================= */
 
-const DIFY_ASSIST_CONFIG = {
-  apiKey: "app-ja847DdFKufaS29cIeAn3WKl",
-  workflowRunUrl: "http://121.43.245.245:5001/v1/workflows/run",
-  user: "abc-123",
-  conversation_id: ""
-};
+// 应用类型配置（不再需要暴露 API 密钥）
+const APP_TYPE = "dispatch_assistant";
+const USER_ID = "frontend-assistant-user";
+let conversationId = "";  // 会话ID，用于保持上下文
 
 function $(id) {
   return document.getElementById(id);
@@ -44,27 +42,13 @@ function safeJsonParse(str) {
 }
 
 async function runDifyAssist(query) {
-  const payload = {
-    inputs: { query },
-    conversation_id: DIFY_ASSIST_CONFIG.conversation_id,
-    user: DIFY_ASSIST_CONFIG.user
-  };
+  // 使用代理客户端运行工作流
+  const data = await DifyProxyClient.runWorkflow(
+    APP_TYPE,
+    { query },
+    { user: USER_ID, conversationId: conversationId || null }
+  );
 
-  const resp = await fetch(DIFY_ASSIST_CONFIG.workflowRunUrl, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${DIFY_ASSIST_CONFIG.apiKey}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!resp.ok) {
-    const t = await resp.text().catch(() => "");
-    throw new Error(`工作流调用失败 (${resp.status}) ${t}`);
-  }
-
-  const data = await resp.json();
   let outputs = data?.data?.outputs ?? data?.outputs ?? {};
 
   // 1) outputs 已结构化

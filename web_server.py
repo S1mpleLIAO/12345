@@ -3,7 +3,7 @@ import asyncio
 import uvicorn
 from typing import Optional, Dict, Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,6 +12,7 @@ from pydantic import BaseModel
 from report.dailyreport_llm_mcp import generate_daily_report
 from report.heatingreport_llm_mcp import generate_heating_report
 from report.emergencyreport_llm_mcp import generate_emergency_report
+from services.dify_proxy_service import dify_proxy
 
 app = FastAPI(title="12345 智能报表生成系统")
 
@@ -41,6 +42,15 @@ class ReportRequest(BaseModel):
 
 class HeatingReportRequest(BaseModel):
     year: int
+
+
+# --------- Dify API 代理请求模型 ---------
+class DifyWorkflowRequest(BaseModel):
+    app_type: str  # order_recognition, element_extraction, dispatch_assistant, address_recognition
+    inputs: Dict[str, Any]
+    response_mode: str = "blocking"  # blocking 或 streaming
+    user: Optional[str] = None
+    conversation_id: Optional[str] = None
 
 
 # --------- Static ---------
@@ -141,6 +151,90 @@ async def generate_emergency_report_api(request: ReportRequest):
         return {"status": "success", "report": report_content}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# --------- Dify API 代理端点 ---------
+@app.post("/api/dify/upload")
+async def dify_upload_proxy(
+    app_type: str = Form(...),
+    file: UploadFile = File(...),
+    user: Optional[str] = Form(None)
+):
+    """
+    Dify 文件上传代理
+
+    Args:
+        app_type: 应用类型 (order_recognition, element_extraction, dispatch_assistant, address_recognition)
+        file: 上传的文件
+        user: 用户标识（可选）
+
+    Returns:
+        Dify API 响应
+    """
+    try:
+        result = await dify_proxy.upload_file(app_type, file, user)
+        return result
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"文件上传失败: {str(e)}")
+
+
+@app.post("/api/dify/workflow")
+async def dify_workflow_proxy(request: DifyWorkflowRequest):
+    """
+    Dify 工作流运行代理（非流式）
+
+    Args:
+        request: 工作流请求参数
+
+    Returns:
+        Dify API 响应
+    """
+    try:
+        result = await dify_proxy.run_workflow(
+            app_type=request.app_type,
+            inputs=request.inputs,
+            response_mode=request.response_mode,
+            user=request.user,
+            conversation_id=request.conversation_id
+        )
+        return result
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"工作流执行失败: {str(e)}")
+
+
+@app.post("/api/dify/workflow/stream")
+async def dify_workflow_stream_proxy(request: DifyWorkflowRequest):
+    """
+    Dify 工作流运行代理（流式）
+
+    Args:
+        request: 工作流请求参数
+
+    Returns:
+        流式响应
+    """
+    try:
+        async def stream_generator():
+            async for chunk in dify_proxy.run_workflow_stream(
+                app_type=request.app_type,
+                inputs=request.inputs,
+                user=request.user,
+                conversation_id=request.conversation_id
+            ):
+                yield chunk
+
+        return StreamingResponse(
+            stream_generator(),
+            media_type="text/event-stream"
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"流式工作流执行失败: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run("web_server:app", host="0.0.0.0", port=8889, reload=True)

@@ -1,19 +1,9 @@
 /* ================= 工单列表（纯前端本地数据版 + 地址识别 + 智能派单整合） ================= */
 (function () {
-  // ====== DIFY 配置 ======
-  // 1. 地址识别 Agent
-  const DIFY_ADDR = {
-    apiKey: "app-3uKaB3kZeoUI5GAsktA61P5H",
-    workflowRunUrl: "http://121.43.245.245:5001/v1/workflows/run",
-    user: "frontend-tickets-addr"
-  };
-
-  // 2. 派单助手 Agent (复用 assistant.js 的配置)
-  const DIFY_DISPATCH = {
-    apiKey: "app-ja847DdFKufaS29cIeAn3WKl",
-    workflowRunUrl: "http://121.43.245.245:5001/v1/workflows/run",
-    user: "frontend-tickets-dispatch"
-  };
+  // ====== 应用类型配置（不再需要暴露 API 密钥） ======
+  const APP_TYPE_ADDRESS = "address_recognition";  // 地址识别
+  const APP_TYPE_DISPATCH = "dispatch_assistant";  // 派单助手
+  const USER_ID = "frontend-tickets-user";
 
   // ====== 你的工单数据（模拟） ======
   // 注意：真实场景下，这些字段初始可能为空，或者已有数据
@@ -367,8 +357,8 @@
     try { return JSON.parse(s); } catch { return null; }
   }
 
-  // ✅ 改动：支持 inputs 对象传参 (query, correction_feedback, previous_result 等)
-  async function runDifyWorkflow(inputsOrQuery, config) {
+  // ✅ 改动：使用代理客户端，支持 inputs 对象传参 (query, correction_feedback, previous_result 等)
+  async function runDifyWorkflow(inputsOrQuery, appType) {
     let inputs = {};
     if (typeof inputsOrQuery === "string") {
       inputs = { query: inputsOrQuery };
@@ -376,29 +366,10 @@
       inputs = inputsOrQuery;
     }
 
-    const payload = {
-      inputs: inputs,
-      response_mode: "blocking",
-      user: config.user,
-    };
-
-    const resp = await fetch(config.workflowRunUrl, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${config.apiKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (!resp.ok) {
-      const t = await resp.text().catch(() => "");
-      throw new Error(`AI 调用失败 (${resp.status}) ${t}`);
-    }
-
-    const data = await resp.json();
+    // 使用代理客户端运行工作流
+    const data = await DifyProxyClient.runWorkflow(appType, inputs, { user: USER_ID });
     let outputs = data?.data?.outputs ?? data?.outputs ?? {};
-    
+
     // 解析 outputs.text 是否为 JSON string
     let text = outputs.text ?? outputs.result ?? outputs.answer ?? outputs.output ?? "";
     if (typeof text === "string") {
@@ -417,7 +388,7 @@
   // 这里简化展示，逻辑与之前一致
 
   async function runAddressWorkflow(text){
-     const res = await runDifyWorkflow(text, DIFY_ADDR);
+     const res = await runDifyWorkflow(text, APP_TYPE_ADDRESS);
      return {
       town: (res["镇街"] ?? "").toString().trim(),
       community: (res["社区"] ?? "").toString().trim(),
@@ -567,7 +538,7 @@
       hint.textContent = "正在调用派单助手分析工单内容...";
 
       try {
-        const res = await runDifyWorkflow(item["主要内容"] || "", DIFY_DISPATCH);
+        const res = await runDifyWorkflow(item["主要内容"] || "", APP_TYPE_DISPATCH);
         $("dp_dept").textContent = res.department || res.dept || "未识别";
         $("dp_reason").textContent = res.reason || "无理由";
         
@@ -737,8 +708,8 @@
           previous_result: previousResultStr
         };
 
-        // 调用同一个 Dify Web (DIFY_DISPATCH)
-        const res = await runDifyWorkflow(inputs, DIFY_DISPATCH);
+        // 调用派单助手 (使用代理)
+        const res = await runDifyWorkflow(inputs, APP_TYPE_DISPATCH);
 
         // ✅ 分析成功，回填到上方的输入框
         $("cr_dept").value = res.department || res.dept || "";

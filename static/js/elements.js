@@ -1,9 +1,7 @@
 /* ================= 页面3 JS：诉求要素提取 ================= */
-const DIFY_ELEMENTS_CONFIG = {
-  apiKey: "app-UGozoIrpuwIxeGaHzNSHsKWz",
-  workflowRunUrl: "http://121.43.245.245:5001/v1/workflows/run",
-  user: "frontend-direct-user",
-};
+// 应用类型配置（不再需要暴露 API 密钥）
+const APP_TYPE = "element_extraction";
+const USER_ID = "frontend-elements-user";
 
 function logElements(msg, type = "info") {
   const box = document.getElementById("elementsLog");
@@ -100,22 +98,13 @@ async function runElementsStream() {
 
   try {
     logElements("启动工作流（流式模式）...");
-    const payload = {
-      inputs: { query: input },
-      response_mode: "streaming",
-      user: DIFY_ELEMENTS_CONFIG.user,
-    };
 
-    const response = await fetch(DIFY_ELEMENTS_CONFIG.workflowRunUrl, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${DIFY_ELEMENTS_CONFIG.apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) throw new Error(`工作流调用失败 (${response.status})`);
+    // 使用代理客户端运行流式工作流
+    const response = await DifyProxyClient.runWorkflowStream(
+      APP_TYPE,
+      { query: input },
+      { user: USER_ID }
+    );
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder("utf-8");

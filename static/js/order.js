@@ -1,9 +1,7 @@
 /* ================= 页面2 JS：接单识别（增强版：同步播放 + 实时显示 conversion） ================= */
-const DIFY_CONFIG = {
-  apiKey: "app-rBYgj9vKWewVLflK64xFtDap",
-  baseUrl: "http://121.43.245.245:5001/v1",
-  user: "frontend-direct-user",
-};
+// 应用类型配置（不再需要暴露 API 密钥）
+const APP_TYPE = "order_recognition";
+const USER_ID = "frontend-order-user";
 
 let selectedFile = null;
 let selectedObjectUrl = null; // 用于本地音频播放 URL（记得 revoke）
@@ -241,38 +239,20 @@ async function startAnalysis() {
 
   try {
     logProcess("正在上传音频文件...");
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-    formData.append("user", DIFY_CONFIG.user);
 
-    const uploadResp = await fetch(`${DIFY_CONFIG.baseUrl}/files/upload`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${DIFY_CONFIG.apiKey}` },
-      body: formData,
-    });
-    if (!uploadResp.ok) throw new Error(`上传失败 (${uploadResp.status})`);
-
-    const uploadJson = await uploadResp.json();
+    // 使用代理客户端上传文件
+    const uploadJson = await DifyProxyClient.uploadFile(APP_TYPE, selectedFile, USER_ID);
     const fileId = uploadJson.id;
     logProcess(`文件上传成功 (ID: ${fileId})`);
 
     logProcess("启动工作流 (流式模式)...");
-    const payload = {
-      inputs: { audio: { type: "audio", transfer_method: "local_file", upload_file_id: fileId } },
-      response_mode: "streaming",
-      user: DIFY_CONFIG.user,
-    };
 
-    const response = await fetch(`${DIFY_CONFIG.baseUrl}/workflows/run`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${DIFY_CONFIG.apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) throw new Error(`工作流调用失败 (${response.status})`);
+    // 使用代理客户端运行流式工作流
+    const response = await DifyProxyClient.runWorkflowStream(
+      APP_TYPE,
+      { audio: { type: "audio", transfer_method: "local_file", upload_file_id: fileId } },
+      { user: USER_ID }
+    );
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder("utf-8");
