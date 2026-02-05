@@ -5,9 +5,9 @@ from typing import List, Dict, Any, Optional, Callable, Awaitable
 from openai import AsyncOpenAI, APIError, RateLimitError, APITimeoutError
 from fastmcp import Client
 
-VLLM_URL = "http://localhost:8003/v1"
-VLLM_KEY = "EMPTY"
-MODEL_NAME = "qwen-next"
+VLLM_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+VLLM_KEY = "sk-5099122b242b4e9c884ddd22828b3760"
+MODEL_NAME = "qwen-plus"
 
 MAX_TOOL_LOOPS = 10
 MAX_COMPLETION_TOKENS = 16384
