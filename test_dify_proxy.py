@@ -15,7 +15,7 @@ async def test_workflow():
             inputs={"query": "测试查询"},
             response_mode="blocking",
             user="test-user"
-        )
+        ) 
         print("✅ 工作流调用成功")
         print(f"响应: {result}")
         return True
