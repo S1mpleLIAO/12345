@@ -5,9 +5,8 @@
   const APP_TYPE_DISPATCH = "dispatch_assistant";  // 派单助手
   const USER_ID = "frontend-tickets-user";
 
-  // ====== 你的工单数据（模拟） ======
-  // 注意：真实场景下，这些字段初始可能为空，或者已有数据
-  const TICKETS = [
+  // ====== 工单数据（可通过 Excel 上传替换） ======
+  let TICKETS = [
     {
       "序号": 32902,
       "主要内容": "市民反映，自己是怀柔区汤河口镇东黄粱村的村民，市民拨打12345反映卜广生二层违建的事情，汤河口镇镇政府主管领导总以在“处理中\"为借口，欺上瞒下，不拆除，不作为，二层违建的地方怀柔区汤河口镇东黄粱村村中间，来电反映汤河口镇镇政府主管领导不作为的问题。注：请及时向反映人反馈办理信息",
@@ -199,10 +198,12 @@
     q: "",
     page: 1,
     size: 10,
-    filtered: [...TICKETS], // Note: In real app, this refers to the TICKETS variable defined above
+    filtered: [...TICKETS],
     currentItem: null,
-    tempCorrectionRes: null, // Temporary storage for correction results
-    tempDispatchRes: null    // Temporary storage for dispatch results
+    tempCorrectionRes: null,
+    tempDispatchRes: null,
+    selected: new Set(),        // 选中的工单序号集合
+    batchCancelled: false       // 批量处理取消标志
   };
 
   function $(id){ return document.getElementById(id); }
@@ -245,22 +246,27 @@
   }
 
   // ====== 修改点 1: 表格渲染 (renderTable) ======
-  // ====== 修改点: renderTable 增加按钮禁用逻辑 ======
+  // ====== 修改点: renderTable 增加复选框和按钮禁用逻辑 ======
   function renderTable(){
     const tbody = $("ticketsTbody");
     const items = getPageItems();
 
     if (!items.length){
-      tbody.innerHTML = `<tr><td colspan="11" class="tickets-empty">暂无数据</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="12" class="tickets-empty">暂无数据</td></tr>`;
       return;
     }
 
     tbody.innerHTML = items.map(x => {
-      // ✅ 核心判断：只有当“建议处置部门”和“派单理由”都有值时，才认为已分析，允许更正
+      const id = String(x["序号"]);
+      const isChecked = state.selected.has(id);
+      // ✅ 核心判断：只有当"建议处置部门"和"派单理由"都有值时，才认为已分析，允许更正
       const hasAnalyzed = x["建议处置部门"] && x["派单理由"];
 
       return `
-      <tr>
+      <tr data-id="${esc(id)}">
+        <td class="td-center">
+          <input type="checkbox" class="ticket-checkbox" data-id="${esc(id)}" ${isChecked ? "checked" : ""} />
+        </td>
         <td class="td-center td-mono">${esc(x["序号"])}</td>
         <td title="${esc(x["主要内容"])}"><div class="td-clamp-2">${esc(x["主要内容"])}</div></td>
         <td class="td-center">${esc(x["被反映街乡镇"] || "—")}</td>
@@ -275,9 +281,9 @@
 
         <td class="td-center">
           <button class="btn-mini" data-action="view" data-id="${esc(x["序号"])}">查看</button>
-          
-          <button class="btn-mini warning" 
-                  data-action="correct" 
+
+          <button class="btn-mini warning"
+                  data-action="correct"
                   data-id="${esc(x["序号"])}"
                   ${hasAnalyzed ? "" : "disabled"}
                   title="${hasAnalyzed ? '点击进行更正' : '请先点击[查看]并运行智能分析'}">
@@ -286,6 +292,20 @@
         </td>
       </tr>
     `}).join("");
+
+    // 绑定复选框事件
+    tbody.querySelectorAll(".ticket-checkbox").forEach(cb => {
+      cb.addEventListener("change", () => {
+        const id = cb.getAttribute("data-id");
+        if (cb.checked) {
+          state.selected.add(id);
+        } else {
+          state.selected.delete(id);
+        }
+        updateSelectAllCheckbox();
+        updateBatchButtons();
+      });
+    });
 
     tbody.querySelectorAll("button[data-action]").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -298,7 +318,6 @@
           openTicketModal(item);
         }
         if (action === "correct"){
-          // 这里的 disabled 属性虽然在 HTML 上生效，但为了安全加个逻辑判断
           if (!item["建议处置部门"] || !item["派单理由"]) {
              return alert("请先在详情中进行智能派单分析！");
           }
@@ -306,6 +325,30 @@
         }
       });
     });
+  }
+
+  // 更新全选复选框状态
+  function updateSelectAllCheckbox() {
+    const selectAll = $("selectAllCheckbox");
+    if (!selectAll) return;
+    const pageItems = getPageItems();
+    const pageIds = pageItems.map(x => String(x["序号"]));
+    const allChecked = pageIds.length > 0 && pageIds.every(id => state.selected.has(id));
+    const someChecked = pageIds.some(id => state.selected.has(id));
+    selectAll.checked = allChecked;
+    selectAll.indeterminate = someChecked && !allChecked;
+  }
+
+  // 更新批量操作按钮状态
+  function updateBatchButtons() {
+    const count = state.selected.size;
+    const btnBatchAddr = $("btnBatchAddress");
+    const btnBatchDispatch = $("btnBatchDispatch");
+    const selectedCount = $("selectedCount");
+
+    if (btnBatchAddr) btnBatchAddr.disabled = count === 0;
+    if (btnBatchDispatch) btnBatchDispatch.disabled = count === 0;
+    if (selectedCount) selectedCount.textContent = count > 0 ? `已选 ${count} 条` : "";
   }
 
   function renderPagination(){
@@ -346,6 +389,8 @@
     $("ticketsTotal").textContent = `共 ${state.filtered.length} 条`;
     renderTable();
     renderPagination();
+    updateSelectAllCheckbox();
+    updateBatchButtons();
   }
 
   // ====== 3) Dify 调用工具函数 ======
@@ -895,10 +940,333 @@
     document.getElementById("ticketModal").classList.add("show");
   }
 
+  // ====== 8) Excel 上传功能 ======
+  async function uploadExcel(file) {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch("/api/tickets/upload", {
+      method: "POST",
+      body: formData
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.detail || "上传失败");
+    }
+
+    return await response.json();
+  }
+
+  function setupExcelUpload() {
+    const uploadBtn = $("btnUploadExcel");
+    const fileInput = $("excelFileInput");
+
+    if (!uploadBtn || !fileInput) return;
+
+    uploadBtn.addEventListener("click", () => fileInput.click());
+
+    fileInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      uploadBtn.disabled = true;
+      uploadBtn.textContent = "上传中...";
+
+      try {
+        const result = await uploadExcel(file);
+        TICKETS = result.tickets;
+        state.filtered = [...TICKETS];
+        state.selected.clear();
+        state.page = 1;
+        applyFilter();
+        renderAll();
+        alert(`成功导入 ${result.count} 条工单`);
+      } catch (err) {
+        alert("上传失败：" + err.message);
+      } finally {
+        uploadBtn.disabled = false;
+        uploadBtn.textContent = "上传 Excel";
+        fileInput.value = "";
+      }
+    });
+  }
+
+  // ====== 9) 批量处理进度弹窗 ======
+  function ensureBatchModal() {
+    if (document.getElementById("batchModal")) return;
+
+    const div = document.createElement("div");
+    div.id = "batchModal";
+    div.className = "addr-modal-mask";
+    div.innerHTML = `
+      <div class="addr-modal" style="width: min(700px, 96vw);">
+        <div class="addr-modal-head">
+          <div class="addr-modal-title" id="batchModalTitle">批量处理</div>
+          <button class="addr-modal-close" id="batchModalClose">✕</button>
+        </div>
+        <div class="addr-modal-body">
+          <div style="margin-bottom: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <span id="batchProgressText">进度：0 / 0</span>
+              <span id="batchProgressPercent">0%</span>
+            </div>
+            <div style="background: #e2e8f0; border-radius: 4px; height: 8px; overflow: hidden;">
+              <div id="batchProgressBar" style="background: linear-gradient(90deg, #3b82f6, #1d4ed8); height: 100%; width: 0%; transition: width 0.3s;"></div>
+            </div>
+          </div>
+          <div style="border: 1px solid #e2e8f0; border-radius: 8px; max-height: 400px; overflow-y: auto;" id="batchResultList">
+            <div style="padding: 20px; color: #94a3b8; text-align: center;">等待开始...</div>
+          </div>
+        </div>
+        <div class="addr-modal-foot" style="justify-content: space-between;">
+          <div id="batchSummary" style="font-size: 12px; color: #64748b;"></div>
+          <div>
+            <button class="btn-ghost" id="batchModalCancel" style="margin-right: 10px;">取消</button>
+            <button class="btn-primary" id="batchModalOk" disabled>完成</button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(div);
+
+    $("batchModalClose").addEventListener("click", () => {
+      state.batchCancelled = true;
+    });
+    $("batchModalCancel").addEventListener("click", () => {
+      state.batchCancelled = true;
+    });
+    $("batchModalOk").addEventListener("click", () => {
+      div.classList.remove("show");
+    });
+  }
+
+  function openBatchModal(title) {
+    ensureBatchModal();
+    $("batchModalTitle").textContent = title;
+    $("batchProgressText").textContent = "进度：0 / 0";
+    $("batchProgressPercent").textContent = "0%";
+    $("batchProgressBar").style.width = "0%";
+    $("batchResultList").innerHTML = '<div style="padding: 20px; color: #94a3b8; text-align: center;">准备中...</div>';
+    $("batchSummary").textContent = "";
+    $("batchModalCancel").disabled = false;
+    $("batchModalOk").disabled = true;
+    state.batchCancelled = false;
+    document.getElementById("batchModal").classList.add("show");
+  }
+
+  function updateBatchProgress(completed, total, successCount, failCount) {
+    const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+    $("batchProgressText").textContent = `进度：${completed} / ${total}`;
+    $("batchProgressPercent").textContent = `${percent}%`;
+    $("batchProgressBar").style.width = `${percent}%`;
+    $("batchSummary").textContent = `成功 ${successCount} 条，失败 ${failCount} 条`;
+  }
+
+  function addBatchResultItem(id, content, status, result) {
+    const list = $("batchResultList");
+    if (list.querySelector(".batch-placeholder")) {
+      list.innerHTML = "";
+    }
+
+    const truncatedContent = content.length > 50 ? content.substring(0, 50) + "..." : content;
+    const statusIcon = status === "success" ? "✓" : status === "error" ? "✗" : "⋯";
+    const statusColor = status === "success" ? "#16a34a" : status === "error" ? "#dc2626" : "#f59e0b";
+
+    const item = document.createElement("div");
+    item.id = `batch-item-${id}`;
+    item.style.cssText = "padding: 12px 15px; border-bottom: 1px solid #f1f5f9;";
+    item.innerHTML = `
+      <div style="display: flex; align-items: flex-start; gap: 10px;">
+        <span style="color: ${statusColor}; font-weight: bold; font-size: 16px; flex-shrink: 0;">${statusIcon}</span>
+        <div style="flex: 1; min-width: 0;">
+          <div style="font-size: 13px; color: #334155; margin-bottom: 4px;">
+            <span style="color: #64748b; font-weight: 600;">#${id}</span>
+            ${esc(truncatedContent)}
+          </div>
+          <div style="font-size: 12px; color: ${statusColor};">
+            → ${esc(result)}
+          </div>
+        </div>
+      </div>
+    `;
+    list.appendChild(item);
+    list.scrollTop = list.scrollHeight;
+  }
+
+  function updateBatchResultItem(id, status, result) {
+    const item = document.getElementById(`batch-item-${id}`);
+    if (!item) return;
+
+    const statusIcon = status === "success" ? "✓" : status === "error" ? "✗" : "⋯";
+    const statusColor = status === "success" ? "#16a34a" : status === "error" ? "#dc2626" : "#f59e0b";
+
+    const iconSpan = item.querySelector("span");
+    const resultDiv = item.querySelector("div > div:last-child");
+
+    if (iconSpan) {
+      iconSpan.textContent = statusIcon;
+      iconSpan.style.color = statusColor;
+    }
+    if (resultDiv) {
+      resultDiv.style.color = statusColor;
+      resultDiv.innerHTML = `→ ${esc(result)}`;
+    }
+  }
+
+  function finishBatchModal() {
+    $("batchModalCancel").disabled = true;
+    $("batchModalOk").disabled = false;
+  }
+
+  // ====== 10) 批量处理逻辑（并发控制） ======
+  async function batchProcess(type) {
+    const selectedIds = Array.from(state.selected);
+    if (selectedIds.length === 0) {
+      alert("请先选择要处理的工单");
+      return;
+    }
+
+    const title = type === "address" ? "批量地址识别" : "批量派单分析";
+    openBatchModal(title);
+
+    const total = selectedIds.length;
+    let completed = 0;
+    let successCount = 0;
+    let failCount = 0;
+
+    const CONCURRENCY = 3;
+    let running = 0;
+    let index = 0;
+
+    // 先添加所有待处理项
+    for (const id of selectedIds) {
+      const item = TICKETS.find(t => String(t["序号"]) === id);
+      if (item) {
+        addBatchResultItem(id, item["主要内容"] || "", "pending", "处理中...");
+      }
+    }
+
+    const processOne = async (id) => {
+      const item = TICKETS.find(t => String(t["序号"]) === id);
+      if (!item) {
+        failCount++;
+        updateBatchResultItem(id, "error", "未找到工单");
+        return;
+      }
+
+      try {
+        if (type === "address") {
+          const res = await runAddressWorkflow(item["主要内容"] || "");
+          item["被反映街乡镇"] = res.town || item["被反映街乡镇"];
+          item["所在村社区"] = res.community || item["所在村社区"];
+          updateBatchResultItem(id, "success", `${res.town || "—"} / ${res.community || "—"}`);
+          successCount++;
+        } else {
+          const res = await runDifyWorkflow(item["主要内容"] || "", APP_TYPE_DISPATCH);
+          item["建议处置部门"] = res.department || res.dept || "";
+          item["派单理由"] = res.reason || "";
+          item["历史工单"] = res.history || [];
+          item["规则依据"] = res.rules || [];
+          const dept = res.department || res.dept || "未识别";
+          const reason = (res.reason || "").substring(0, 30);
+          updateBatchResultItem(id, "success", `建议部门：${dept} | ${reason}...`);
+          successCount++;
+        }
+        // 实时更新表格行
+        renderAll();
+      } catch (e) {
+        failCount++;
+        updateBatchResultItem(id, "error", `失败：${e.message}`);
+      }
+
+      completed++;
+      updateBatchProgress(completed, total, successCount, failCount);
+    };
+
+    // 并发控制执行
+    const executeWithConcurrency = () => {
+      return new Promise((resolve) => {
+        const checkAndRun = () => {
+          if (state.batchCancelled) {
+            // 取消后标记剩余为取消
+            while (index < selectedIds.length) {
+              const id = selectedIds[index];
+              updateBatchResultItem(id, "error", "已取消");
+              failCount++;
+              completed++;
+              index++;
+            }
+            updateBatchProgress(completed, total, successCount, failCount);
+            resolve();
+            return;
+          }
+
+          while (running < CONCURRENCY && index < selectedIds.length) {
+            const id = selectedIds[index];
+            index++;
+            running++;
+
+            processOne(id).finally(() => {
+              running--;
+              checkAndRun();
+            });
+          }
+
+          if (running === 0 && index >= selectedIds.length) {
+            resolve();
+          }
+        };
+
+        checkAndRun();
+      });
+    };
+
+    await executeWithConcurrency();
+    finishBatchModal();
+    renderAll();
+  }
+
+  // ====== 11) 全选功能 ======
+  function setupSelectAll() {
+    const selectAll = $("selectAllCheckbox");
+    if (!selectAll) return;
+
+    selectAll.addEventListener("change", () => {
+      const pageItems = getPageItems();
+      const pageIds = pageItems.map(x => String(x["序号"]));
+
+      if (selectAll.checked) {
+        pageIds.forEach(id => state.selected.add(id));
+      } else {
+        pageIds.forEach(id => state.selected.delete(id));
+      }
+
+      renderTable();
+      updateBatchButtons();
+    });
+  }
+
+  // ====== 12) 批量操作按钮绑定 ======
+  function setupBatchButtons() {
+    const btnBatchAddr = $("btnBatchAddress");
+    const btnBatchDispatch = $("btnBatchDispatch");
+
+    if (btnBatchAddr) {
+      btnBatchAddr.addEventListener("click", () => batchProcess("address"));
+    }
+    if (btnBatchDispatch) {
+      btnBatchDispatch.addEventListener("click", () => batchProcess("dispatch"));
+    }
+  }
+
   window.addEventListener("DOMContentLoaded", () => {
     if (!$("page-tickets")) return;
     applyFilter();
     renderAll();
+    setupExcelUpload();
+    setupSelectAll();
+    setupBatchButtons();
   });
 
 })();

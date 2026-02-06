@@ -187,6 +187,8 @@
             </div>
 
             <div class="tickets-right">
+              <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
+              <button id="btnUploadExcel" class="btn-primary" style="margin-right: 10px;">上传 Excel</button>
               <select id="ticketPageSize" class="tickets-size">
                 <option value="10">10/页</option>
                 <option value="20">20/页</option>
@@ -195,10 +197,17 @@
             </div>
           </div>
 
+          <div class="tickets-batch-bar" style="display: flex; align-items: center; gap: 15px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 10px;">
+            <span id="selectedCount" style="font-size: 13px; color: #64748b;"></span>
+            <button id="btnBatchAddress" class="btn-mini" disabled style="background: #64748b; color: white;">批量地址识别</button>
+            <button id="btnBatchDispatch" class="btn-mini" disabled style="background: #2563eb; color: white;">批量派单分析</button>
+          </div>
+
           <div class="tickets-table-wrap">
             <table class="tickets-table">
               <thead>
                 <tr>
+                  <th style="width:40px;"><input type="checkbox" id="selectAllCheckbox" title="全选当前页" /></th>
                   <th style="width:60px;">序号</th>
                   <th style="width:200px;">主要内容</th>
                   <th style="width:100px;">被反映街乡镇</th>
@@ -214,7 +223,7 @@
               </thead>
               <tbody id="ticketsTbody">
                 <tr>
-                  <td colspan="11" class="tickets-empty">暂无数据</td>
+                  <td colspan="12" class="tickets-empty">暂无数据</td>
                 </tr>
               </tbody>
             </table>

@@ -3,51 +3,105 @@ nohup: ignoring input
 
 ╭──────────────────────────────────────────────────────────────────────────────╮
 │                                                                              │
+│                                                                              │
 │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
 │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
 │                                                                              │
-│                               FastMCP 2.13.0.2                               │
 │                                                                              │
+│                                FastMCP 2.14.3                                │
+│                            https://gofastmcp.com                             │
 │                                                                              │
-│           🖥  Server name: EmergencyReport-Server                             │
+│                    🖥  Server:      EmergencyReport-Server                    │
+│                    🚀 Deploy free: https://fastmcp.cloud                     │
 │                                                                              │
-│           📦 Transport:   HTTP                                               │
-│           🔗 Server URL:  http://0.0.0.0:9003/emergency_report_mcp           │
-│                                                                              │
-│           📚 Docs:        https://gofastmcp.com                              │
-│           🚀 Hosting:     https://fastmcp.cloud                              │
-│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                          ✨ FastMCP 3.0 is coming!                           │
+│       Pin `fastmcp < 3` in production, then upgrade when you're ready.       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                         🎉 Update available: 2.14.5                          │
+│                      Run: pip install --upgrade fastmcp                      │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[01/27/26 01:14:34] INFO     Starting MCP server                  server.py:2050
+[02/05/26 14:15:25] INFO     Starting MCP server                  server.py:2585
                              'EmergencyReport-Server' with                      
                              transport 'streamable-http' on                     
                              http://0.0.0.0:9003/emergency_report               
                              _mcp                                               
-INFO:     Started server process [357710]
+INFO:     Started server process [4171963]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:9003 (Press CTRL+C to quit)
-INFO:     127.0.0.1:49888 - "POST /emergency_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49894 - "POST /emergency_report_mcp HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:49902 - "GET /emergency_report_mcp HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49918 - "POST /emergency_report_mcp HTTP/1.1" 200 OK
-[01/28/26 02:18:28] DEBUG    [EmergencyReport-Server] Handler      server.py:687
-                             called: list_tools                                 
-INFO:     127.0.0.1:49922 - "POST /emergency_report_mcp HTTP/1.1" 200 OK
-[01/28/26 02:18:30] DEBUG    [EmergencyReport-Server] Handler     server.py:1061
-                             called: call_tool                                  
-                             get_emergency_category_stats_tool                  
-                             with {'date': '2025-10-26'}                        
-INFO:     127.0.0.1:49924 - "POST /emergency_report_mcp HTTP/1.1" 200 OK
-                    DEBUG    [EmergencyReport-Server] Handler     server.py:1061
-                             called: call_tool                                  
-                             get_emergency_month_daily_rates_tool               
-                             with {'date': '2025-10-26'}                        
-INFO:     127.0.0.1:49926 - "POST /emergency_report_mcp HTTP/1.1" 200 OK
-[01/28/26 02:18:31] DEBUG    [EmergencyReport-Server] Handler     server.py:1061
-                             called: call_tool                                  
-                             get_emergency_appeals_tool with                    
-                             {'date': '2025-10-26'}                             
-INFO:     127.0.0.1:57382 - "DELETE /emergency_report_mcp HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     39.100.68.188:37070 - "GET / HTTP/1.0" 404 Not Found
+INFO:     39.100.68.188:37914 - "OPTIONS / HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     39.100.68.188:49028 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.216.149.80:61778 - "GET / HTTP/1.1" 404 Not Found
+INFO:     47.92.233.252:58342 - "GET / HTTP/1.1" 404 Not Found
+INFO:     47.92.233.252:58388 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.178:5796 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.178:5814 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.178:5836 - "GET /robots.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     35.203.211.32:63368 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.216.150.4:63612 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     35.203.211.51:64238 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.211:30350 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.168.34.211:47708 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.211:34102 - "GET /wiki HTTP/1.1" 404 Not Found
+INFO:     119.164.104.8:49470 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.194:12442 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.194:31876 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.194:31878 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.194:15376 - "GET /wiki HTTP/1.1" 404 Not Found

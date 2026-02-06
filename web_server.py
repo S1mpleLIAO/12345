@@ -1,13 +1,15 @@
 import json
 import asyncio
 import uvicorn
-from typing import Optional, Dict, Any
+import io
+from typing import Optional, Dict, Any, List
 
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from openpyxl import load_workbook
 
 from report.dailyreport_llm_mcp import generate_daily_report
 from report.heatingreport_llm_mcp import generate_heating_report
@@ -151,6 +153,75 @@ async def generate_emergency_report_api(request: ReportRequest):
         return {"status": "success", "report": report_content}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# --------- 工单 Excel 上传 ---------
+@app.post("/api/tickets/upload")
+async def upload_tickets_excel(file: UploadFile = File(...)):
+    """
+    上传 Excel 文件解析工单数据
+
+    Excel 格式要求：
+    - 第一行为表头
+    - 必须包含"主要内容"列
+    - 可选列：序号、被反映街乡镇、所在村社区、二级承办单位简称
+
+    Returns:
+        解析后的工单数据列表
+    """
+    if not file.filename.endswith(('.xlsx', '.xls')):
+        raise HTTPException(status_code=400, detail="请上传 Excel 文件（.xlsx 或 .xls）")
+
+    try:
+        content = await file.read()
+        wb = load_workbook(filename=io.BytesIO(content), read_only=True)
+        ws = wb.active
+
+        rows = list(ws.iter_rows(values_only=True))
+        if len(rows) < 2:
+            raise HTTPException(status_code=400, detail="Excel 文件为空或只有表头")
+
+        headers = [str(h).strip() if h else "" for h in rows[0]]
+
+        if "主要内容" not in headers:
+            raise HTTPException(status_code=400, detail="Excel 必须包含主要内容列")
+
+        tickets: List[Dict[str, Any]] = []
+        for idx, row in enumerate(rows[1:], start=1):
+            row_dict = {}
+            for col_idx, header in enumerate(headers):
+                if header and col_idx < len(row):
+                    value = row[col_idx]
+                    row_dict[header] = str(value).strip() if value is not None else ""
+
+            if not row_dict.get("主要内容"):
+                continue
+
+            ticket = {
+                "序号": row_dict.get("序号", str(idx)),
+                "主要内容": row_dict.get("主要内容", ""),
+                "被反映街乡镇": row_dict.get("被反映街乡镇", ""),
+                "所在村社区": row_dict.get("所在村社区", ""),
+                "二级承办单位简称": row_dict.get("二级承办单位简称", ""),
+                "建议处置部门": "",
+                "派单理由": "",
+                "历史工单": "",
+                "规则依据": "",
+                "备注": ""
+            }
+            tickets.append(ticket)
+
+        wb.close()
+
+        if not tickets:
+            raise HTTPException(status_code=400, detail="未解析到有效工单数据")
+
+        return {"status": "success", "count": len(tickets), "tickets": tickets}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Excel 解析失败: {str(e)}")
 
 
 # --------- Dify API 代理端点 ---------
