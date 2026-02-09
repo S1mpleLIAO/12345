@@ -443,3 +443,9 @@ INFO:     172.17.45.92:53238 - "POST /daily_report_mcp HTTP/1.1" 200 OK
                              {'date': '2025-10-12'}                             
 INFO:     172.17.45.92:53254 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
 WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:33842 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     212.73.148.2:33376 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.

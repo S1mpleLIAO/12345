@@ -16,6 +16,8 @@ python web_server.py
 python mcp_server/daily_report_mcp.py     # 端口 9001
 python mcp_server/heating_report_mcp.py   # 端口 9002
 python mcp_server/emergency_report_mcp.py # 端口 9003
+python mcp_server/annual_analysis_mcp.py  # 端口 6001（年度分析）
+python mcp_server/custom_period_mcp.py    # 端口 6002（自定义时间段分析）
 ```
 
 ## 系统架构
@@ -27,7 +29,7 @@ python mcp_server/emergency_report_mcp.py # 端口 9003
                           ↓
               MCPClientWrapper (mcp_llm_clint.py)
                           ↓
-              MCP 服务器 (9001-9003) → Services → MySQL
+              MCP 服务器 (9001-9003, 6001-6002) → Services → MySQL
 ```
 
 **核心流程**：用户请求 → FastAPI → 报告生成器 → LLM 决定调用哪些工具 → MCP 服务器执行工具 → Service 层查询数据库 → LLM 合成 Markdown 报告
