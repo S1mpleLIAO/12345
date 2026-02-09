@@ -141,3 +141,305 @@ WARNING:  Invalid HTTP request received.
 WARNING:  Invalid HTTP request received.
 INFO:     199.45.154.128:10942 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
 WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:60494 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     121.41.164.251:39044 - "GET /nmaplowercheck1770376084 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     121.41.164.251:39060 - "GET / HTTP/1.0" 404 Not Found
+INFO:     121.41.164.251:39062 - "POST /sdk HTTP/1.1" 404 Not Found
+INFO:     121.41.164.251:39082 - "GET /evox/about HTTP/1.1" 404 Not Found
+INFO:     121.41.164.251:39088 - "GET /HNAP1 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     121.41.164.251:39462 - "GET / HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     121.41.164.251:39474 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     39.103.163.218:40714 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     47.92.243.128:59472 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:36066 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     18.191.97.239:51932 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:58970 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     18.191.97.239:45894 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     3.145.110.79:47504 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.145.110.79:50918 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     184.105.139.69:13120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     184.105.139.69:6558 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.42:36234 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.42:16328 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.42:9246 - "GET /wiki HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     18.221.103.30:46292 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.221.103.30:60096 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     18.191.172.171:40658 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.191.172.171:53824 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.219.216.206:45400 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.219.216.206:35566 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:41040 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     91.230.168.121:46743 - "GET / HTTP/1.1" 404 Not Found
+INFO:     195.184.76.70:60187 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     198.235.24.224:62620 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:57570 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     113.215.189.206:10976 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     3.137.194.242:36926 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:54936 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     18.219.216.206:40984 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.150.119.126:56430 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.137.194.242:52000 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.219.216.206:60860 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.150.119.126:48324 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     195.178.110.108:34170 - "GET /.git/config HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     195.178.110.108:41430 - "GET / HTTP/1.1" 404 Not Found
+INFO:     85.217.149.20:48384 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     64.62.156.132:10438 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:39408 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:36930 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.117:57890 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.168.34.117:48784 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.117:40470 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:55754 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     205.210.31.22:64840 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:50972 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:44562 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     101.133.140.228:57524 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     18.191.106.209:36062 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     3.14.72.188:59788 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     3.137.194.242:54052 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.14.72.188:35026 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.137.194.242:37890 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:41852 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     204.76.203.50:48768 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.50:12306 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.168.34.50:31492 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.50:59538 - "GET /security.txt HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:48986 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     205.210.31.136:60694 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     18.191.52.107:51202 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     3.137.194.242:44250 - "GET / HTTP/1.1" 404 Not Found
+INFO:     18.224.1.173:48732 - "GET / HTTP/1.1" 404 Not Found
+INFO:     18.191.52.107:40330 - "GET / HTTP/1.1" 404 Not Found
+INFO:     18.224.1.173:52260 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.137.194.242:48112 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     195.178.110.108:58376 - "GET /.git/config HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     195.178.110.108:58402 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     198.235.24.201:64000 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     152.32.135.214:60562 - "GET / HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60586 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60592 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60602 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60606 - "GET /sse HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60618 - "GET /mcp HTTP/1.1" 404 Not Found
+INFO:     152.32.135.214:60628 - "GET /mcp-sse HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     101.133.224.44:53264 - "GET / HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     101.133.224.44:60664 - "OPTIONS / HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     101.133.224.44:40566 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:50040 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     184.105.139.68:13590 - "GET / HTTP/1.1" 404 Not Found
+INFO:     184.105.139.68:4690 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.63:21886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.63:8772 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.63:3730 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.198:47820 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.198:55218 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.168.34.198:55224 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.198:43716 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:58526 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     39.100.68.14:58190 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Unsupported upgrade request.
+INFO:     39.100.70.23:58792 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     207.90.244.28:51068 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.51:52652 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     112.124.56.197:54404 - "GET / HTTP/1.1" 404 Not Found
+INFO:     112.124.56.197:54406 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:41332 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     198.235.24.102:61586 - "GET / HTTP/1.1" 404 Not Found
+INFO:     205.210.31.149:60874 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.188:55734 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.188:55744 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.188:40866 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     204.76.203.51:59596 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     172.17.45.92:49316 - "GET /daily_report_mcp HTTP/1.1" 400 Bad Request
+INFO:     172.17.45.92:49330 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:49332 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     172.17.45.92:49334 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:49356 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/09/26 10:06:52] DEBUG    [Report-Server] Handler called:      server.py:1538
+                             call_tool get_daily_report_data with               
+                             {'date': '2056-10-13'}                             
+INFO:     172.17.45.92:49370 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:33108 - "GET /daily_report_mcp HTTP/1.1" 400 Bad Request
+INFO:     172.17.45.92:33118 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:33134 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     172.17.45.92:33136 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:33156 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/09/26 10:07:14] DEBUG    [Report-Server] Handler called:      server.py:1158
+                             list_tools                                         
+INFO:     172.17.45.92:33162 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:40828 - "GET /daily_report_mcp HTTP/1.1" 400 Bad Request
+INFO:     172.17.45.92:40830 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:40838 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     172.17.45.92:40840 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:40852 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/09/26 10:07:22] DEBUG    [Report-Server] Handler called:      server.py:1158
+                             list_tools                                         
+INFO:     172.17.45.92:40862 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:53214 - "GET /daily_report_mcp HTTP/1.1" 400 Bad Request
+INFO:     172.17.45.92:53226 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:53228 - "GET /daily_report_mcp HTTP/1.1" 200 OK
+INFO:     172.17.45.92:53230 - "POST /daily_report_mcp HTTP/1.1" 202 Accepted
+INFO:     172.17.45.92:53238 - "POST /daily_report_mcp HTTP/1.1" 200 OK
+[02/09/26 10:08:02] DEBUG    [Report-Server] Handler called:      server.py:1538
+                             call_tool get_daily_report_data with               
+                             {'date': '2025-10-12'}                             
+INFO:     172.17.45.92:53254 - "DELETE /daily_report_mcp HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.

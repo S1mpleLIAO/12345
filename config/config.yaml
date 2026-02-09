@@ -4,7 +4,7 @@ database:
   user: "liao"
   password: "NewPass@123!"
   name: "12345"
-  table: "12345test"
+  table: "Sheet1"
 
 data_lists:
   streets:
