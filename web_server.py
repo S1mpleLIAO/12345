@@ -197,8 +197,9 @@ async def upload_tickets_excel(file: UploadFile = File(...)):
             if not row_dict.get("主要内容"):
                 continue
 
+            # 强制使用行号作为序号，确保唯一性（即使 Excel 中有序号列也忽略）
             ticket = {
-                "序号": row_dict.get("序号", str(idx)),
+                "序号": idx,
                 "主要内容": row_dict.get("主要内容", ""),
                 "被反映街乡镇": row_dict.get("被反映街乡镇", ""),
                 "所在村社区": row_dict.get("所在村社区", ""),

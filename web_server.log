@@ -366,3 +366,138 @@ INFO:     Finished server process [2283960]
 INFO:     Started server process [2328493]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     124.127.213.42:60467 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60467 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60478 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60480 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60477 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60479 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60472 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60467 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60479 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60479 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:53775 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62270 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55953 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62270 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55953 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55953 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62270 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55953 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62270 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62270 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:54773 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54779 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55880 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49928 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49969 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49990 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50008 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55460 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55462 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55461 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55588 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55588 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55588 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55678 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33188 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33188 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58028 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58030 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58029 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33189 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33190 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33188 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58028 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58028 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:58031 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33191 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33191 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33194 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58033 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33193 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58468 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33191 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:33192 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58033 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33194 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33191 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58468 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33193 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58033 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33192 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:33195 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33196 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33196 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     39.144.78.124:33196 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33196 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33197 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58469 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33199 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33198 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58470 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33196 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33197 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33197 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:58471 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33200 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33200 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58472 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58473 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33201 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33202 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58474 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33200 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58472 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58472 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:58475 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2328493]
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [1492107]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     39.144.78.124:33204 - "GET / HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33204 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58477 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     39.144.78.124:58479 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     39.144.78.124:58479 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     39.144.78.124:58480 - "POST /api/tickets/upload HTTP/1.1" 200 OK

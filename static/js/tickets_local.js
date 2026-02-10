@@ -341,6 +341,14 @@
 
   // 更新批量操作按钮状态
   function updateBatchButtons() {
+    // 清理无效的选中项
+    const validIds = new Set(TICKETS.map(t => String(t["序号"])));
+    const invalidIds = [];
+    state.selected.forEach(id => {
+      if (!validIds.has(id)) invalidIds.push(id);
+    });
+    invalidIds.forEach(id => state.selected.delete(id));
+
     const count = state.selected.size;
     const btnBatchAddr = $("btnBatchAddress");
     const btnBatchDispatch = $("btnBatchDispatch");
@@ -975,9 +983,10 @@
 
       try {
         const result = await uploadExcel(file);
+        // 重要：先清空选中状态，再替换数据
+        state.selected = new Set();  // 重新创建 Set，确保完全清空
         TICKETS = result.tickets;
         state.filtered = [...TICKETS];
-        state.selected.clear();
         state.page = 1;
         applyFilter();
         renderAll();
@@ -1121,6 +1130,14 @@
 
   // ====== 10) 批量处理逻辑（并发控制） ======
   async function batchProcess(type) {
+    // 清理无效的选中项（确保选中的序号在当前 TICKETS 中存在）
+    const validIds = new Set(TICKETS.map(t => String(t["序号"])));
+    const invalidIds = [];
+    state.selected.forEach(id => {
+      if (!validIds.has(id)) invalidIds.push(id);
+    });
+    invalidIds.forEach(id => state.selected.delete(id));
+
     const selectedIds = Array.from(state.selected);
     if (selectedIds.length === 0) {
       alert("请先选择要处理的工单");
