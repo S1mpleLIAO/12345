@@ -4,55 +4,608 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>12345 æ™ºèƒ½å·¥ä½œå°</title>
-
+  <title>ÄÏÍ¨ÊÐ12345 ÖÇÄÜ¹¤×÷Ì¨</title>
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 
 <body>
-  <div class="sidebar">
-    <div class="sidebar-header">ðŸš€ 12345 æ™ºèƒ½å·¥ä½œå°</div>
+  <div class="sidebar glass-panel">
+    <div class="sidebar-header">
+      <div class="brand-mark">12345</div>
+      <div>
+        <div class="brand-title">ÄÏÍ¨ÊÐ12345</div>
+        <div class="brand-subtitle">ÖÇÄÜ¹¤µ¥¹¤×÷Ì¨</div>
+      </div>
+    </div>
 
-    <div class="nav-item" data-page="order">
-      <span>ðŸŽ§</span> æŽ¥å•è¯†åˆ«åŠ©æ‰‹
-    </div>
-    <div class="nav-item" data-page="tickets">
-      <span>ðŸ“‹</span> å·¥å•åˆ—è¡¨
-    </div>
-    <!-- <div class="nav-item" data-page="assistant">
-      <span>ðŸ¤–</span> æ´¾å•åŠ©æ‰‹
-    </div> -->
-    <div class="nav-item active" data-page="report">
-      <span>ðŸ“Š</span> æ™ºèƒ½æŠ¥è¡¨ç”Ÿæˆ
-    </div>
+    <nav class="nav-tree" aria-label="Ö÷µ¼º½">
+      <div class="nav-section">
+        <div class="nav-item active" data-page="home">
+          <span class="nav-icon">?</span>
+          <span>Ê×Ò³</span>
+        </div>
+      </div>
+
+      <div class="nav-group expanded" data-nav-group="dispatch">
+        <button class="nav-toggle" type="button" aria-expanded="true" data-toggle-group="dispatch">
+          <span class="nav-toggle-left">
+            <span class="nav-icon">?</span>
+            <span>ÅÉµ¥ÏêÇé</span>
+          </span>
+          <span class="nav-chevron">?</span>
+        </button>
+
+        <div class="nav-subsection">
+          <div class="nav-item nav-subitem" data-page="tickets" data-nav-parent="dispatch">
+            <span class="nav-icon">??</span>
+            <span>´ý°ì¹¤µ¥</span>
+          </div>
+          <div class="nav-item nav-subitem" data-page="history" data-nav-parent="dispatch">
+            <span class="nav-icon">??</span>
+            <span>ÀúÊ·¹¤µ¥²éÑ¯</span>
+          </div>
+          <div class="nav-item nav-subitem" data-page="upload" data-nav-parent="dispatch">
+            <span class="nav-icon">??</span>
+            <span>ÉÏ´«¹¤µ¥</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-group expanded" data-nav-group="call">
+        <button class="nav-toggle" type="button" aria-expanded="true" data-toggle-group="call">
+          <span class="nav-toggle-left">
+            <span class="nav-icon">?</span>
+            <span>½Óµ¥¹ÜÀí</span>
+          </span>
+          <span class="nav-chevron">?</span>
+        </button>
+
+        <div class="nav-subsection">
+          <div class="nav-item nav-subitem" data-page="order" data-nav-parent="call">
+            <span class="nav-icon">??</span>
+            <span>½Óµ¥ÖúÊÖ</span>
+          </div>
+          <div class="nav-item nav-subitem" data-page="workorder" data-nav-parent="call">
+            <span class="nav-icon">??</span>
+            <span>¹¤µ¥Éú³É</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-section nav-section-bottom">
+        <div class="nav-item" data-page="analytics">
+          <span class="nav-icon">??</span>
+          <span>Í³¼Æ·ÖÎö</span>
+        </div>
+        <div class="nav-item" data-page="report">
+          <span class="nav-icon">??</span>
+          <span>±¨¸æÉú³É</span>
+        </div>
+      </div>
+    </nav>
   </div>
 
   <div class="main-container">
+    <div id="page-home" class="page-view" style="display:flex;">
+      <div class="page-header glass-panel">
+        <div>
+          <div class="eyebrow">Admin UI ¡¤ Liquid Glass</div>
+          <h1>Ê×Ò³¼ÝÊ»²Õ</h1>
+          <p>¼¯ÖÐÕ¹Ê¾½ñÈÕ¹¤µ¥½ÓÈë¡¢Ä£ÐÍÅÉµ¥¡¢´ýÈ·ÈÏºÍ¸üÕýÇé¿ö¡£</p>
+        </div>
+        <div class="header-actions">
+          <span class="live-dot"></span>
+          <span>Ã¿Ð¡Ê±Ë¢ÐÂ</span>
+        </div>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric-card glass-panel">
+          <span>½ñÈÕÊÕµ¥Êý</span>
+          <strong>186</strong>
+          <em>Í¬±È×òÈÕ +12.6%</em>
+        </div>
+        <div class="metric-card glass-panel">
+          <span>½ñÈÕÅÉµ¥Êý</span>
+          <strong>142</strong>
+          <em>Ä£ÐÍÅÐ¶ÏÕýÈ·ÂÊ 91.3%</em>
+        </div>
+        <div class="metric-card glass-panel">
+          <span>´ýÈ·ÈÏ¹¤µ¥</span>
+          <strong>31</strong>
+          <em>½ô¼±¹¤µ¥ 4 ¼þ</em>
+        </div>
+        <div class="metric-card glass-panel">
+          <span>ÒÑ¸üÕý¹¤µ¥</span>
+          <strong>13</strong>
+          <em>Ðè¸´ÅÌ¹æÔò 5 Ìõ</em>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card glass-panel chart-card">
+          <h2>9:00¨C17:00 ½Óµ¥Ç÷ÊÆ</h2>
+          <div class="bar-chart" id="hourlyChart"></div>
+        </div>
+        <div class="card glass-panel chart-card">
+          <h2>½ü 30 ÌìÊÕµ¥Ç÷ÊÆ</h2>
+          <div class="bar-chart dense" id="monthChart"></div>
+        </div>
+      </div>
+
+      <div class="card glass-panel alert-card">
+        <div class="section-head">
+          <div>
+            <h2>Òì³£¸æ¾¯</h2>
+            <p>ËßÇóÁ¿¼¤Ôö¡¢³¬ÆÚÎ´´¦ÖÃµÈÒì³£Ïî¼¯ÖÐÌáÐÑ¡£</p>
+          </div>
+          <button id="btnAlertModal" class="btn-primary">²é¿´ 3 Ìõ¸æ¾¯</button>
+        </div>
+      </div>
+
+      <div class="card glass-panel flex-fill">
+        <h2>ÊµÊ±¹¤µ¥Ã÷Ï¸</h2>
+        <div class="simple-table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr>
+                <th>¹¤µ¥±àºÅ</th>
+                <th>½Óµ¥Ê±¼ä</th>
+                <th>ËßÇó</th>
+                <th>ÅÉµ¥½¨Òé</th>
+                <th>×´Ì¬</th>
+                <th>´¦ÖÃ·½Ê½</th>
+              </tr>
+            </thead>
+            <tbody id="homeTicketsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-tickets" class="page-view" style="display:none;">
+      <div class="tickets-container">
+        <div class="page-header glass-panel compact">
+          <div>
+            <div class="eyebrow">ÅÉµ¥ÏêÇé</div>
+            <h1>´ý°ì¹¤µ¥</h1>
+            <p>Ö§³ÖÉ¸Ñ¡¡¢ÅúÁ¿´¦Àí¡¢AI ÅÉµ¥·ÖÎö¡¢ÈË¹¤È·ÈÏÓë¸üÕý¡£</p>
+          </div>
+        </div>
+
+        <div class="card glass-panel">
+          <h2>´ý°ì¹¤µ¥ÁÐ±í</h2>
+
+          <div class="tickets-toolbar">
+            <div class="tickets-left">
+              <select class="tickets-size">
+                <option>´ýÈ·ÈÏ¹¤µ¥</option>
+                <option>ÒÑ¸üÕý¹¤µ¥</option>
+                <option>°´Ê±¼ä</option>
+              </select>
+              <input id="ticketSearch" class="tickets-search" placeholder="ËÑË÷£ºËßÇó / Õò½Ö / ÉçÇø / ³Ð°ìµ¥Î»" />
+              <button id="ticketSearchBtn">ËÑË÷</button>
+              <button id="ticketResetBtn" class="btn-ghost">ÖØÖÃ</button>
+            </div>
+
+            <div class="tickets-right">
+              <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
+              <button id="btnUploadExcel" class="btn-primary">ÉÏ´« Excel</button>
+              <select id="ticketPageSize" class="tickets-size">
+                <option value="10">10/Ò³</option>
+                <option value="20">20/Ò³</option>
+                <option value="50">50/Ò³</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tickets-batch-bar">
+            <span id="selectedCount"></span>
+            <button id="btnBatchAddress" class="btn-mini" disabled>ÅúÁ¿µØÖ·Ê¶±ð</button>
+            <button id="btnBatchDispatch" class="btn-mini" disabled>ÅúÁ¿ÅÉµ¥·ÖÎö</button>
+          </div>
+
+          <div class="tickets-table-wrap">
+            <table class="tickets-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;"><input type="checkbox" id="selectAllCheckbox" /></th>
+                  <th style="width:80px;">±àºÅ</th>
+                  <th style="width:260px;">ËßÇó</th>
+                  <th style="width:120px;">½ÖÏçÕò</th>
+                  <th style="width:160px;">Í¶ËßµØµã</th>
+                  <th style="width:130px;">°ìÀíµ¥Î»</th>
+                  <th style="width:170px;">ÅÉµ¥ÒÀ¾Ý</th>
+                  <th style="width:80px;">ÀúÊ·</th>
+                  <th style="width:80px;">¹æÔò</th>
+                  <th style="width:80px;">×´Ì¬</th>
+                  <th style="width:130px;">²Ù×÷</th>
+                </tr>
+              </thead>
+              <tbody id="ticketsTbody">
+                <tr>
+                  <td colspan="11" class="tickets-empty">ÔÝÎÞÊý¾Ý</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tickets-footer">
+            <div class="tickets-total" id="ticketsTotal">¹² 0 Ìõ</div>
+            <div class="tickets-pagination" id="ticketsPagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-history" class="page-view" style="display:none;">
+      <div class="page-header glass-panel compact">
+        <div>
+          <div class="eyebrow">ÅÉµ¥ÏêÇé</div>
+          <h1>ÀúÊ·¹¤µ¥²éÑ¯</h1>
+          <p>¼ìË÷ÒÑÈ·ÈÏ¡¢ÒÑ¸üÕý¹¤µ¥£¬Ö§³Ö°´²¿ÃÅ¡¢×´Ì¬¡¢Ê±¼äÓë¹Ø¼ü´Ê¹ýÂË¡£</p>
+        </div>
+      </div>
+
+      <div class="card glass-panel flex-fill">
+        <div class="filter-strip">
+          <select>
+            <option>È«²¿²¿ÃÅ</option>
+            <option>³Ç¹Ü¾Ö</option>
+            <option>×¡½¨¾Ö</option>
+            <option>ÊÐ³¡¼à¹Ü¾Ö</option>
+          </select>
+          <select>
+            <option>È«²¿×´Ì¬</option>
+            <option>ÒÑÈ·ÈÏ</option>
+            <option>ÒÑ¸üÕý</option>
+          </select>
+          <input type="date" />
+          <input type="date" />
+          <input class="tickets-search" placeholder="ËÑË÷ÀúÊ·ËßÇó¹Ø¼ü´Ê" />
+          <button>²éÑ¯</button>
+          <button class="btn-ghost">ÅúÁ¿µ¼³ö</button>
+        </div>
+
+        <div class="simple-table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr>
+                <th>¹¤µ¥±àºÅ</th>
+                <th>½Óµ¥Ê±¼ä</th>
+                <th>ËßÇóÕªÒª</th>
+                <th>°ìÀíµ¥Î»</th>
+                <th>×´Ì¬</th>
+                <th>¸ü¸Ä´ÎÊý</th>
+                <th>²Ù×÷</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-upload" class="page-view" style="display:none;">
+      <div class="page-header glass-panel compact">
+        <div>
+          <div class="eyebrow">ÅÉµ¥ÏêÇé</div>
+          <h1>ÉÏ´«¹¤µ¥</h1>
+          <p>Ö§³Öµ¥¶ÀÂ¼ÈëÓë Excel ÅúÁ¿ÉÏ´«Ô¤ÀÀ¡£±¾ÂÖ²»½Ó¶ÌÐÅ·´À¡¡£</p>
+        </div>
+      </div>
+
+      <div class="upload-grid">
+        <div class="card glass-panel">
+          <h2>µ¥¶ÀÂ¼Èë</h2>
+
+          <div class="form-grid">
+            <label>
+              ÉÏ´«ÈËÐÕÃû
+              <input value="ÏµÍ³×Ô¶¯Éú³É" disabled />
+            </label>
+            <label>
+              ²¿ÃÅ
+              <input value="ÊÐ¼¶ÅÉµ¥ÖÐÐÄ" disabled />
+            </label>
+            <label>
+              ¹¤µ¥±àºÅ
+              <input value="20260607001" disabled />
+            </label>
+            <label>
+              ´´½¨Ê±¼ä
+              <input value="2026-06-07 14:30" disabled />
+            </label>
+            <label class="span-2">
+              ÓÃ»§ËßÇó
+              <textarea placeholder="ÇëÊäÈëÊÐÃñËßÇóÄÚÈÝ£¬±ØÌî"></textarea>
+            </label>
+            <label>
+              ´ð¸´²¿ÃÅ
+              <input placeholder="Ñ¡Ìî£ºÌîÐ´ºó×÷ÎªÀúÊ·¹¤µ¥" />
+            </label>
+            <label>
+              ÅÐ¶ÏÒÀ¾Ý
+              <input placeholder="Ñ¡Ìî£ºÀúÊ·¹¤µ¥ÒÀ¾Ý" />
+            </label>
+            <label class="span-2">
+              µç»°Â¼Òô
+              <input type="file" accept="audio/*" />
+            </label>
+            <div class="span-2 form-actions">
+              <button>È·ÈÏÉÏ´«</button>
+              <button class="btn-ghost">Çå¿Õ</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-panel">
+          <h2>ÅúÁ¿ÉÏ´«</h2>
+
+          <div class="batch-upload-box">
+            <div class="upload-icon">??</div>
+            <strong>ÏÂÔØ±ê×¼ Excel Ä£°å ¡ú ÉÏ´«ÎÄ¼þ ¡ú Ô¤ÀÀºË¶Ô ¡ú È·ÈÏÉÏ´«</strong>
+            <p>µ±Ç°±£ÁôÇ°¶ËÁ÷³Ì£¬ºóÐø¿É¸´ÓÃÒÑÓÐ /api/tickets/upload ½Ó¿Ú¡£</p>
+            <button>ÏÂÔØÄ£°å</button>
+            <button class="btn-ghost">Ñ¡Ôñ Excel ÎÄ¼þ</button>
+          </div>
+
+          <div class="simple-table-wrap mini">
+            <table class="simple-table">
+              <thead>
+                <tr>
+                  <th>ÐòºÅ</th>
+                  <th>ËßÇó</th>
+                  <th>Äâ°ì²¿ÃÅ</th>
+                  <th>Ð£Ñé</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Ð¡ÇøÒ¹¼äÊ©¹¤ÈÅÃñ</td>
+                  <td>×¡½¨¾Ö</td>
+                  <td><span class="pill ok">Í¨¹ý</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Á÷¶¯Ì¯··Õ¼µÀ¾­Óª</td>
+                  <td>³Ç¹Ü¾Ö</td>
+                  <td><span class="pill warn">´ýÈ·ÈÏ</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-order" class="page-view" style="display:none;">
+      <div class="order-container call-layout">
+        <div class="page-header glass-panel compact">
+          <div>
+            <div class="eyebrow">½Óµ¥¹ÜÀí</div>
+            <h1>½Óµ¥ÖúÊÖ</h1>
+            <p>ÓïÒôÊ¶±ð¡¢½ÇÉ«Çø·Ö¡¢¹Ø¼üÐÅÏ¢ÌáÊ¾Óë²¹ÎÊÇåµ¥¡£</p>
+          </div>
+        </div>
+
+        <div class="call-grid">
+          <div class="card glass-panel upload-section">
+            <h2>Í¨»°ÓëÂ¼Òô</h2>
+
+            <div class="caller-card">
+              <div class="avatar">ÊÐÃñ</div>
+              <div>
+                <strong>Í¶ËßÈËÐÅÏ¢</strong>
+                <p>ÐÕÃû¡¢µç»°¡¢µØÖ·¿ÉÔÚ½ÓÈëºó¸üÕý»ò±¸×¢¡£</p>
+              </div>
+              <button class="btn-ghost">Ìí¼Ó±¸×¢</button>
+            </div>
+
+            <div class="upload-box" id="uploadBox">
+              <span class="upload-icon">??</span>
+              <div>µã»÷ÉÏ´«ÒôÆµÎÄ¼þ (.mp3, .wav, .m4a)</div>
+              <div class="file-name" id="fileName"></div>
+              <input type="file" id="audioInput" accept="audio/*" style="display:none" />
+            </div>
+
+            <div class="order-audio">
+              <audio id="orderAudio" controls></audio>
+              <div class="status">µã»÷¡°¿ªÊ¼·ÖÎö¡±»á²¥·Å¸ÃÂ¼Òô¡£</div>
+            </div>
+
+            <div class="call-actions">
+              <button class="btn-ghost">¾²Òô</button>
+              <button class="btn-ghost">±ÕÂó</button>
+              <button id="btnAnalyze">¿ªÊ¼·ÖÎö</button>
+            </div>
+          </div>
+
+          <div class="card glass-panel">
+            <h2>ÓïÒôÊ¶±ð¼ÇÂ¼</h2>
+            <pre id="conversationBox" class="order-conv-body">ÔÝÎÞÊý¾Ý</pre>
+          </div>
+
+          <div class="card glass-panel">
+            <h2>¸¨ÖúÌáÊ¾¹¤¾ß</h2>
+            <div class="analysis-section stacked">
+              <div class="res-card">
+                <div class="res-head">? ÒÑÈ·ÈÏÐÅÏ¢</div>
+                <ul class="res-list" id="list-asked">
+                  <div class="empty-tip">ÔÝÎÞÊý¾Ý</div>
+                </ul>
+              </div>
+              <div class="res-card">
+                <div class="res-head">? Ðè²¹ÎÊÐÅÏ¢</div>
+                <ul class="res-list" id="list-missing">
+                  <div class="empty-tip">ÔÝÎÞÊý¾Ý</div>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card glass-panel">
+            <h2>Ä£ÐÍ¹ý³Ì</h2>
+            <div id="processLog" class="process-log-box">
+              <div class="log-line">>>> µÈ´ýÈÎÎñ¿ªÊ¼...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-workorder" class="page-view" style="display:none;">
+      <div class="page-header glass-panel compact">
+        <div>
+          <div class="eyebrow">½Óµ¥¹ÜÀí</div>
+          <h1>¹¤µ¥Éú³É</h1>
+          <p>¸ù¾ÝÍ¨»°ÄÚÈÝÉú³É¡¶ÊÐÃñËßÇóµÇ¼Çµ¥¡·£¬Ö§³Ö±à¼­¡¢±£´æ¡¢µ¼³ö¡£</p>
+        </div>
+      </div>
+
+      <div class="workorder-grid">
+        <div class="card glass-panel">
+          <h2>´ýÉú³ÉÁÐ±í</h2>
+
+          <div class="simple-table-wrap">
+            <table class="simple-table">
+              <thead>
+                <tr>
+                  <th>Í¨»°±àºÅ</th>
+                  <th>Í¶ËßÈË</th>
+                  <th>ÕªÒª</th>
+                  <th>×´Ì¬</th>
+                  <th>²Ù×÷</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CALL-001</td>
+                  <td>ÕÅÏÈÉú</td>
+                  <td>Ð¡ÇøÂ¥ÏÂ²ÍÒûÓÍÑÌÈÅÃñ</td>
+                  <td><span class="pill warn">´ýÉú³É</span></td>
+                  <td><button class="btn-mini">Éú³É¹¤µ¥</button></td>
+                </tr>
+                <tr>
+                  <td>CALL-002</td>
+                  <td>ÀîÅ®Ê¿</td>
+                  <td>µÀÂ·¾®¸ÇËÉ¶¯´æÔÚ°²È«Òþ»¼</td>
+                  <td><span class="pill ok">ÒÑÉú³É</span></td>
+                  <td><button class="btn-mini">²é¿´</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card glass-panel">
+          <h2>ÊÐÃñËßÇóµÇ¼Çµ¥</h2>
+
+          <div class="report-editor">
+            <input value="ËßÇóÕªÒª£ºÐ¡ÇøÂ¥ÏÂ²ÍÒûÓÍÑÌÈÅÃñ£¬ÒªÇóºË²éÕû¸Ä" />
+
+            <div class="form-grid">
+              <label>
+                Ò»¼¶·ÖÀà
+                <select>
+                  <option>³ÇÊÐ¹ÜÀí</option>
+                </select>
+              </label>
+              <label>
+                ¶þ¼¶·ÖÀà
+                <select>
+                  <option>»·¾³ÎÛÈ¾</option>
+                </select>
+              </label>
+              <label>
+                Èý¼¶·ÖÀà
+                <select>
+                  <option>ÓÍÑÌÈÅÃñ</option>
+                </select>
+              </label>
+              <label>
+                Äâ°ì²¿ÃÅ
+                <input value="ÉúÌ¬»·¾³¾Ö" />
+              </label>
+            </div>
+
+            <textarea>ÊÂÊµÃèÊö£ºÍ¶ËßÈË·´Ó³Ä³Ð¡ÇøÂ¥ÏÂ²ÍÒûµêÍí¼ä¾­ÓªÊ±ÓÍÑÌÃ÷ÏÔ£¬Ó°Ïì¾ÓÃñÉú»î¡£ÅÉµ¥ÒÀ¾Ý£º¸ù¾ÝÊôµØ¹ÜÀí¼°ÓÍÑÌÈÅÃñ´¦ÖÃ¹æÔò£¬½¨ÒéÅÉËÍÉúÌ¬»·¾³¾ÖÐ­Í¬ÊôµØ½ÖµÀ´¦Àí¡£</textarea>
+
+            <p class="warning-text">µØÖ·Ê¶±ð£ºÈËÃñÂ·Ä³Ð¡Çø£¨ÐèºË²é£©</p>
+
+            <div class="form-actions">
+              <button>±£´æ</button>
+              <button class="btn-ghost">µ¼³ö Excel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-analytics" class="page-view" style="display:none;">
+      <div class="page-header glass-panel compact">
+        <div>
+          <div class="eyebrow">Í³¼Æ·ÖÎö</div>
+          <h1>¹¤µ¥Êý¾Ý·ÖÎö</h1>
+          <p>»ùÓÚµ±Ç°¹¤µ¥Êý¾Ý×öÇ÷ÊÆ¡¢²¿ÃÅ¡¢×´Ì¬ºÍÀàÐÍ·Ö²¼Õ¹Ê¾¡£</p>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        <div class="card glass-panel">
+          <h2>²¿ÃÅ·Ö²¼</h2>
+          <div class="rank-list" id="deptRank"></div>
+        </div>
+
+        <div class="card glass-panel">
+          <h2>×´Ì¬·Ö²¼</h2>
+          <div class="donut-wrap">
+            <div class="donut"></div>
+            <div>
+              <p><span class="dot blue"></span>´ýÈ·ÈÏ 42%</p>
+              <p><span class="dot green"></span>ÒÑÈ·ÈÏ 47%</p>
+              <p><span class="dot orange"></span>ÒÑ¸üÕý 11%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-panel span-2">
+          <h2>ËßÇóÀàÐÍÇ÷ÊÆ</h2>
+          <div class="bar-chart" id="typeChart"></div>
+        </div>
+      </div>
+    </div>
 
     <div id="page-report" class="page-view" style="display:none;">
       <div class="report-wrap">
-        <div class="card">
-          <h2>æ¨¡åž‹æ€è€ƒè¿‡ç¨‹</h2>
+        <div class="card glass-panel">
+          <h2>±¨¸æÉú³É</h2>
+
           <div class="controls">
             <select id="reportType">
-              <option value="daily">æ—¥æŠ¥</option>
-              <option value="heating">ä¾›æš–æŠ¥å‘Š</option>
-              <option value="emergency">ç´§æ€¥åˆ†æžæŠ¥å‘Š</option>
+              <option value="daily">×¨¿¯±¨¸æ</option>
+              <option value="emergency">ÎÊÌâ¶½°ì</option>
+              <option value="heating">ÖØµãÇøÓò</option>
             </select>
-
-            <span id="dateWrap"><input id="date" type="date" /></span>
+            <span id="dateWrap">
+              <input id="date" type="date" />
+            </span>
             <span id="yearWrap" style="display:none;">
               <input id="year" type="number" min="2000" max="2100" style="width:96px;" />
             </span>
-
-            <button id="btn">ç”Ÿæˆ</button>
-            <span class="status" id="status">å°±ç»ª</span>
+            <button id="btn">Éú³É</button>
+            <button class="btn-ghost" type="button">µ¼³ö Word</button>
+            <span class="status" id="status">¾ÍÐ÷</span>
           </div>
 
           <div class="left-body">
             <div class="plan-area" id="plan-area">
               <div class="plan-head">
-                <div><span class="badge">è®¡åˆ’</span> <span style="font-weight:900;">æ‰§è¡Œæ­¥éª¤</span></div>
+                <div>
+                  <span class="badge">¼Æ»®</span>
+                  <span style="font-weight:900;">Ö´ÐÐ²½Öè</span>
+                </div>
                 <div class="meta" id="plan-meta"></div>
               </div>
 
@@ -66,7 +619,7 @@
               <div class="steps" id="steps"></div>
 
               <details>
-                <summary>å±•å¼€ï¼šæ˜¾ç¤ºè¯¦ç»†äº‹ä»¶æµ</summary>
+                <summary>Õ¹¿ª£ºÏÔÊ¾ÏêÏ¸ÊÂ¼þÁ÷</summary>
                 <div class="trace" id="trace-detail" style="max-height:260px;"></div>
               </details>
             </div>
@@ -75,206 +628,86 @@
           </div>
         </div>
 
-        <div class="card">
-          <h2>æœ€ç»ˆæŠ¥å‘Š</h2>
+        <div class="card glass-panel">
+          <h2>×îÖÕ±¨¸æ</h2>
           <div class="result" id="result">
-            <div class="placeholder">ç‚¹å‡»â€œç”Ÿæˆâ€åŽï¼Œè¿™é‡Œä¼šæ˜¾ç¤ºæœ€ç»ˆæŠ¥å‘Šã€‚</div>
+            <div class="placeholder">µã»÷¡°Éú³É¡±ºó£¬ÕâÀï»áÏÔÊ¾×îÖÕ±¨¸æ¡£±¾ÂÖÔÝ²»×öÄ£°å±à¼­¡£</div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div id="page-order" class="page-view" style="display:flex;">
-      <div class="order-container">
-
-        <div class="card upload-section">
-          <h2>ðŸŽ§ ä¸Šä¼ è¯‰æ±‚å½•éŸ³</h2>
-          <div style="padding: 15px 20px;">
-            <div class="upload-box" id="uploadBox">
-              <span class="upload-icon">ðŸ“‚</span>
-              <div>ç‚¹å‡»ä¸Šä¼ éŸ³é¢‘æ–‡ä»¶ (.mp3, .wav, .m4a)</div>
-              <div class="file-name" id="fileName"></div>
-              <input type="file" id="audioInput" accept="audio/*" style="display:none" />
-            </div>
-
-            <div class="order-audio">
-              <audio id="orderAudio" controls></audio>
-              <div class="status" style="margin-top:6px;">ç‚¹å‡»â€œå¼€å§‹åˆ†æžâ€ä¼šæ’­æ”¾è¯¥å½•éŸ³ã€‚</div>
-            </div>
-            <div style="text-align: center; margin-top: 10px;">
-              <button id="btnAnalyze" style="font-size: 14px; padding: 8px 25px;">ðŸš€ å¼€å§‹åˆ†æž</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="order-stream-row">
-          <div class="order-conv-card">
-            <div class="order-conv-head">ðŸ’¬ å¯¹è¯å†…å®¹ï¼ˆconversionï¼‰</div>
-            <pre id="conversationBox" class="order-conv-body">æš‚æ— æ•°æ®</pre>
-          </div>
-
-          <div class="order-log-wrap">
-            <div id="processLog" class="process-log-box">
-              <div class="log-line">>>> ç­‰å¾…ä»»åŠ¡å¼€å§‹...</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="analysis-section">
-          <div class="res-card">
-            <div class="res-head" style="color: #166534;">âœ… å·²ç¡®è®¤ä¿¡æ¯ (Asked)</div>
-            <ul class="res-list" id="list-asked">
-              <div class="empty-tip">æš‚æ— æ•°æ®</div>
-            </ul>
-          </div>
-          <div class="res-card">
-            <div class="res-head" style="color: #991b1b;">â“ éœ€è¡¥é—®ä¿¡æ¯ (Missing)</div>
-            <ul class="res-list" id="list-missing">
-              <div class="empty-tip">æš‚æ— æ•°æ®</div>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
 
     <div id="page-elements" class="page-view" style="display:none;">
       <div class="elements-container">
-
-        <div class="card elements-input-card">
-          <h2>ðŸ§© è¾“å…¥è¯‰æ±‚æ–‡æœ¬</h2>
-          <div style="padding: 15px 20px; display:flex; flex-direction:column; gap:10px;">
-            <textarea id="elementsInput" class="elements-textarea"
-              placeholder="ä¾‹å¦‚ï¼šå¼€å‘åŒºæŒ¯å…´è·¯ä¸Žç«¹æž—è·¯äº¤å‰å£æœ‰æµåŠ¨æ‘Šè´©å é“ï¼Œè¦æ±‚é©±èµ¶ä¿éšœé€šè¡Œ"></textarea>
-
-            <div style="display:flex; gap:10px; align-items:center; justify-content:flex-start; flex-wrap:wrap;">
-              <button id="btnElementsRun" style="font-size: 14px; padding: 8px 22px;">ðŸš€ å¼€å§‹æå–ï¼ˆæµå¼ï¼‰</button>
-              <span class="status" id="elementsStatus">å°±ç»ª</span>
-            </div>
-          </div>
+        <div class="card glass-panel">
+          <h2>ÒªËØÌáÈ¡</h2>
+          <textarea id="elementsInput" class="elements-textarea"></textarea>
+          <button id="btnElementsRun">¿ªÊ¼ÌáÈ¡</button>
+          <span class="status" id="elementsStatus">¾ÍÐ÷</span>
+          <div id="elementsLog" class="process-log-box"></div>
+          <div id="elementsKV"></div>
+          <div id="elementsReason"></div>
         </div>
-
-        <div class="elements-result-grid">
-          <div class="res-card">
-            <div class="res-head" style="color:#111827;">ðŸ“Œ ç»“æž„åŒ–è¦ç´ </div>
-            <div class="elements-kv" id="elementsKV">
-              <div class="empty-tip">æš‚æ— ç»“æžœ</div>
-            </div>
-          </div>
-
-          <div class="res-card">
-            <div class="res-head" style="color:#111827;">ðŸ§  è§£æžä¾æ® / Reason</div>
-            <div class="elements-reason" id="elementsReason">
-              <div class="empty-tip">æš‚æ— ç»“æžœ</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div id="page-tickets" class="page-view" style="display:none;">
-      <div class="tickets-container">
-
-        <div class="card">
-          <h2>ðŸ“‹ å·¥å•åˆ—è¡¨</h2>
-
-          <div class="tickets-toolbar">
-            <div class="tickets-left">
-              <input id="ticketSearch" class="tickets-search" placeholder="æœç´¢ï¼šä¸»è¦å†…å®¹ / é•‡è¡— / ç¤¾åŒº / æ‰¿åŠžå•ä½ï¼ˆå›žè½¦æˆ–ç‚¹æœç´¢ï¼‰" />
-              <button id="ticketSearchBtn">æœç´¢</button>
-              <button id="ticketResetBtn" class="btn-ghost">é‡ç½®</button>
-            </div>
-
-            <div class="tickets-right">
-              <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none;" />
-              <button id="btnUploadExcel" class="btn-primary" style="margin-right: 10px;">ä¸Šä¼  Excel</button>
-              <select id="ticketPageSize" class="tickets-size">
-                <option value="10">10/é¡µ</option>
-                <option value="20">20/é¡µ</option>
-                <option value="50">50/é¡µ</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="tickets-batch-bar" style="display: flex; align-items: center; gap: 15px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 10px;">
-            <span id="selectedCount" style="font-size: 13px; color: #64748b;"></span>
-            <button id="btnBatchAddress" class="btn-mini" disabled style="background: #64748b; color: white;">æ‰¹é‡åœ°å€è¯†åˆ«</button>
-            <button id="btnBatchDispatch" class="btn-mini" disabled style="background: #2563eb; color: white;">æ‰¹é‡æ´¾å•åˆ†æž</button>
-          </div>
-
-          <div class="tickets-table-wrap">
-            <table class="tickets-table">
-              <thead>
-                <tr>
-                  <th style="width:40px;"><input type="checkbox" id="selectAllCheckbox" title="å…¨é€‰å½“å‰é¡µ" /></th>
-                  <th style="width:60px;">åºå·</th>
-                  <th style="width:200px;">ä¸»è¦å†…å®¹</th>
-                  <th style="width:100px;">è¢«åæ˜ è¡—ä¹¡é•‡</th>
-                  <th style="width:100px;">æ‰€åœ¨æ‘ç¤¾åŒº</th>
-                  <th style="width:100px;">æ‰¿åŠžå•ä½(åŽŸ)</th>
-                  <th style="width:110px; color:#2563eb;">âš¡ï¸å¤„ç½®éƒ¨é—¨</th>
-                  <th style="width:140px; color:#2563eb;">âš¡ï¸æ´¾å•ç†ç”±</th>
-                  <th style="width:80px; color:#2563eb;">âš¡ï¸åŽ†å²</th>
-                  <th style="width:80px; color:#2563eb;">âš¡ï¸è§„åˆ™</th>
-                  <th style="width:60px; color:#64748b;">å¤‡æ³¨</th>
-                  <th style="width:120px;">æ“ä½œ</th>
-                </tr>
-              </thead>
-              <tbody id="ticketsTbody">
-                <tr>
-                  <td colspan="12" class="tickets-empty">æš‚æ— æ•°æ®</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="tickets-footer">
-            <div class="tickets-total" id="ticketsTotal">å…± 0 æ¡</div>
-            <div class="tickets-pagination" id="ticketsPagination"></div>
-          </div>
-        </div>
-
       </div>
     </div>
 
     <div id="page-assistant" class="page-view" style="display:none;">
       <div class="assistant-wrap">
-        <div class="assistant-card">
+        <div class="assistant-card glass-panel">
           <div class="assistant-head">
-            <div class="assistant-title">æ‚¨å¥½ï¼æˆ‘æ˜¯AIæ™ºèƒ½åŠ©æ‰‹ï¼Œæœ‰ä»€ä¹ˆå¯ä»¥å¸®åŠ©æ‚¨çš„å—ï¼Ÿ</div>
+            <div class="assistant-title">AIÅÉµ¥ÖúÊÖ</div>
           </div>
-
           <div class="assistant-body" id="assistantMsgs">
-            <div class="assistant-empty">åœ¨ä¸‹æ–¹è¾“å…¥è¯‰æ±‚å†…å®¹ï¼Œç‚¹å‡»å‘é€å³å¯å¾—åˆ°â€œå¤„ç½®éƒ¨é—¨ + ç†ç”±â€ã€‚</div>
+            <div class="assistant-empty">ÊäÈëËßÇóÄÚÈÝ£¬µÃµ½´¦ÖÃ²¿ÃÅÓëÀíÓÉ¡£</div>
           </div>
-
           <div class="assistant-inputbar">
-            <textarea id="assistantInput" class="assistant-input"
-              placeholder="è¯·è¾“å…¥è¯‰æ±‚å†…å®¹...ï¼ˆEnter å‘é€ï¼ŒCtrl+Enter æ¢è¡Œï¼‰"></textarea>
-            <button id="assistantSend" class="assistant-send">å‘é€</button>
+            <textarea id="assistantInput" class="assistant-input"></textarea>
+            <button id="assistantSend" class="assistant-send">·¢ËÍ</button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-  <div id="assistDetailMask" class="assist-mask" style="display:none;">
-    <div class="assist-modal" role="dialog" aria-modal="true">
-      <div class="assist-modal-head">
-        <div class="assist-modal-title">è¯¦æƒ…</div>
-        <button id="assistDetailClose" class="assist-modal-close" type="button">âœ•</button>
-      </div>
 
+  <div id="alertMask" class="assist-mask" style="display:none;">
+    <div class="assist-modal glass-panel">
+      <div class="assist-modal-head">
+        <div class="assist-modal-title">Òì³£¸æ¾¯</div>
+        <button id="alertClose" class="assist-modal-close" type="button">?</button>
+      </div>
+      <div class="assist-modal-body">
+        <div class="alert-list">
+          <div class="alert-item">
+            <strong>³ç´¨ÇøÕ¼µÀ¾­ÓªËßÇó¼¤Ôö</strong>
+            <p>½ü 2 Ð¡Ê±Í¬ÀàËßÇó½Ï×òÈÕÍ¬ÆÚÉÏÉý 38%¡£</p>
+          </div>
+          <div class="alert-item">
+            <strong>3 ¼þ¹¤µ¥½Ó½ü³¬ÆÚ</strong>
+            <p>½¨ÒéÅÉµ¥Ô±ÓÅÏÈºË²é°ìÀí×´Ì¬¡£</p>
+          </div>
+          <div class="alert-item">
+            <strong>ÖØ¸´Í¶Ëß·çÏÕ</strong>
+            <p>Í¬Ò»Ð¡ÇøÓÍÑÌÈÅÃñËßÇó 7 ÈÕÄÚ³öÏÖ 6 ´Î¡£</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="assistDetailMask" class="assist-mask" style="display:none;">
+    <div class="assist-modal glass-panel" role="dialog" aria-modal="true">
+      <div class="assist-modal-head">
+        <div class="assist-modal-title">ÏêÇé</div>
+        <button id="assistDetailClose" class="assist-modal-close" type="button">?</button>
+      </div>
       <div class="assist-modal-body">
         <div class="assist-detail-grid">
           <div class="assist-detail-col">
-            <div class="assist-detail-col-title">ðŸ§¾ åŽ†å²å·¥å•</div>
+            <div class="assist-detail-col-title">?? ÀúÊ·¹¤µ¥</div>
             <div id="assistHistoryList" class="assist-detail-list"></div>
           </div>
-
           <div class="assist-detail-col">
-            <div class="assist-detail-col-title">ðŸ“š è§„åˆ™åº“</div>
+            <div class="assist-detail-col-title">?? ¹æÔò¿â</div>
             <div id="assistRulesList" class="assist-detail-list"></div>
           </div>
         </div>
@@ -282,17 +715,15 @@
     </div>
   </div>
 
-
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
   <script src="/static/js/dify_client.js"></script>
   <script src="/static/js/app.js"></script>
+  <script src="/static/js/admin_ui.js"></script>
   <script src="/static/js/report.js"></script>
   <script src="/static/js/order.js"></script>
   <script src="/static/js/elements.js"></script>
   <script src="/static/js/assistant.js"></script>
   <script src="/static/js/tickets_local.js"></script>
-
 </body>
 
 </html>

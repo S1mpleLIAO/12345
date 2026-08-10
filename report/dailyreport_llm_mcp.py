@@ -200,7 +200,7 @@ async def generate_daily_report(
         answer1 = await mcp_client.chat(
             q_daily,
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="daily",
         )
@@ -211,7 +211,7 @@ async def generate_daily_report(
         answer2 = await mcp_client.chat(
             q_street_bottom3_rank,
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="bottom3_trend",
         )
@@ -222,7 +222,7 @@ async def generate_daily_report(
         answer3 = await mcp_client.chat(
             q_street,
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="street_table",
         )
@@ -233,7 +233,7 @@ async def generate_daily_report(
         answer4 = await mcp_client.chat(
             q_unit,
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="unit_table",
         )

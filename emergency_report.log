@@ -1,357 +1,56 @@
-nohup: ignoring input
 
 
 ╭──────────────────────────────────────────────────────────────────────────────╮
-│                                                                              │
 │                                                                              │
 │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
 │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
 │                                                                              │
+│                               FastMCP 2.13.0.2                               │
 │                                                                              │
-│                                FastMCP 2.14.3                                │
-│                            https://gofastmcp.com                             │
 │                                                                              │
-│                    🖥  Server:      EmergencyReport-Server                    │
-│                    🚀 Deploy free: https://fastmcp.cloud                     │
+│           🖥  Server name: EmergencyReport-Server                             │
 │                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭──────────────────────────────────────────────────────────────────────────────╮
-│                          ✨ FastMCP 3.0 is coming!                           │
-│       Pin `fastmcp < 3` in production, then upgrade when you're ready.       │
-╰──────────────────────────────────────────────────────────────────────────────╯
-╭──────────────────────────────────────────────────────────────────────────────╮
-│                         🎉 Update available: 2.14.5                          │
-│                      Run: pip install --upgrade fastmcp                      │
+│           📦 Transport:   HTTP                                               │
+│           🔗 Server URL:  http://0.0.0.0:9003/emergency_report_mcp           │
+│                                                                              │
+│           📚 Docs:        https://gofastmcp.com                              │
+│           🚀 Hosting:     https://fastmcp.cloud                              │
+│                                                                              │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-[02/05/26 14:15:25] INFO     Starting MCP server                  server.py:2585
+[05/26/26 14:36:28] INFO     Starting MCP server                  server.py:2050
                              'EmergencyReport-Server' with                      
                              transport 'streamable-http' on                     
                              http://0.0.0.0:9003/emergency_report               
                              _mcp                                               
-INFO:     Started server process [4171963]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:9003 (Press CTRL+C to quit)
-WARNING:  Invalid HTTP request received.
-INFO:     39.100.68.188:37070 - "GET / HTTP/1.0" 404 Not Found
-INFO:     39.100.68.188:37914 - "OPTIONS / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     39.100.68.188:49028 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.216.149.80:61778 - "GET / HTTP/1.1" 404 Not Found
-INFO:     47.92.233.252:58342 - "GET / HTTP/1.1" 404 Not Found
-INFO:     47.92.233.252:58388 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.178:5796 - "GET / HTTP/1.1" 404 Not Found
-INFO:     167.94.138.178:5814 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.178:5836 - "GET /robots.txt HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     35.203.211.32:63368 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.216.150.4:63612 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     35.203.211.51:64238 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     206.168.34.211:30350 - "GET / HTTP/1.1" 404 Not Found
-INFO:     206.168.34.211:47708 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     206.168.34.211:34102 - "GET /wiki HTTP/1.1" 404 Not Found
-INFO:     119.164.104.8:49470 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.194:12442 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.194:31876 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.142.125.194:31878 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.194:15376 - "GET /wiki HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     121.41.164.251:36508 - "GET / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     121.41.164.251:36512 - "GET /nmaplowercheck1770376084 HTTP/1.1" 404 Not Found
-INFO:     121.41.164.251:36518 - "POST /sdk HTTP/1.1" 404 Not Found
-INFO:     121.41.164.251:36544 - "GET /HNAP1 HTTP/1.1" 404 Not Found
-INFO:     121.41.164.251:36552 - "GET /evox/about HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     121.41.164.251:36920 - "GET / HTTP/1.0" 404 Not Found
-INFO:     121.41.164.251:36932 - "GET / HTTP/1.1" 404 Not Found
-INFO:     35.203.210.252:64250 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.207:35862 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.142.125.207:57148 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.207:40322 - "GET /robots.txt HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     59.82.135.76:39234 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.216.150.73:61442 - "GET / HTTP/1.1" 404 Not Found
-INFO:     113.215.189.219:52560 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     147.185.132.208:60276 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     66.132.153.125:51850 - "GET / HTTP/1.1" 404 Not Found
-INFO:     66.132.153.125:13600 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     66.132.153.125:51052 - "GET /wiki HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     47.103.37.203:34318 - "GET / HTTP/1.0" 404 Not Found
-INFO:     47.103.37.203:35516 - "OPTIONS / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     47.103.37.203:53000 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     147.185.132.212:58290 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     121.43.117.244:59732 - "GET / HTTP/1.1" 404 Not Found
-INFO:     121.43.117.244:59734 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.45:61506 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.142.125.45:61534 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.45:38066 - "GET /wiki HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     139.162.3.144:42912 - "GET / HTTP/1.0" 404 Not Found
-INFO:     139.162.3.144:59676 - "OPTIONS / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     139.162.3.144:55552 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     139.162.3.144:39510 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     172.105.128.12:25668 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     152.32.150.215:46772 - "GET / HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52194 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52202 - "GET /robots.txt HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52210 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52226 - "GET /sse HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52236 - "GET /mcp HTTP/1.1" 404 Not Found
-INFO:     152.32.150.215:52238 - "GET /mcp-sse HTTP/1.1" 404 Not Found
-INFO:     162.216.149.31:61238 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     47.92.76.23:38636 - "GET / HTTP/1.0" 404 Not Found
-INFO:     47.92.76.23:39694 - "OPTIONS / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     47.92.76.23:57464 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.185:11732 - "GET / HTTP/1.1" 404 Not Found
-INFO:     167.94.138.185:11742 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.185:32136 - "GET /.well-known/security.txt HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.123:14250 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.142.125.123:14254 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.123:14300 - "GET /robots.txt HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     31.14.32.5:47490 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     123.160.221.130:36954 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.216.149.166:58978 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.216.150.129:59708 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.205:4586 - "GET / HTTP/1.1" 404 Not Found
-INFO:     162.142.125.205:4594 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     162.142.125.205:58190 - "GET /login HTTP/1.1" 404 Not Found
-INFO:     162.216.150.115:63004 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     106.14.80.184:56200 - "GET / HTTP/1.0" 404 Not Found
-INFO:     106.14.80.184:57494 - "OPTIONS / HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     106.14.80.184:43954 - "GET /nice%20ports%2C/Trinity.txt.bak HTTP/1.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.42:7654 - "GET / HTTP/1.1" 404 Not Found
-INFO:     167.94.138.42:52360 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.138.42:29536 - "GET /login HTTP/1.1" 404 Not Found
-INFO:     147.185.133.128:64276 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.146.51:36560 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.146.51:33704 - "GET / HTTP/1.1" 404 Not Found
-INFO:     167.94.146.51:33716 - "PRI %2A HTTP/2.0" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     167.94.146.51:33736 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
-INFO:     35.203.211.130:64218 - "GET / HTTP/1.1" 404 Not Found
-INFO:     113.215.189.32:47945 - "GET / HTTP/1.1" 404 Not Found
-WARNING:  Invalid HTTP request received.
-WARNING:  Invalid HTTP request received.
-INFO:     59.82.135.190:12817 - "GET / HTTP/1.1" 404 Not Found
+Traceback (most recent call last):
+  File "/root/anaconda3/envs/12345/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/anaconda3/envs/12345/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/liao/test/12345/mcp_server/emergency_report_mcp.py", line 13, in <module>
+    mcp.run(
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/server.py", line 448, in run
+    anyio.run(
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/anyio/_core/_eventloop.py", line 74, in run
+    return async_backend.run(func, args, {}, backend_options)
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2325, in run
+    return runner.run(wrapper())
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 218, in run
+    return self._loop.run_until_complete(task)
+  File "/root/anaconda3/envs/12345/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2313, in wrapper
+    return await func(*args)
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/server.py", line 428, in run_async
+    await self.run_http_async(
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/server.py", line 2054, in run_http_async
+    await server.serve()
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/config.py", line 426, in load
+    ws_protocol_class = import_from_string(WS_PROTOCOLS[self.ws])
+KeyError: 'websockets-sansio'

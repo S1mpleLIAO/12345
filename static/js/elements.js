@@ -1,6 +1,6 @@
 /* ================= 页面3 JS：诉求要素提取 ================= */
 // 应用类型配置（不再需要暴露 API 密钥）
-const APP_TYPE = "element_extraction";
+const APP_TYPE_ELEMENTS = "element_extraction";
 const USER_ID = "frontend-elements-user";
 
 function logElements(msg, type = "info") {
@@ -101,7 +101,7 @@ async function runElementsStream() {
 
     // 使用代理客户端运行流式工作流
     const response = await DifyProxyClient.runWorkflowStream(
-      APP_TYPE,
+      APP_TYPE_ELEMENTS,
       { query: input },
       { user: USER_ID }
     );

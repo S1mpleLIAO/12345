@@ -66,7 +66,7 @@ async def generate_emergency_report(
         ans = await mcp_client.chat(
             prompts,
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="emergency",
         )

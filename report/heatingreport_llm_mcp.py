@@ -87,7 +87,7 @@ async def generate_heating_report(
         ans1 = await mcp_client.chat(
             prompts["season"],
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="heating_season",
         )
@@ -97,7 +97,7 @@ async def generate_heating_report(
         ans2 = await mcp_client.chat(
             prompts["off_season"],
             debug=False,
-            reasoning_summary=True,
+            reasoning_summary=False,
             event_cb=event_cb,
             section="heating_offseason",
         )

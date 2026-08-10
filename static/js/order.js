@@ -1,6 +1,6 @@
 /* ================= 页面2 JS：接单识别（增强版：同步播放 + 实时显示 conversion） ================= */
 // 应用类型配置（不再需要暴露 API 密钥）
-const APP_TYPE = "order_recognition";
+const APP_TYPE_ORDER = "order_recognition";
 const USER_ID = "frontend-order-user";
 
 let selectedFile = null;
@@ -241,7 +241,7 @@ async function startAnalysis() {
     logProcess("正在上传音频文件...");
 
     // 使用代理客户端上传文件
-    const uploadJson = await DifyProxyClient.uploadFile(APP_TYPE, selectedFile, USER_ID);
+    const uploadJson = await DifyProxyClient.uploadFile(APP_TYPE_ORDER, selectedFile, USER_ID);
     const fileId = uploadJson.id;
     logProcess(`文件上传成功 (ID: ${fileId})`);
 
@@ -249,7 +249,7 @@ async function startAnalysis() {
 
     // 使用代理客户端运行流式工作流
     const response = await DifyProxyClient.runWorkflowStream(
-      APP_TYPE,
+      APP_TYPE_ORDER,
       { audio: { type: "audio", transfer_method: "local_file", upload_file_id: fileId } },
       { user: USER_ID }
     );

@@ -1,29 +1,232 @@
 nohup: ignoring input
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
 INFO:     Will watch for changes in these directories: ['/root/liao/test/12345']
 INFO:     Uvicorn running on http://0.0.0.0:8889 (Press CTRL+C to quit)
-INFO:     Started reloader process [11390] using StatReload
+INFO:     Started reloader process [159716] using WatchFiles
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
 /root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [11531]
+INFO:     Started server process [159928]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     124.127.213.42:56294 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56294 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56294 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49276 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53745 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49274 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49275 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49277 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56294 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49274 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     124.127.213.42:64977 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     124.127.213.42:64979 - "POST /api/dify/upload HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64979 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
-INFO:     124.127.213.42:52344 - "POST /api/generate/stream HTTP/1.1" 200 OK
-[2025-10-12] 开始生成日报
+INFO:     124.127.213.42:52024 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52024 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:52029 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:52027 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:52028 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:63870 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:63869 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:63872 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:63871 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:63919 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:63920 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63920 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65437 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65436 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65438 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65437 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65438 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65436 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65437 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65438 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65436 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65437 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53931 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53930 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53932 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53931 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53930 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53931 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53932 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53931 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53930 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53932 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55063 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:57053 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:57055 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:57057 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:57053 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+WARNING:  WatchFiles detected changes in 'mcp_llm_clint.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [159928]
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+  warnings.warn(  # deprecated in 14.0 - 2024-11-09
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+INFO:     Started server process [4123120]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     124.127.213.42:58867 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:58868 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:58868 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61629 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61628 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61628 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61757 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61758 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63596 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50134 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50134 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50134 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50152 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50153 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50155 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50156 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50157 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50134 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50153 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50153 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:50567 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50568 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51263 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51263 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51269 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51268 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51270 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51267 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51266 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51263 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51269 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51269 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:52426 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52426 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52429 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52427 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52428 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52430 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52431 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52426 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52429 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52429 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:54327 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54327 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54349 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54350 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54347 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54343 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54351 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54349 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54327 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54350 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:55437 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55437 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55441 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55442 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55440 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55439 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55438 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55437 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55441 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55437 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:55477 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55477 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55478 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55482 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55479 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55480 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55481 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55478 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55477 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55482 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:56129 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56129 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56135 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56133 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56130 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56129 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56134 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56132 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56135 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56135 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:56995 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56995 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56999 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56996 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:57000 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56995 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56998 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56997 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56999 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56999 - "GET /favicon.iINFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [493482]
+9220 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59220 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59226 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59229 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59231 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59230 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59227 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59220 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59226 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59226 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:59664 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59664 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59667 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59670 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59671 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59664 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59668 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:59669 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59667 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59671 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59670 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59664 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59668 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59667 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59667 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:59667 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59667 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59668 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59671 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59670 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59664 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59669 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59668 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59668 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:59735 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59736 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59976 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59975 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60921 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60920 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61844 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61844 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61851 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61847 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61859 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61852 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61855 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61844 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61851 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61851 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:61851 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61844 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62802 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62801 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63982 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63981 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64394 - "POST /api/generate/stream HTTP/1.1" 200 OK
+/root/anaconda3/envs/12345/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+  self.gen = func(*args, **kwds)
+[2025-06-23] 开始生成日报
 >> 正在生成主体日报...
 主体日报生成完毕。
 >> 正在生成倒数三街镇月度排名趋势表...
@@ -31,473 +234,390 @@ INFO:     124.127.213.42:52344 - "POST /api/generate/stream HTTP/1.1" 200 OK
 >> 正在生成街道镇乡统计表...
 街道统计表生成完毕。
 >> 正在生成区直单位统计表...
-INFO:     124.127.213.42:65312 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:65312 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64179 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:61723 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55500 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54428 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:59966 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:65312 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64179 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60634 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 区直单位统计表生成完毕。
 MCP client disconnected.
 生成完毕，正在合并结果...
-INFO:     124.127.213.42:51390 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53415 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'test_dify_proxy.py'. Reloading...
+INFO:     124.127.213.42:65070 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65069 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49714 - "POST /api/tickets/upload HTTP/1.1" 400 Bad Request
+INFO:     124.127.213.42:49761 - "POST /api/tickets/upload HTTP/1.1" 400 Bad Request
+INFO:     124.127.213.42:49992 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50678 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50677 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50676 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50678 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55294 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55295 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55296 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:55294 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63066 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63213 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64897 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50429 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:50875 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:54343 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62686 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64756 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64756 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64765 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64768 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64761 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64769 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64756 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64767 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64765 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:64768 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:64821 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:65007 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49159 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49754 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49754 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49756 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49755 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49758 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49757 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49759 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49754 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49756 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49756 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:49820 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49842 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49843 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49820 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49842 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49820 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49843 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49842 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49843 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49842 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49820 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52651 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56352 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56352 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:56352 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:51091 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51091 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+INFO:     124.127.213.42:51091 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51091 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51117 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51108 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51116 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51118 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51119 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51091 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51117 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51117 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:51185 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:51186 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51186 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51391 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51392 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51393 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51391 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51392 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51393 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51391 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51392 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51393 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51391 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51538 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51537 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51755 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51879 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51918 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51917 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51918 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:51917 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52167 - "POST /api/generate/stream HTTP/1.1" 200 OK
+/root/anaconda3/envs/12345/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+  self.gen = func(*args, **kwds)
+[2025-06-23] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     124.127.213.42:61250 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:61250 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
+WARNING:  WatchFiles detected changes in 'mcp_llm_clint.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [11531]
+INFO:     Finished server process [4123120]
+/root/anaconda3/envs/12345/lib/python3.10/site-packages/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose import JsonWebKey, JsonWebToken
 /root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
   warnings.warn(  # deprecated in 14.0 - 2024-11-09
 /root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
   from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2267738]
+INFO:     Started server process [927363]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     124.127.213.42:62186 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49452 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:62186 - "GET /static/js/dify_client.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:49452 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:65270 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60123 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:62186 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:61447 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:61660 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:54438 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54438 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54438 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56036 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56494 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56497 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56496 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:56495 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54438 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2267738]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2754418]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2754418]
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-  File "/root/anaconda3/envs/12345/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
-    exitcode = _main(fd, parent_sentinel)
-  File "/root/anaconda3/envs/12345/lib/python3.10/multiprocessing/spawn.py", line 125, in _main
-    prepare(preparation_data)
-  File "/root/anaconda3/envs/12345/lib/python3.10/multiprocessing/spawn.py", line 236, in prepare
-    _fixup_main_from_path(data['init_main_from_path'])
-  File "/root/anaconda3/envs/12345/lib/python3.10/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
-    main_content = runpy.run_path(main_path,
-  File "/root/anaconda3/envs/12345/lib/python3.10/runpy.py", line 288, in run_path
-    code, fname = _get_code_from_file(run_name, path_name)
-  File "/root/anaconda3/envs/12345/lib/python3.10/runpy.py", line 257, in _get_code_from_file
-    code = compile(f.read(), fname, 'exec')
-  File "/root/liao/test/12345/web_server.py", line 187
-    raise HTTPException(status_code=400, detail="Excel 必须包含"主要内容"列")
-                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2770543]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     124.127.213.42:52501 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53988 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54488 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:51265 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54488 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:51265 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54488 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:51265 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54488 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:51265 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54488 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:61471 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:52408 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62472 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62473 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49247 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49249 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49248 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:61389 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62383 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62384 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62113 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53382 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:62113 - "GET /static/js/dify_client.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:50146 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60809 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:62314 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:53943 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:53382 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:62113 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64669 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49635 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53412 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64669 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49635 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:53412 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64669 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55707 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55707 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:65080 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:65081 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:54842 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:64006 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60373 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60373 - "GET /static/style.css HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60375 - "GET /static/js/dify_client.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:59772 - "GET /static/js/report.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60373 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:59771 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:59773 - "GET /static/js/elements.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:59774 - "GET /static/js/order.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60375 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     124.127.213.42:60375 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-WARNING:  StatReload detected changes in 'services/annual_analysis_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2770543]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1944305]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1944305]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1952861]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1952861]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1964339]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1964339]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1964500]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1964500]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1964938]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/annual_analysis_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1964938]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1972848]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/annual_analysis_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1972848]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1973240]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1973240]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2007456]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2007456]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2008032]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2008032]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2009003]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/custom_period_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2009003]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2278604]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/custom_period_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2278604]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2280651]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'services/custom_period_service.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2280651]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2282088]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'tools/custom_period_tool.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2282088]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2282997]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2282997]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2283960]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2283960]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [2328493]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     124.127.213.42:60467 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60467 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60478 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60480 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60477 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60479 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60472 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60467 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60479 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60479 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     124.127.213.42:53775 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62270 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55953 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62270 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55953 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55953 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62270 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55953 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62270 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     124.127.213.42:62270 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     124.127.213.42:54773 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     124.127.213.42:54779 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55880 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49928 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49969 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:49990 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:50008 - "GET / HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60168 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60169 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:60167 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55460 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55462 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55461 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55588 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55588 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55588 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     124.127.213.42:55678 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33188 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33188 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58028 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58030 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58029 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33189 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33190 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33188 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58028 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58028 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:58031 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58032 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33191 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33191 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33194 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58033 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33193 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58468 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33191 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:33192 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58033 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33194 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33191 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58468 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33193 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58033 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33192 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:33195 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33196 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33196 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     39.144.78.124:33196 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33196 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33197 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58469 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33199 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33198 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58470 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33196 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33197 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33197 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:58471 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33200 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33200 - "GET /static/js/order.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58472 - "GET /static/style.css HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58473 - "GET /static/js/report.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33201 - "GET /static/js/elements.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33202 - "GET /static/js/app.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58474 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33200 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58472 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58472 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:58475 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'web_server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2328493]
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
-  warnings.warn(  # deprecated in 14.0 - 2024-11-09
-/root/anaconda3/envs/12345/lib/python3.10/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
-  from websockets.server import WebSocketServerProtocol
-INFO:     Started server process [1492107]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     39.144.78.124:33204 - "GET / HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33204 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58477 - "POST /api/tickets/upload HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33205 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:33206 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58478 - "POST /api/dify/workflow HTTP/1.1" 200 OK
-INFO:     39.144.78.124:58479 - "GET /static/js/tickets_local.js HTTP/1.1" 304 Not Modified
-INFO:     39.144.78.124:58479 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     39.144.78.124:58480 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43461 - "GET / HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43461 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43603 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43534 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43503 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43677 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43603 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43582 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43461 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43461 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     182.33.140.144:43721 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     182.33.140.144:43721 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43721 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43609 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43469 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43470 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43789 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43762 - "POST /api/generate/stream HTTP/1.1" 200 OK
+/root/anaconda3/envs/12345/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+  self.gen = func(*args, **kwds)
+[2025-06-23] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     182.33.140.144:43640 - "POST /api/tickets/upload HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43804 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43699 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43803 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43804 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43776 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43405 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43776 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     182.33.140.144:43375 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     35.203.211.47:58682 - "GET / HTTP/1.1" 200 OK
+INFO:     59.82.83.114:61935 - "GET / HTTP/1.1" 200 OK
+INFO:     35.203.211.11:60794 - "GET /metrics HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     218.56.247.56:58585 - "GET / HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58586 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58586 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58585 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58038 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58040 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58039 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58041 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58586 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     218.56.247.56:55224 - "POST /api/generate/stream HTTP/1.1" 200 OK
+/root/anaconda3/envs/12345/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+  self.gen = func(*args, **kwds)
+[2025-06-11] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     218.56.247.56:64757 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     218.56.247.56:52774 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     218.56.247.56:52774 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58351 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58350 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58350 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     218.56.247.56:58351 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     147.185.133.35:57816 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     124.127.213.42:56667 - "GET / HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56667 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63673 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53716 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:58669 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:49277 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59222 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:63673 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:56667 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59431 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:60935 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     124.127.213.42:60935 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:60935 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     124.127.213.42:62609 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:52601 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2026-06-02] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     124.127.213.42:63684 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2026-03-02] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     124.127.213.42:62358 - "POST /api/generate/stream HTTP/1.1" 200 OK
+[2025-05-25] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     124.127.213.42:53271 - "POST /api/dify/upload HTTP/1.1" 200 OK
+INFO:     124.127.213.42:53271 - "POST /api/dify/workflow/stream HTTP/1.1" 200 OK
+INFO:     124.127.213.42:57464 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:59187 - "POST /api/dify/workflow HTTP/1.1" 200 OK
+INFO:     124.127.213.42:58259 - "POST /api/generate/stream HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+[2025-05-19] 开始生成日报
+>> 正在生成主体日报...
+主体日报生成完毕。
+>> 正在生成倒数三街镇月度排名趋势表...
+趋势表生成完毕。
+>> 正在生成街道镇乡统计表...
+街道统计表生成完毕。
+>> 正在生成区直单位统计表...
+区直单位统计表生成完毕。
+MCP client disconnected.
+生成完毕，正在合并结果...
+INFO:     111.7.96.148:45892 - "GET / HTTP/1.1" 200 OK
+INFO:     111.7.96.148:45944 - "GET / HTTP/1.1" 200 OK
+INFO:     123.160.221.130:23214 - "GET / HTTP/1.1" 200 OK
+INFO:     123.160.221.130:38668 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     43.138.246.68:54842 - "GET / HTTP/1.1" 200 OK
+INFO:     43.138.246.68:41472 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     20.80.105.157:42478 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.216.150.108:63798 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     91.230.168.246:34837 - "GET / HTTP/1.1" 200 OK
+INFO:     195.184.76.153:58643 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     66.228.53.78:10004 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     45.79.211.97:39449 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     45.33.12.214:44740 - "GET / HTTP/1.1" 200 OK
+INFO:     66.228.53.157:4428 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     139.162.3.144:35034 - "GET / HTTP/1.0" 200 OK
+INFO:     139.162.3.144:35280 - "OPTIONS / HTTP/1.0" 405 Method Not Allowed
+INFO:     139.162.3.144:35356 - "OPTIONS / HTTP/1.0" 405 Method Not Allowed
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     172.236.228.115:13882 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     35.203.211.78:65012 - "GET / HTTP/1.1" 200 OK
+INFO:     45.156.129.91:35148 - "GET / HTTP/1.1" 200 OK
+INFO:     45.156.129.90:58910 - "POST /mcp HTTP/1.1" 404 Not Found
+INFO:     45.156.129.90:58910 - "GET /sse HTTP/1.1" 404 Not Found
+INFO:     45.156.129.91:36104 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     123.160.221.143:36348 - "GET / HTTP/1.1" 200 OK
+INFO:     123.160.221.143:36358 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50244 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50492 - "GET / HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50566 - "GET /static/js/elements.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50564 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50562 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50556 - "GET /static/js/dify_client.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50560 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50568 - "GET /static/js/tickets_local.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:50558 - "GET /static/js/report.js HTTP/1.1" 200 OK
+INFO:     36.41.65.20:51378 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     113.215.188.224:56378 - "GET / HTTP/1.1" 200 OK
+INFO:     204.76.203.220:60480 - "GET / HTTP/1.1" 200 OK
+INFO:     59.82.135.105:4590 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     121.43.118.130:33308 - "GET / HTTP/1.0" 200 OK
+INFO:     121.43.118.130:33604 - "GET /nmaplowercheck1780609159 HTTP/1.1" 404 Not Found
+INFO:     121.43.118.130:33606 - "POST /sdk HTTP/1.1" 404 Not Found
+INFO:     121.43.118.130:33614 - "GET / HTTP/1.0" 200 OK
+INFO:     121.43.118.130:33620 - "GET /HNAP1 HTTP/1.1" 404 Not Found
+INFO:     121.43.118.130:33626 - "GET /evox/about HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     121.43.118.130:34016 - "GET / HTTP/1.0" 200 OK
+INFO:     121.43.118.130:34020 - "GET / HTTP/1.1" 200 OK
+INFO:     208.87.243.131:51966 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     147.185.133.169:59074 - "GET / HTTP/1.1" 200 OK
+INFO:     162.216.149.121:58048 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     45.33.12.214:58421 - "GET / HTTP/1.1" 200 OK
+INFO:     172.104.11.4:58266 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     172.236.228.193:46740 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     47.92.237.9:35766 - "GET / HTTP/1.1" 200 OK
+INFO:     47.92.237.9:35816 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     162.216.150.162:59290 - "GET / HTTP/1.1" 200 OK
+INFO:     147.185.133.94:64864 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     47.94.166.214:42206 - "GET / HTTP/1.1" 200 OK
+INFO:     47.94.166.214:42234 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     106.75.147.222:51928 - "GET / HTTP/1.1" 200 OK
+INFO:     106.75.147.222:52150 - "GET / HTTP/1.1" 200 OK
+INFO:     106.75.147.222:52254 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     106.75.147.222:52256 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     106.75.147.222:52258 - "GET /static/js/order.js HTTP/1.1" 200 OK
+INFO:     106.75.147.222:52278 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     35.203.210.42:59546 - "GET /.well-known/security.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.

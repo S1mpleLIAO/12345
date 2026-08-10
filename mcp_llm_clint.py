@@ -6,8 +6,8 @@ from openai import AsyncOpenAI, APIError, RateLimitError, APITimeoutError
 from fastmcp import Client
 
 VLLM_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-VLLM_KEY = "sk-5099122b242b4e9c884ddd22828b3760"
-MODEL_NAME = "qwen-plus"
+VLLM_KEY = "sk-b52550ad1855483096f3d496bc5a1b18"
+MODEL_NAME = "qwen3-max-2025-09-23"
 
 MAX_TOOL_LOOPS = 10
 MAX_COMPLETION_TOKENS = 16384
@@ -25,7 +25,18 @@ def build_system_msg(reasoning_summary: bool) -> Dict[str, Any]:
         "你是一个通过工具获取事实数据并生成报告的助手。"
         "对于涉及文件、表格、指标、排名的任何问题，你必须至少调用一个提供的工具，"
         "绝不能凭空捏造数据，也不能仅根据记忆或常识回答。"
-        "如果一次工具调用不够，你可以继续调用工具，直到得到可靠结果。"
+        "\n\n"
+        "【工具调用硬性要求】"
+        "\n1. 调用工具时，function.arguments 必须是严格合法的 JSON 对象字符串。"
+        "\n2. JSON 的 key 和 string value 必须使用英文双引号。"
+        "\n3. 禁止使用 Python dict 格式，例如 {'date': '2025-06-26'}。"
+        "\n4. 禁止输出裸参数，例如 date=2025-06-26。"
+        "\n5. 禁止在 function.arguments 中输出 Markdown、注释、解释或多余文本。"
+        "\n6. 如果工具参数只有 date，必须使用这种格式：{\"date\":\"2025-06-26\"}。"
+        "\n7. 如果工具没有参数，必须使用空 JSON 对象：{}。"
+        "\n\n"
+        "你最多进行一轮工具调用。工具返回结果后，必须基于工具结果直接生成最终报告，"
+        "不要再次调用工具。"
     )
     if reasoning_summary:
         base += (
@@ -91,30 +102,40 @@ class MCPClientWrapper:
         self,
         *,
         messages: List[Dict[str, Any]],
-        tools: List[Dict[str, Any]],
-        tool_choice: str,
+        tools: Optional[List[Dict[str, Any]]] = None,
+        tool_choice: Optional[str] = None,
         max_tokens: int,
         temperature: float = 0.0,
     ):
         last_err: Exception | None = None
+
         for attempt in range(1, MAX_LLM_RETRIES + 1):
             try:
-                return await self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    tools=tools,
-                    tool_choice=tool_choice,
-                    temperature=temperature,
-                    max_tokens=max_tokens,
-                )
+                kwargs = {
+                    "model": self.model,
+                    "messages": messages,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                }
+
+                if tools:
+                    kwargs["tools"] = tools
+
+                if tool_choice:
+                    kwargs["tool_choice"] = tool_choice
+
+                return await self.client.chat.completions.create(**kwargs)
+
             except (APIError, RateLimitError, APITimeoutError, TimeoutError) as e:
                 last_err = e
                 if attempt == MAX_LLM_RETRIES:
                     break
                 await asyncio.sleep(2 ** (attempt - 1))
+
             except Exception as e:
                 last_err = e
                 break
+
         raise last_err if last_err is not None else RuntimeError("未知的 LLM 调用错误")
 
     async def _safe_call_tool(self, tool_name: str, args: Dict[str, Any]) -> str:
@@ -303,8 +324,17 @@ class MCPClientWrapper:
             for tool_call in msg.tool_calls:
                 tool_name = tool_call.function.name
                 try:
-                    args = json.loads(tool_call.function.arguments or "{}")
-                except Exception:
+                    raw_args = tool_call.function.arguments or "{}"
+                    # 确保参数是有效的 JSON 格式
+                    if not raw_args.strip():
+                        raw_args = "{}"
+                    # 尝试解析 JSON
+                    args = json.loads(raw_args)
+                    # 确保参数是字典类型
+                    if not isinstance(args, dict):
+                        args = {}
+                except (json.JSONDecodeError, TypeError) as e:
+                    print(f"警告：工具 {tool_name} 的参数不是有效的 JSON 格式: {e}")
                     args = {}
 
                 # ✅ ensure step exists (dynamic extend)
@@ -375,11 +405,25 @@ class MCPClientWrapper:
             messages = self._truncate_history(messages)
 
             # 3) post tools
+            # 3) post tools
+# 工具执行完成后，不再允许模型继续调用工具。
+# 否则 qwen 可能再次生成非法 function.arguments，触发：
+# The "function.arguments" parameter of the code model must be in JSON format.
             try:
+                messages.append(
+                    {
+                        "role": "system",
+                        "content": (
+                            "工具结果已经返回。现在请基于已有工具结果直接生成最终报告。"
+                            "不要再调用任何工具。不要输出 tool_calls。"
+                        ),
+                    }
+                )
+
                 final_resp = await self._llm_chat_with_retry(
                     messages=messages,
-                    tools=self.tools,
-                    tool_choice="auto",
+                    tools=None,
+                    tool_choice=None,
                     temperature=0,
                     max_tokens=MAX_COMPLETION_TOKENS,
                 )

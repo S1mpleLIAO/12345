@@ -1,7 +1,7 @@
 /* ================= 页面：接单助手（文本 -> Dify workflow，带"详情"弹窗） ================= */
 
 // 应用类型配置（不再需要暴露 API 密钥）
-const APP_TYPE = "dispatch_assistant";
+const APP_TYPE_ASSISTANT = "dispatch_assistant";
 const USER_ID = "frontend-assistant-user";
 let conversationId = "";  // 会话ID，用于保持上下文
 
@@ -44,7 +44,7 @@ function safeJsonParse(str) {
 async function runDifyAssist(query) {
   // 使用代理客户端运行工作流
   const data = await DifyProxyClient.runWorkflow(
-    APP_TYPE,
+    APP_TYPE_ASSISTANT,
     { query },
     { user: USER_ID, conversationId: conversationId || null }
   );
